@@ -51,5 +51,23 @@ CREATE TABLE WedstrijdStatistieken (
     FOREIGN KEY (wedstrijdid) REFERENCES Wedstrijden(id)
 );
 
+CREATE TABLE WedstrijdWeer (
+    wedstrijdid INT PRIMARY KEY,
+
+    temperature_2m DECIMAL(4,1),
+    precipitation DECIMAL(5,2),
+    relative_humidity_2m INT,
+
+    windspeed_10m DECIMAL(4,1),
+    winddirection_10m INT,
+    windgusts_10m DECIMAL(4,1),
+
+    cloudcover INT,
+    weathercode INT,
+    pressure_msl DECIMAL(6,1),
+
+    FOREIGN KEY (wedstrijdid) REFERENCES Wedstrijden(id)
+);
+
 CREATE INDEX idx_wedstrijden_hometeam ON Wedstrijden(hometeam);
 CREATE INDEX idx_wedstrijden_awayteam ON Wedstrijden(awayteam);
