@@ -6,7 +6,8 @@ USE Jupiler_Pro_League_Matches;
 CREATE TABLE Teams (
     team VARCHAR(100) PRIMARY KEY,
     latitude DECIMAL(9,6),
-    longitude DECIMAL(9,6)
+    longitude DECIMAL(9,6),
+    stadium_capacity INT
 );
 
 CREATE TABLE Wedstrijden (
