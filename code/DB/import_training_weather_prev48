@@ -1,0 +1,188 @@
+import requests
+import pyodbc
+import json
+import os
+from datetime import datetime, timedelta
+
+# ======================
+# Config
+# ======================
+API_URL = "https://archive-api.open-meteo.com/v1/archive"
+CACHE_DIR = "code/weather_cache"  # dezelfde map als matchweer
+
+os.makedirs(CACHE_DIR, exist_ok=True)
+
+# ======================
+# DB connectie
+# ======================
+conn = pyodbc.connect(
+    "DRIVER={ODBC Driver 17 for SQL Server};"
+    "SERVER=localhost;"
+    "DATABASE=Jupiler_Pro_League_Matches;"
+    "Trusted_Connection=yes;"
+)
+cursor = conn.cursor()
+
+# ======================
+# Cache helpers
+# ======================
+def cache_filename(lat, lon, date):
+    lat = round(lat, 4)
+    lon = round(lon, 4)
+    return f"{CACHE_DIR}/{lat}_{lon}_{date}.json"
+
+def load_or_fetch_day(lat, lon, date):
+    """Laadt of haalt één dag op van de API / cache"""
+    filename = cache_filename(lat, lon, date)
+    if os.path.exists(filename):
+        with open(filename, "r") as f:
+            return json.load(f), False  # cache hit
+
+    # API call
+    params = {
+        "latitude": lat,
+        "longitude": lon,
+        "start_date": date,
+        "end_date": date,
+        "hourly": "temperature_2m,precipitation,windgusts_10m",
+        "timezone": "Europe/Brussels"
+    }
+    r = requests.get(API_URL, params=params, timeout=20)
+    r.raise_for_status()
+    data = r.json()["hourly"]
+
+    with open(filename, "w") as f:
+        json.dump(data, f)
+
+    return data, True
+
+def load_or_fetch_weather(lat, lon, start_date, end_date):
+    """Haalt meerdere dagen op en voegt samen"""
+    current = datetime.fromisoformat(start_date)
+    end = datetime.fromisoformat(end_date)
+    merged = {"time": [], "temperature_2m": [], "precipitation": [], "windgusts_10m": []}
+    api_used_total = False
+
+    while current <= end:
+        date_str = current.date().isoformat()
+        day_data, api_used = load_or_fetch_day(lat, lon, date_str)
+        api_used_total = api_used_total or api_used
+
+        for key in merged.keys():
+            if key in day_data:
+                merged[key].extend(day_data[key])
+
+        current += timedelta(days=1)
+
+    return merged, api_used_total
+
+# ======================
+# Trainingsweer berekenen
+# ======================
+def compute_training_weather(hourly, start_ts, end_ts):
+    temps = []
+    precs = []
+    gusts = []
+    rain_hours = 0
+    heat_hours = 0
+
+    for i, ts in enumerate(hourly["time"]):
+        t = datetime.fromisoformat(ts)
+        if start_ts <= t < end_ts:
+            temp = hourly["temperature_2m"][i]
+            precip = hourly["precipitation"][i]
+            gust = hourly["windgusts_10m"][i]
+
+            temps.append(temp)
+            precs.append(precip)
+            gusts.append(gust)
+
+            if precip > 0:
+                rain_hours += 1
+            if temp >= 25:
+                heat_hours += 1
+
+    if not temps:
+        raise ValueError("Geen trainingsweer gevonden")
+
+    return (
+        round(sum(temps)/len(temps), 1),   # temp_avg_prev48
+        round(sum(precs), 2),              # precip_sum_prev48
+        round(max(gusts), 1),              # max_windgust_prev48
+        rain_hours,                         # rain_hours_prev48
+        heat_hours                          # heat_hours_prev48
+    )
+
+# ======================
+# Wedstrijden ophalen
+# ======================
+cursor.execute("""
+    SELECT w.id, w.wedstrijddatum, w.wedstrijdtijd,
+           t.latitude, t.longitude
+    FROM Wedstrijden w
+    JOIN Teams t ON w.hometeam = t.team
+    WHERE t.latitude IS NOT NULL
+      AND NOT EXISTS (
+          SELECT 1
+          FROM WedstrijdWeerVooraf ww
+          WHERE ww.wedstrijdid = w.id
+      )
+""")
+
+matches = cursor.fetchall()
+total = len(matches)
+
+print(f"🏋️ Start import trainingsweer (48u vooraf) voor {total} wedstrijden\n")
+
+api_calls = 0
+cache_hits = 0
+
+# ======================
+# Verwerking
+# ======================
+for i, (wid, datum, tijd, lat, lon) in enumerate(matches, start=1):
+    match_dt = datetime.combine(datum, tijd)
+    start_prev48 = match_dt - timedelta(hours=48)
+
+    start_date = start_prev48.date().isoformat()
+    end_date = match_dt.date().isoformat()
+
+    try:
+        hourly, api_used = load_or_fetch_weather(lat, lon, start_date, end_date)
+        api_calls += int(api_used)
+        cache_hits += int(not api_used)
+
+        training_weather = compute_training_weather(hourly, start_prev48, match_dt)
+
+        cursor.execute("""
+            INSERT INTO WedstrijdWeerVooraf (
+                wedstrijdid,
+                temp_avg_prev48,
+                precip_sum_prev48,
+                max_windgust_prev48,
+                rain_hours_prev48,
+                heat_hours_prev48
+            )
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, wid, *training_weather)
+
+        if i % 10 == 0 or i == total:
+            percent = (i / total) * 100
+            print(
+                f"✅ {i}/{total} ({percent:.1f}%) | "
+                f"API calls: {api_calls} | cache hits: {cache_hits}"
+            )
+
+    except Exception as e:
+        print(f"❌ Wedstrijd {wid}: {e}")
+
+# ======================
+# Afronden
+# ======================
+conn.commit()
+cursor.close()
+conn.close()
+
+print("\n🎉 Trainingsweer succesvol opgeslagen!")
+print(f"🌐 API calls: {api_calls}")
+print(f"📂 Cache hits: {cache_hits}")

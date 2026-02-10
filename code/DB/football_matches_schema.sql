@@ -66,8 +66,27 @@ CREATE TABLE WedstrijdWeer (
     weathercode INT,
     pressure_msl DECIMAL(6,1),
 
+    -- gemiddelde tussen 1 uur voor en na de aftrap
+    temperature_avg DECIMAL(4,1),
+    precipitation_sum DECIMAL(5,2),
+    windspeed_avg DECIMAL(4,1),
+    windgusts_max DECIMAL(4,1),
+
     FOREIGN KEY (wedstrijdid) REFERENCES Wedstrijden(id)
 );
+
+CREATE TABLE WedstrijdWeerVooraf (
+    wedstrijdid INT PRIMARY KEY,
+
+    temp_avg_prev48 DECIMAL(4,1),
+    precip_sum_prev48 DECIMAL(6,2),
+    max_windgust_prev48 DECIMAL(4,1),
+    rain_hours_prev48 INT,
+    heat_hours_prev48 INT,
+
+    FOREIGN KEY (wedstrijdid) REFERENCES Wedstrijden(id)
+);
+
 
 CREATE INDEX idx_wedstrijden_hometeam ON Wedstrijden(hometeam);
 CREATE INDEX idx_wedstrijden_awayteam ON Wedstrijden(awayteam);
