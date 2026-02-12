@@ -1,0 +1,6 @@
+Welke data mist nog?
+
+Alle preprocessing in DB of ook nog waarden zoals boolean rain wanneer er meer dan 0 regen valt in ML doen?
+
+Alle benamingen in het engels of nederlands?
+
