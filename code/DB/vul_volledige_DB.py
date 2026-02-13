@@ -9,6 +9,8 @@ files = [
     "importeer_weer_vooraf_48u.py"
 ]
 
+error = False
+
 for file in files:
     print(f"Start: {file}")
 
@@ -21,8 +23,10 @@ for file in files:
 
     if result.returncode != 0:
         print(f"Fout bij uitvoeren van {file}")
+        error = True
         break
 
     print(f"Klaar: {file}")
 
-print("Alle scripts uitgevoerd.")
+if not error:
+    print("Alle scripts uitgevoerd.")
