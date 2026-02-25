@@ -1,11 +1,10 @@
 {
   "jobname": "deSchrijverTorbenBP",
   "md5": "9FC5D273FFDB17E21BC48560478DD4B0",
-  "timestamp": "20260224191029",
+  "timestamp": "20260225115703",
   "cachefiles": [
     "5B1874FFC0ED59F57072E4AEB7D92072.highlight.minted",
     "_9FC5D273FFDB17E21BC48560478DD4B0.index.minted",
-    "default.style.minted",
     "solarized-light.style.minted"
   ]
 }
