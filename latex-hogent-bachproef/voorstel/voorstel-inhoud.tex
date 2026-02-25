@@ -15,70 +15,198 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Voorspellen van voetbalwedstrijden is lastig.
+Veel factoren spelen een rol, zoals de ploegen, het tijdstip, de locatie en het weer.
+Tegenwoordig is er veel data beschikbaar, maar het is vaak onduidelijk wat nu echt
+bepalend is voor de eindstand en andere wedstrijdstatistieken. Daarnaast zijn
+bestaande voorspellingsmodellen, zoals die van bookmakers, vaak niet transparant
+en geven ze niet prijs hoe ze tot hun cijfers komen. Daardoor is het moeilijk om te
+begrijpen waarom bepaalde uitslagen als waarschijnlijker worden gezien dan andere.
+Daarbij is het ook nog eens interessant om te weten welke factoren hiervan de meeste
+invloed hebben op deze zaken.
 
+\vspace{5pt}
+
+Deze bachelorproef onderzoekt met behulp van data-analyse en machine learning,
+op een open en inzichtelijke manier welke elementen het sterkst bijdragen aan
+wedstrijdstatistieken zoals: eindstand, aantal kaarten en aantal doelpunten.
+Dit zal onderzocht worden voor de Jupiler Pro League, waarbij vervolgens ook met
+deze modellen toekomstige wedstrijden en wedstrijdstatistieken voorspeld worden.
+
+\vspace{5pt}
+
+De \textbf{centrale onderzoeksvraag} luidt dan ook als volgt:
+
+\begin{quote}
+\textit{Welke factoren dragen het sterkst bij aan het voorspellen van
+wedstrijdstatistieken in de Jupiler Pro League, en hoe kunnen deze factoren
+met data-analyse en machine learning gemodelleerd worden om accurate
+voorspellingen te maken?}
+\end{quote}
+
+Om deze vraag te beantwoorden, wordt het onderzoek opgesplitst in twee sets
+deelvragen. Ten eerste richten we ons op het probleemdo
+mein:
+
+\vspace{5pt}
+
+\textbf{Deelvragen over het probleemdomein:}
 \begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
+\item Welke wedstrijdstatistieken (zoals eindstand, aantal kaarten en aantal
+doelpunten) zijn het meest relevant om te voorspellen?
+\item Welke externe factoren (zoals ploeg, locatie, tijdstip, weer en andere
+contextuele variabelen) hebben potentieel invloed op deze
+wedstrijdstatistieken?
 \end{itemize}
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+\vspace{5pt}
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
+Ten tweede kijken we naar mogelijke oplos
+singen hiervoor:
 
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
+\vspace{5pt}
 
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+\textbf{Deelvragen over het oplossingsdomein:}
+\begin{itemize}
+\item Hoe kunnen de relevante factoren worden verzameld, gestructureerd en
+geanalyseerd met behulp van data-analyse?
+\item Welke machine-learningmodellen zijn het meest geschikt voor het
+voorspellen van wedstrijdstatistieken in de Jupiler Pro League?
+\item Hoe presteren de geselecteerde modellen in termen van nauwkeurigheid,
+betrouwbaarheid en generaliseerbaarheid bij het voorspellen van
+toekomstige wedstrijden en statistieken?
+\end{itemize}
+
+\vspace{5pt}
+
+Tot slot volgt de structuur van dit gehele werk.
+Ten eerste wordt (\ref{sec:literatuurstudie}) de relevante literatuur
+besproken over data-analyse, sports analytics en machine-learningtoepassingen
+binnen de sportwereld. Daarna worden in de methodologie (\ref{sec:methodologie}) de dataverzameling, featureselectie,
+modelkeuze en evaluatiecriteria toegelicht. Bovendien wordt de planning
+(\ref{sec:planning}) besproken, met een geplande
+overlap van fases en tussentijdse mijlpalen, inclusief ruimte voor het
+uitschrijven van het verslag. Ten slotte (\ref{sec:verwachte_resultaten}) wordt er geschetst welk antwoord het onderzoek
+moet bieden op de vraag welke factoren de meeste invloed hebben en waarom,
+en wie daarbij meerwaarde heeft binnen de context van voorspellingen in de
+Jupiler Pro League.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+Tegenwoordig wordt in studies over voetbal voorspellingen data-analyse en machine learning steeds vaker ingezet. \textcite{Rodrigues2022} levert een waardevolle bijdrage door een aantal modellen naast elkaar te zetten voor de voorspelling van wedstrijduitslagen in Europese competities. Wat zij aantonen, is dat met name classificatiemodellen als Random Forest en Gradient Boosting sterk scoren, mits er voldoende historische wedstrijd- en teamstatistieken beschikbaar zijn. Daarbij is volgens hen vooral de nadruk op featureselectie om storende ruis en overfitting te beperken, sterk onderbelicht.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+\vspace{5pt}
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+\textcite{Choi2023} gingen op zoek naar diverse machine-learning methoden, waaronder Support Vector Machines, k-Nearest Neighbours en neurale netwerken. Zij stelden vast dat de prestaties van modellen sterk afhangen van de kwaliteit van de ingevoerde variabelen en de balans tussen winst-, verlies- en gelijkspeldata. Met hun onderzoek benadrukken zij dat een model zelden overal het beste is, waardoor hybride modellen of ensembles vaak betere voorspellingen geven.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+\vspace{5pt}
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+In recent onderzoek gaat \textcite{Sun2025} nog een stap verder door gebruik te maken van quantum neural networks (QNN). Deze technologie, gebaseerd op principes uit quantum computing, bood in hun onderzoek een licht betere voorspellingsnauwkeurigheid dan klassieke deep-learningmodellen. Hoewel QNN nog in een experimentele fase zit, toont het onderzoek aan dat innovatieve netwerkarchitecturen potentieel hebben binnen sports analytics.
 
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
+\vspace{5pt}
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+Verder wordt naast het modelleren van voetbalprestaties ook meer onderzoek gedaan naar de achterliggende factoren. \textcite{Fan2023} bestudeerden data van verschillende FIFA-wereldbekers en kwamen tot de conclusie dat factoren als ervaring, economie en de kwaliteit van de tegenstander bepalend zijn. We moeten hierbij wel aangeven dat de studie zich voornamelijk richt op internationale toernooien. Het laat echter wel zien dat context zeer bepalend kan zijn voor prestaties in sport.
+
+\vspace{5pt}
+
+\textcite{Zhong2024} bestudeerden de impact van weersomstandigheden op de technische prestaties van teams. Daarbij stelden ze vast dat factoren als temperatuur, wind en luchtvochtigheid een significante invloed hadden op de nauwkeurigheid van passes, de intensiteit en de foutenmarge. Hiermee laten zij zien dat externe omgevingsfactoren ertoe doen bij het in kaart brengen van prestatiedata.
+
+\vspace{5pt}
+
+Tot slot lieten \textcite{Wong2025} zien hoe zij een geavanceerd voorspellend framework bouwden waarin verschillende machine-learningmodellen worden samengevoegd om sportuitslagen te voorspellen. De focus van hun framework ligt op feature engineering, datareikwijdte en modelvergelijking. Ze bewijzen dat ensemble-technieken, zoals blending en stacking, doorgaans betere prestaties leveren dan losse modellen.
+
+\vspace{5pt}
+
+Samenvattend blijkt uit de literatuur dat de keuze van het model, de selectie van de features en de contextuele factoren bepalende elementen zijn voor het voorspellen van voetbalwedstrijden. Machine learning heeft zijn sterktes, maar het succes ervan hangt sterk af van de kwaliteit van de data, de gekozen variabelen en de insteek van het onderzoek. Met deze inzichten gaan we dit onderzoek verder uitdiepen in de Jupiler Pro League.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Voor deze studie werd gekozen voor een kwantitatieve, data-gedreven benadering om de factoren die van invloed kunnen zijn op wedstrijdstatistieken in de Jupiler Pro League te ontdekken en te modelleren. Een korte samenvatting van de methode is als volgt: dataverzameling en -voorbereiding, verkennende data-analyse en featureselectie, modelopbouw en validatie en tenslotte evaluatie van de modelprestaties.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+\vspace{5pt}
+\textbf{Dataverzameling en -voorbereiding}
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+De eerste stap is het samenstellen van een dataset met historische wedstrijddata van de Jupiler Pro League. Hiertoe wordt gebruikgemaakt van open databronnen. De data die wordt verzameld bevat wedstrijduitkomsten en teamstatistieken. Ook de data van externe factoren die de wedstrijdcontext beïnvloeden, zoals het weer, de locatie of het tijdstip van de wedstrijd, worden opgehaald. De data wordt opgeschoond en gestandaardiseerd. Ontbrekende waarden worden waar mogelijk ingevuld of verwijderd, en variabelen worden genormaliseerd. Daarnaast worden categorische variabelen omgezet in een geschikt formaat voor machine-learningmodellen, bijvoorbeeld door one-hot encoding.
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+\vspace{5pt}
+\textbf{Verkennende data-analyse en featureselectie}
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+Daarna wordt een verkennende analyse gedaan om inzicht te krijgen in de data en de relaties tussen de variabelen. Hiervoor worden statistische samenvattingen, visualisaties en correlaties uitgevoerd. Op basis hiervan wordt een keuze gemaakt welke features relevant zijn en waarschijnlijk bijdragen aan het voorspellen van targetvariabelen zoals eindstand, aantal doelpunten en kaarten. Featureselectiemethoden zoals recursive feature elimination (RFE) en een score zoals feature importance uit bijvoorbeeld Random Forests worden gebruikt om irrelevante of ruisende variabelen te verkleinen, zodat er minder kans is op overfitting.
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\vspace{5pt}
+\textbf{Modelontwikkeling}
+
+Er verschijnen steeds meer machine-learningmodellen die ontwikkeld worden met als doel ze met elkaar te vergelijken. Zo zijn er classificatiemodellen (Random Forest, Gradient Boosting Machines, Support Vector Machines) die voorspellen wat de uitkomst van een wedstrijd is (bijvoorbeeld winst, verlies, gelijkspel) en zijn er regressiemodellen (lineaire regressie, XGBoost regressie) die voorspellen wat de uitkomst van een wedstrijd is in de vorm van een getal (bijvoorbeeld het aantal doelpunten). Verder wordt ook aan ensemble- en hybride modellen geëxperimenteerd. Door enkele modellen te combineren zou je betere voorspellingen kunnen krijgen. De modellen worden getraind met een train-test-splitsing van de data en hierbij wordt ook cross-validatie gebruikt om ervoor te zorgen dat de modellen generaliseerbaar zijn.
+
+\vspace{5pt}
+\textbf{Modelvalidatie en evaluatie}
+
+De performance van de modellen wordt beoordeeld aan de hand van relevante metrics, zoals accuracy, precision, recall, F1-score bij classificatie, en Mean Absolute Error (MAE), Root Mean Squared Error (RMSE) bij regressie. Verder wordt er gekeken naar de modelsteekkracht en modelinterpretatie, bijvoorbeeld met behulp van SHAP-waarden of feature importance scores om te achterhalen welke factoren het meeste impact hebben. Dit helpt om de black-box van het model te doorbreken, wat aansluit bij het doel om inzicht te bieden in de bepalende factoren.
+
+\vspace{5pt}
+\textbf{Tools en software}
+
+Voor dit onderzoek worden programmeertalen en -bibliotheken als Python gebruikt. Met name worden er Python-packages zoals pandas voor datamanipulatie, scikit-learn en XGBoost voor machine learning, matplotlib en seaborn voor visualisaties, en SHAP voor modeluitleg gebruikt. Voor dataverzameling worden webscrapingtools, API’s en downloadbare datasets gebruikt. Het gehele proces wordt uitgevoerd in een Jupyter-Notebook-omgeving voor overzichtelijkheid en reproduceerbaarheid.
+
+\vspace{5pt}
+Met deze aanpak kan een onderzoek worden uitgevoerd dat technisch goed onderbouwd is en toch ook praktisch haalbaar, waarbij ook voldoende aandacht is voor de gebruikte data, het gekozen model en de interpretatie ervan om een betrouwbaar antwoord te kunnen geven op de gestelde vraag.
+
+\section{Planning}%
+\label{sec:planning}
+
+Voor dit bachelorproefonderzoek is gekozen voor een flexibele planning met overlappende fases. Op deze manier kunnen de data-analyse, het opbouwen van het model en het schrijven van het verslag gelijktijdig en iteratief verlopen. Tevens is er ruim tijd voorzien voor het ontvangen van feedback en het bijsturen van de koers in samenspraak met de promotor.
+
+\vspace{5pt}
+\begin{itemize}
+    \item \textbf{Data verzamelen en voorbereiden} \\
+    Start begin semester 2 en loopt tot midden maart 2026. Gedurende deze periode wordt data verzameld, opgeschoond en voorbereid voor analyse.
+
+    \vspace{5pt}
+    \item \textbf{Exploratieve data-analyse en featureselectie} \\
+    Start direct na de start van de dataverzameling en loopt deels parallel aan de voorbereiding van de literatuurstudie. Deze fase loopt tot eind maart 2026.
+
+    \vspace{5pt}
+    \item \textbf{Modelontwikkeling en validatie} \\
+    Start in maart 2026, na de eerste analyses, en loopt tot begin mei 2026. Gedurende deze periode worden modellen ontwikkeld, getest en geoptimaliseerd.
+
+    \vspace{5pt}
+    \item \textbf{Tussentijds rapport en bachelorproef schrijven} \\
+    Vanaf begin maart 2026 wordt gestart met het schrijven van de draft bachelorproef, die tussentijds van feedback zal worden voorzien, waarna het verslag vervolgens wordt aangepast. Het schrijven loopt tot eind mei 2026, waarbij ruimte is voor het uitschrijven van resultaten, discussies en conclusies.
+
+    \vspace{5pt}
+    \item \textbf{Voorbereiding verdediging} \\
+    Vanaf mei 2026 wordt tijd gereserveerd voor het voorbereiden van de presentatie, poster en eventuele ondersteunende materialen voor de verdediging.
+\end{itemize}
+
+\vspace{5pt}
+Door deze planning kunnen de verschillende onderdelen elkaar versterken, is er ruimte voor bijsturing en is er voldoende tijd voor het schrijven en afronden van de bachelorproef.
 
 %---------- Verwachte resultaten ----------------------------------------------
-\section{Verwacht resultaat, conclusie}%
+\section{Verwacht resultaat}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+Het doel van dit onderzoek is niet om vooraf een bepaalde uitkomst te voorspellen, maar om te laten zien welke inzichten dit project kan opleveren en waarom deze waardevol zijn. Het onderzoek zal met name door de analyses en modellen bijdragen aan een beter begrip van de factoren die de wedstrijdstatistieken en -resultaten in de Jupiler Pro League beïnvloeden.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+\vspace{5pt}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Omdat dit onderzoek een verkennend en verklarend onderzoek is, zullen er vooral observaties, patronen en mogelijke verklaringen voor deze patronen worden verwacht. De uitkomsten kunnen leiden tot nieuwe hypothesen voor toekomstig, meer confirmerend onderzoek. Het belangrijkste is dat de gevonden inzichten interpreteerbaar zijn en het mogelijk maken om de rol en impact van verschillende variabelen te begrijpen in de context van Belgische voetbalcompetities.
+
+\vspace{5pt}
+
+De meerwaarde van dit onderzoek is te vinden in de toepassing ervan. De inzichten die voortvloeien uit de modellen en analyses kunnen verschillende doelgroepen helpen:
+
+\begin{itemize}
+    \item \textbf{Clubs en analisten:} ze krijgen meer zicht op welke spelelementen of factoren uit de omgeving van invloed zijn op een bepaald prestatiepeil en dat kan hen verder helpen met de tactische voorbereiding, wedstrijdanalyse tot wel het nemen van strategische beslissingen.
+    \item \textbf{Trainers en sportstaf:} de verklarende waarde van het model kun je gebruiken om meer onderbouwde oordelen te vormen over team- of spelerprestatie-indicatoren.
+    \item \textbf{Data-analisten en onderzoekers:} dit onderzoek biedt een raamwerk dat reproduceerbaar is voor dataverzameling, featureselectie en modelvalidatie binnen een sportcontext.
+    \item \textbf{Supporters en media:} beter inzicht in onderliggende patronen en beïnvloedende factoren kan bijdragen aan een genuanceerdere duiding van matchresultaten.
+\end{itemize}
+
+Kortom, het uiteindelijke doel is voornamelijk om een reeks aan toegankelijke inzichten, leermomenten en gefundeerde observaties voor te leggen aan elke prestatieanalist die zich bezighoudt met het Belgische voetbal. Hiermee wil ik een basis leggen om verder academisch of beroepsmatig te kunnen werken.
+
 
