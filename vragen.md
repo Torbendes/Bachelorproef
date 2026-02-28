@@ -97,3 +97,16 @@ In welke mate denkt u dat onderstaande match‑up factoren invloed hebben op het
 - Snelheid voorin tegen een trage verdediging (1–5)
 
 *(Experts gebruiken dit intuïtief heel vaak, terwijl modellen dit meestal enkel indirect capteren via resultaten. Daarom zeer waardevol voor bias-analyse.)*
+
+
+⭐ Eén extra vraag die je onderzoek nóg sterker maakt
+
+Voeg ergens toe:
+
+Hoe zeker bent u van uw voorspelling? (1–5)
+
+Waarom dit goud is:
+
+je kan confidence vs accuracy vergelijken
+
+vaak zijn experts overzeker → zeer interessante discussie.
