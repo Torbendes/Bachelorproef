@@ -1,30 +1,75 @@
-%%=============================================================================
-%% Methodologie
-%%=============================================================================
-
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
 \label{ch:methodologie}
 
-%% TODO: In dit hoofstuk geef je een korte toelichting over hoe je te werk bent
-%% gegaan. Verdeel je onderzoek in grote fasen, en licht in elke fase toe wat
-%% de doelstelling was, welke deliverables daar uit gekomen zijn, en welke
-%% onderzoeksmethoden je daarbij toegepast hebt. Verantwoord waarom je
-%% op deze manier te werk gegaan bent.
-%% 
-%% Voorbeelden van zulke fasen zijn: literatuurstudie, opstellen van een
-%% requirements-analyse, opstellen long-list (bij vergelijkende studie),
-%% selectie van geschikte tools (bij vergelijkende studie, "short-list"),
-%% opzetten testopstelling/PoC, uitvoeren testen en verzamelen
-%% van resultaten, analyse van resultaten, ...
-%%
-%% !!!!! LET OP !!!!!
-%%
-%% Het is uitdrukkelijk NIET de bedoeling dat je het grootste deel van de corpus
-%% van je bachelorproef in dit hoofstuk verwerkt! Dit hoofdstuk is eerder een
-%% kort overzicht van je plan van aanpak.
-%%
-%% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
-%% en geef het een gepaste titel.
+In dit hoofdstuk wordt toegelicht hoe dit onderzoek werd uitgevoerd. 
+De methodologie beschrijft de verschillende fasen van het onderzoeksproces, 
+de gehanteerde werkwijze en de gemaakte keuzes. 
+Het doel van dit hoofdstuk is een helder overzicht te geven van het plan van aanpak, 
+zonder reeds in te gaan op concrete resultaten.
 
-\lipsum[21-25]
+\section{Onderzoeksopzet}
 
+Deze bachelorproef hanteert een kwantitatieve onderzoeksaanpak waarbij historische wedstrijddata 
+worden gebruikt om machine-learningmodellen te ontwikkelen en te evalueren. 
+De centrale doelstelling is het vergelijken van algoritmische voorspellingen met menselijke expertise binnen de context van voetbalwedstrijden.
+
+Het onderzoek werd opgebouwd in vier opeenvolgende fasen:
+\begin{itemize}
+    \item dataverzameling en voorbereiding,
+    \item modelontwikkeling,
+    \item evaluatie van modelprestaties,
+    \item vergelijking met expertvoorspellingen en interpretatie.
+\end{itemize}
+
+Elke fase wordt in een afzonderlijk hoofdstuk verder uitgewerkt.
+
+\section{Dataverzameling en voorbereiding}
+
+In de eerste fase werden historische wedstrijdgegevens verzameld. 
+De selectie van variabelen gebeurde op basis van inzichten uit de literatuurstudie, 
+waarbij zowel prestatie-indicatoren als contextuele factoren werden meegenomen.
+
+De voorbereiding van de data omvatte onder andere:
+\begin{itemize}
+    \item het opschonen van de dataset,
+    \item het behandelen van ontbrekende waarden,
+    \item het transformeren en coderen van variabelen,
+    \item het opsplitsen van de data in trainings- en testsets.
+\end{itemize}
+
+Deze stappen waren noodzakelijk om betrouwbare en reproduceerbare modeltraining mogelijk te maken.
+
+\section{Modelontwikkeling}
+
+In de tweede fase werden verschillende machine-learningmodellen ontwikkeld. 
+De selectie van algoritmes gebeurde op basis van hun geschiktheid voor classificatieproblemen 
+en hun frequent gebruik binnen sportanalyse.
+
+Tijdens deze fase werd aandacht besteed aan:
+\begin{itemize}
+    \item het trainen van de modellen op historische data,
+    \item het optimaliseren van hyperparameters,
+    \item het beperken van overfitting via geschikte validatiestrategieën.
+\end{itemize}
+
+Daarnaast werd voorzien in methoden om modeluitkomsten interpreteerbaar te maken.
+
+\section{Evaluatie van modelprestaties}
+
+De derde fase bestond uit het objectief evalueren van de ontwikkelde modellen. 
+Hiervoor werden verschillende evaluatiemetrieken gebruikt die aansluiten bij classificatieproblemen en probabilistische voorspellingen.
+
+Er werd bewust gekozen voor meerdere maatstaven om een vertekend beeld te vermijden en een evenwichtige vergelijking mogelijk te maken.
+
+\section{Vergelijking met menselijke expertise}
+
+In de laatste fase werden de algoritmische voorspellingen vergeleken met menselijke inschattingen. 
+Hierbij werd onderzocht in welke mate er verschillen optreden in nauwkeurigheid, consistentie en patroonherkenning.
+
+Deze vergelijking laat toe om niet enkel technische prestaties te analyseren, 
+maar ook bredere implicaties te formuleren omtrent de rol van menselijke expertise tegenover datagedreven modellen.
+
+\vspace{5pt}
+
+De hier beschreven methodologische aanpak vormt de basis voor de verdere uitwerking in de volgende hoofdstukken, 
+waarin elke fase gedetailleerd wordt besproken.
