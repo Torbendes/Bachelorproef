@@ -1,22 +1,18 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
 
-% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
-% dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
-% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
-
-% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
-
-
-
 In het vorige hoofdstuk zijn de probleemstelling, onderzoeksvragen en doel van deze bachelorproef besproken. 
 Om al enige kennis op te doen over deze vragen, wordt in dit hoofdstuk een overzicht gegeven 
 van relevante wetenschappelijke literatuur 
-rond voetbalvoorspellingen, datanalyse en machine learning. 
+rond voetbalvoorspellingen, data-analyse en machine learning. 
 Er wordt ingelezen op de gebruikte modellen, bepalende factoren en recente ontwikkelingen in sport-analyses. 
 Deze inzichten vormen vervolgens de basis voor de methodologische keuzes die in het volgende hoofdstuk besproken worden.
 
-Tegenwoordig wordt in studies over voetbal voorspellingen data-analyse en machine learning steeds vaker ingezet. 
+\vspace{5pt}
+
+\section{Machine learning in voetbalvoorspellingen}
+
+Tegenwoordig worden in studies over voetbalvoorspellingen data-analyse en machine learning steeds vaker ingezet.
 \textcite{Rodrigues2022} levert een waardevolle bijdrage door een aantal modellen naast elkaar te zetten voor de voorspelling van wedstrijduitslagen in Europese competities. 
 Wat zij aantonen, is dat met name classificatiemodellen als Random Forest en Gradient Boosting sterk scoren, 
 mits er voldoende historische wedstrijd- en teamstatistieken beschikbaar zijn. 
@@ -32,9 +28,11 @@ Met hun onderzoek benadrukken zij dat een model zelden overal het beste is, waar
 
 In recent onderzoek gaat \textcite{Sun2025} nog een stap verder door gebruik te maken van quantum neural networks (QNN). 
 Deze technologie, gebaseerd op principes uit quantum computing, bood in hun onderzoek een licht betere voorspellingsnauwkeurigheid dan klassieke deep-learningmodellen. 
-Hoewel QNN nog in een experimentele fase zit, toont het onderzoek aan dat innovatieve netwerkarchitecturen potentieel hebben binnen sports analytics.
+Hoewel QNN nog in een experimentele fase zit, toont het onderzoek aan dat innovatieve netwerkarchitecturen potentieel hebben binnen sportanalyse.
 
 \vspace{5pt}
+
+\section{Bepalende en contextuele factoren}
 
 Verder wordt naast het modelleren van voetbalprestaties ook meer onderzoek gedaan naar de achterliggende factoren. 
 \textcite{Fan2023} bestudeerden data van verschillende FIFA-wereldbekers en kwamen tot de conclusie dat factoren als ervaring, 
@@ -50,13 +48,86 @@ Hiermee laten zij zien dat externe omgevingsfactoren ertoe doen bij het in kaart
 
 \vspace{5pt}
 
-Tot slot lieten \textcite{Wong2025} zien hoe zij een geavanceerd voorspellend framework bouwden waarin verschillende machine-learningmodellen worden samengevoegd
- om sportuitslagen te voorspellen. De focus van hun framework ligt op feature engineering, datareikwijdte en modelvergelijking. 
- Ze bewijzen dat ensemble-technieken, zoals blending en stacking, doorgaans betere prestaties leveren dan losse modellen.
+In de voetbalcontext besloten \textcite{LagoPenas2017} om te onderzoeken welk effect het eerste doelpunt zou hebben 
+op de rest van de wedstrijd.
+Wat zij daarbij vonden was dat het team dat eerst scoort ook een veel hogere kans heeft op de overwinning.
+Dit toont dus aan dat het verloop van een wedstrijd sterk beïnvloed kan worden door bepaalde gebeurtenissen.
+Met deze case willen we laten zien dat je met analyses ver kunt komen, ook als het gaat om zaken 
+waar je misschien al wel intuïtief een beeld bij hebt.
+Het bevestigt dat methodes die op data gebaseerd zijn je kunnen helpen om achterliggende patronen te ontdekken in competities
+en dat dit een goede link is tussen sportanalyse en voorspellende modellering.
 
 \vspace{5pt}
 
-Samenvattend blijkt uit de literatuur dat de keuze van het model, 
-de selectie van de features en de contextuele factoren bepalende elementen zijn voor het voorspellen van voetbalwedstrijden. 
-Machine learning heeft zijn sterktes, maar het succes ervan hangt sterk af van de kwaliteit van de data, de gekozen variabelen en de insteek van het onderzoek. 
-Met deze inzichten gaan we dit onderzoek verder uitdiepen in de Jupiler Pro League.
+\section{Ensemble-methoden en geavanceerde frameworks}
+
+Bovendien lieten \textcite{Wong2025} zien hoe zij een geavanceerd voorspellend framework bouwden waarin verschillende machine-learningmodellen worden samengevoegd
+om sportuitslagen te voorspellen. De focus van hun framework ligt op feature engineering, datareikwijdte en modelvergelijking. 
+Ze bewijzen dat ensemble-technieken, zoals blending en stacking, doorgaans betere prestaties leveren dan losse modellen.
+
+\vspace{5pt}
+
+\section{Evaluatiemetrieken in sportvoorspellingen}
+
+Bij het vergelijken van verschillende voorspellingsmodellen is een geschikte evaluatiemethode essentieel.
+Bij ongelijke verdeling, wat vaak het geval is bij sportvoorspellingen, kan er al snel een vertekend beeld ontstaan, indien bijvoorbeeld
+enkel naar nauwkeurigheid als metriek wordt gekeken.
+\textcite{Berrar2019} beklemtonen dat elke soort voorspelling een eigen metriek vereist, afhankelijk van de praktische toepassing ervan.
+Bij classificatie worden de maatstaven precision, recall en F1-score vaak zinvoller geacht dan alleen accuracy.
+Verder is log loss erg interessant als het model een probabilistische voorspelling afgeeft
+omdat deze maatstaf ook kijkt naar de zekerheid van het model.
+
+\vspace{5pt}
+
+\section{Explainable AI en modelinterpretatie}
+
+Buiten de kracht van dergelijke voorspellingen is het ook belangrijk om te begrijpen hoe deze tot stand komen.
+\textcite{Rudin2019} menen dat in gevallen waar beslissingen verantwoord moeten worden,
+interpreteerbare modellen prioriteit moeten krijgen boven complexe black-box-modellen.
+Transparantie hierin vergroot het vertrouwen in modeluitkomsten en maakt kritische evaluatie mogelijk.
+
+\vspace{5pt}
+
+Zeker de post-hoc verklaringsmethoden zijn interessant voor interpretatie van machine-learningmodellen.
+\textcite{Lundberg2017} introduceerden SHAP (SHapley Additive exPlanations), 
+een op speltheorie gebaseerde techniek waarmee je per voorspelling kunt nagaan welk aandeel een variabele aan die voorspelling bijdraagt. 
+Deze techniek is zeer bruikbaar binnen deze bachelorproef, omdat ze het mogelijk maakt om modelverklaringen in parallelle lijn met menselijke redeneringen te kunnen zetten 
+en exact te kunnen analyseren welke factoren het meest bepalend zijn voor de voorspelling.
+
+\vspace{5pt}
+
+\section{Menselijke expertise versus algoritmische voorspellingen}
+
+Daarnaast is er nog de verhouding tussen menselijke expertise en algoritmische voorspellingen.
+Voorgaand onderzochten \textcite{Dietvorst2015} hoe mensen omgaan met voorspellingen door een algoritme in vergelijking met voorspellingen door een mens.
+Hiertoe lieten zij zien dat mensen vaak minder vertrouwen hebben in een algoritme wanneer zij zien dat het een fout maakt,
+ook al presteert het algoritme objectief gezien beter dan menselijke voorspellers.
+Hun bevindingen zijn zeer interessant in het kader van sportvoorspellingen, waar het vertrouwen in menselijke deskundigheid traditioneel sterk is.
+De conclusie hier is dus dat het belangrijk is dat er transparant omgegaan wordt met de prestaties van het model. De beperkingen moeten vooraf benoemd worden en duidelijke 
+controle en vergelijkingsmogelijkheden moeten worden getoond, zodat er vertrouwen kan ontstaan in datagedreven beslissingssystemen.
+
+\vspace{5pt}
+
+Ten slotte voerden \textcite{Grove2000} een uitgebreide meta-analyse uit waarin menselijke voorspellingen werden vergeleken met statistische modellen.
+In hun overzicht van verschillende vakgebieden laten zij zien dat simpele statistische modellen vaak even goed, en soms beter, scoren dan menselijke experts.
+Ook al gaat hun werk niet direct over sport, het bevestigt wel dat beredeneerde beslissingen nemen op basis van data, beter kan zijn dan op intuïtie te vertrouwen.
+Dit is een belangrijke theoretische achtergrond voor het vergelijken van de voorspellingen van experts met die van machine-learningmodellen in voetbal.
+
+\vspace{5pt}
+
+\section{Synthese}
+
+Samenvattend komen in de literatuur dus een aantal zaken steeds terug. Eén daarvan is dat het soort model en de data die gebruikt 
+en meegewogen worden in de voorspelling centraal staan.
+Verder is de huidige literatuur er ook over eens dat het belangrijk is dat we
+begrijpen welke factoren onze voorspellingen veroorzaken en dat we de juiste
+maatstaven gebruiken om de resultaten van onze modellen op eerlijke wijze te kunnen beoordelen.
+Tot slot komen er in de literatuur ook meerdere studies voor die kijken naar het
+beslissingsproces van mensen en van algoritmes. Verschillende onderzoekers komen tot de conclusie dat de verschillen tussen de keuzes van mensen en die
+van algoritmes, niet alleen van technische aard kunnen zijn, maar dat ze ook van gedrag kunnen zijn.
+
+\vspace{5pt}
+
+Deze inzichten vormen de theoretische basis voor de methodologische keuzes 
+die in het volgende hoofdstuk worden toegelicht, 
+met specifieke toepassing op de Jupiler Pro League.
