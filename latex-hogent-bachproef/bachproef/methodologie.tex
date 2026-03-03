@@ -25,19 +25,19 @@ Elke fase wordt in een afzonderlijk onderdeel verder uitgewerkt.
 
 \section{Dataverzameling en voorbereiding}
 
-In de eerste fase werden historische wedstrijdgegevens verzameld. 
-De selectie van variabelen gebeurde op basis van inzichten uit de literatuurstudie, 
-waarbij zowel prestatie-indicatoren als contextuele factoren werden meegenomen.
+In de eerste fase werden historische wedstrijdgegevens van de Jupiler Pro League van 2019 tot 2026 verzameld.
+Ook externe factoren zoals weersomstandigheden en stadioncapaciteit werden toegevoegd aan de dataset.
+De keuze van deze selectie was gebaseerd op een combinatie van domeinkennis, literatuuronderzoek en praktische overwegingen omtrent datakwaliteit en beschikbaarheid.
 
-De voorbereiding van de data omvatte onder andere:
-\begin{itemize}
-    \item het opschonen van de dataset,
-    \item het behandelen van ontbrekende waarden,
-    \item het transformeren en coderen van variabelen,
-    \item het opsplitsen van de data in trainings- en testsets.
-\end{itemize}
+\vspace{5pt}
 
-Deze stappen waren noodzakelijk om betrouwbare en reproduceerbare modeltraining mogelijk te maken.
+Om al deze data op te slaan werd er gebruik gemaakt van een relationele database, waarbij de verschillende datasets werden geïntegreerd in een gestructureerde vorm.
+
+\vspace{5pt}
+
+Nadien werd de data voorbereid voor modeltraining. 
+Hierbij werd een Jupyter Notebook opgezet waarin stapsgewijs de nodige data cleaning, feature engineering en normalisatie kon gedaan worden.
+Bovenstaande procedures waren cruciaal om kwalitatieve en reproduceerbare modeltraining mogelijk te maken.
 
 \section{Modelontwikkeling}
 
