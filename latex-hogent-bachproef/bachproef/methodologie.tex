@@ -1,16 +1,16 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
 \label{ch:methodologie}
 
-In dit hoofdstuk wordt een overzicht gegeven van de verschillende stappen die ondernomen zijn 
+In dit hoofdstuk wordt een overzicht gegeven van de verschillende stappen die ondernomen zijn
 om de onderzoeksvraag met bijhorende deelvragen succesvol te kunnen beantwoorden.
 Per hoofdstuk wordt de werkwijze overlopen waarbij telkens de belangrijkste keuzes worden toegelicht,
 zonder concreet in te gaan op details.
 
 \section{Onderzoeksopzet}
 
-Deze bachelorproef behandelt een stapsgewijze aanpak waarbij historische wedstrijdgegevens, 
-aangevuld door externe factoren zoals weersomstandigheden en stadioncapiciteit, worden gebruikt 
-om machine-learningmodellen te trainen. Vervolgens zullen deze modellen genuttigd worden om menslijke expertinschatingen te vergelijken
+Deze bachelorproef behandelt een stapsgewijze aanpak waarbij historische wedstrijdgegevens,
+aangevuld door externe factoren zoals weersomstandigheden en stadioncapaciteit, worden gebruikt
+om machine-learningmodellen te trainen. Vervolgens zullen deze modellen gebruikt worden om menselijke expertinschattingen te vergelijken
 met algoritmische voorspellingen en factorbelangen.
 
 Het onderzoek werd opgebouwd in vier opeenvolgende fasen:
@@ -31,13 +31,13 @@ De keuze van deze selectie was gebaseerd op een combinatie van domeinkennis, lit
 
 \vspace{5pt}
 
-Om al deze data op te slaan werd er gebruik gemaakt van een relationele database, waarbij de verschillende datasets werden geïntegreerd in een gestructureerde vorm.
+Om al deze data op te slaan werd er gebruikgemaakt van een relationele database, waarbij de verschillende datasets werden geïntegreerd in een gestructureerde vorm.
 
 \vspace{5pt}
 
-Nadien werd de data voorbereid voor modeltraining. 
+Nadien werd de data voorbereid voor modeltraining.
 Hierbij werd een Jupyter Notebook opgezet waarin stapsgewijs de nodige data cleaning, feature engineering en normalisatie kon gedaan worden.
-Als laatste stap van de voorbereiding werd de dataset opgesplitst in trainings-, validatie- en testsets, 
+Als laatste stap van de voorbereiding werd de dataset opgesplitst in trainings-, validatie- en testsets,
 waarbij er bewust voor gekozen werd om een tijdsgebaseerde splitsing te hanteren om datalekken te voorkomen.
 Bovenstaande procedures waren cruciaal om kwalitatieve en reproduceerbare modeltraining mogelijk te maken.
 
@@ -47,8 +47,8 @@ In de tweede fase werden verschillende machine-learningmodellen ontwikkeld.
 
 Tijdens deze fase werd aandacht besteed aan:
 \begin{itemize}
-    \item het trainen van verschillende modellen op historische data
-    \item het optimaliseren van hyperparameters
+    \item het trainen van verschillende modellen op historische data,
+    \item het optimaliseren van hyperparameters,
     \item het beperken van overfitting via geschikte validatiestrategieën.
 \end{itemize}
 
@@ -56,20 +56,28 @@ Verder werden technieken ontwikkeld om de resultaten van modellen inzichtelijk t
 
 \section{Evaluatie van modelprestaties}
 
-De derde fase bestond uit het objectief evalueren van de ontwikkelde modellen. 
-Hiervoor werden verschillende evaluatiemetrieken gebruikt die aansluiten bij classificatieproblemen en probabilistische voorspellingen.
-
-Er werd bewust gekozen voor meerdere maatstaven om een vertekend beeld te vermijden en een evenwichtige vergelijking mogelijk te maken.
-
-\section{Vergelijking met menselijke expertise}
-
-In de laatste fase werden de algoritmische voorspellingen vergeleken met menselijke inschattingen. 
-Hierbij werd onderzocht in welke mate er verschillen optreden in nauwkeurigheid, consistentie en patroonherkenning.
-
-Deze vergelijking laat toe om niet enkel technische prestaties te analyseren, 
-maar ook bredere implicaties te formuleren omtrent de rol van menselijke expertise tegenover datagedreven modellen.
+In de derde fase werden de ontwikkelde modellen kritisch geëvalueerd aan de hand van verschillende classificatiemetrieken.
+Hieronder vielen onder andere accuracy, precision, recall en F1-score, die in combinatie een globaal beeld geven van de prestaties van de modellen.
+Niet enkel de uiteindelijke winnaar werd voorspeld, maar ook allerlei andere relevante uitkomstvariabelen.
 
 \vspace{5pt}
 
-De hier beschreven methodologische aanpak vormt de basis voor de verdere uitwerking in de volgende hoofdstukken, 
+Eerst werd er gekeken naar de prestaties op de validatieset. Op basis hiervan werd het beste model geselecteerd, samen met de best scorende hyperparameters.
+Daarna werden van dit model de metrieken berekend op de testset, zodat er een realistisch beeld verkregen werd van de generaliseerbaarheid van het model op ongeziene data.
+
+\vspace{5pt}
+
+Naast het meten van de prestatiewaarden van de modellen, werd er ook een diepgaande analyse gemaakt van de feature importance.
+Want behalve de voorspellingen zelf, was het ook van belang de grootste invloedfactoren te identificeren.
+
+\section{Vergelijking met menselijke expertise}
+
+In de laatste fase werden de voorspellingen vergeleken met menselijke expertinschattingen.
+Er werd geanalyseerd in welke mate er verschillen optraden in nauwkeurigheid, consistentie en patroonherkenning.
+Hierbij werd niet alleen gekeken naar de technische prestaties,
+maar ook naar wat dit betekent voor de positie van de mens tegenover machine learning.
+
+\vspace{5pt}
+
+De hier beschreven methodologische aanpak vormt de basis voor de verdere uitwerking in de volgende hoofdstukken,
 waarin elke fase gedetailleerd wordt besproken.
