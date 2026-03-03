@@ -37,22 +37,22 @@ Om al deze data op te slaan werd er gebruik gemaakt van een relationele database
 
 Nadien werd de data voorbereid voor modeltraining. 
 Hierbij werd een Jupyter Notebook opgezet waarin stapsgewijs de nodige data cleaning, feature engineering en normalisatie kon gedaan worden.
+Als laatste stap van de voorbereiding werd de dataset opgesplitst in trainings-, validatie- en testsets, 
+waarbij er bewust voor gekozen werd om een tijdsgebaseerde splitsing te hanteren om datalekken te voorkomen.
 Bovenstaande procedures waren cruciaal om kwalitatieve en reproduceerbare modeltraining mogelijk te maken.
 
 \section{Modelontwikkeling}
 
-In de tweede fase werden verschillende machine-learningmodellen ontwikkeld. 
-De selectie van algoritmes gebeurde op basis van hun geschiktheid voor classificatieproblemen 
-en hun frequent gebruik binnen sportanalyse.
+In de tweede fase werden verschillende machine-learningmodellen ontwikkeld.
 
 Tijdens deze fase werd aandacht besteed aan:
 \begin{itemize}
-    \item het trainen van de modellen op historische data,
-    \item het optimaliseren van hyperparameters,
+    \item het trainen van verschillende modellen op historische data
+    \item het optimaliseren van hyperparameters
     \item het beperken van overfitting via geschikte validatiestrategieën.
 \end{itemize}
 
-Daarnaast werd voorzien in methoden om modeluitkomsten interpreteerbaar te maken.
+Verder werden technieken ontwikkeld om de resultaten van modellen inzichtelijk te maken.
 
 \section{Evaluatie van modelprestaties}
 
