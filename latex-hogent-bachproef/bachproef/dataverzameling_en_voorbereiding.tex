@@ -11,7 +11,7 @@ Voordat de data verwerkt kan worden voor de modellen, moet deze eerst verzameld 
 Daarom werd er voorafgaand grondig op zoek gegaan naar verschillende bronnen met bruikbare ruwe data, 
 die later tot een gestructureerd geheel konden worden gebracht.
 Deze gegevens bestonden uit wedstrijdstatistieken van de Jupiler Pro League, 
-alsook externe factoren zoals weerdata en stadioninformatie. Nadien werden deze gestructureerd en opgeslagen in een relationele databakank.
+alsook externe factoren zoals weerdata en stadioninformatie. Nadien werden deze gestructureerd en opgeslagen in een relationele databank.
 
 \subsection{Wedstrijddata}
 
@@ -19,7 +19,7 @@ Eerst werden 7 CSV-bestanden gedownload~\autocite{football_data_belgium}.
 Elk bestand bevatte een bepaald seizoen van de Jupiler Pro League, beginnend bij het seizoen 2019-2020 en eindigend midden het seizoen 2025-2026.
 Voorgaande seizoenen werden niet opgenomen omdat er in deze bestanden bepaalde statistieken ontbraken die van belang waren.
 Uit deze bron werden diverse wedstrijdstatistieken verzameld, 
-waaronder de deelnemende teams, speeldatum, doelpunten, uitslagen, schoten, overtredingen, corners en kaarten voor zowel de thuis- als uitploeg.
+waaronder de deelnemende teams, speeldatum, doelpunten, uitslagen, schoten, overtredingen, corners, en kaarten voor zowel de thuis- als uitploeg.
 Voor de feature-importance-analyse en de voorspellingen waren deze variabelen uiteraard cruciaal.
 Features zoals betting odds werden bewust niet opgenomen omdat deze juist voorspeld moesten worden.
 Overige data van de scheidsrechter, teamopstellingen, blessures en transfers waren enkel ter beschikking bij betaalde bronnen en werden daarom niet opgenomen.
@@ -27,7 +27,7 @@ Overige data van de scheidsrechter, teamopstellingen, blessures en transfers war
 \subsection{Externe factoren}
 
 Daarnaast werden ook externe factoren toegevoegd aan de dataset.
-Hiertoe behoren onder andere talrijke weergegevens zoals temperatuur, neerslag, luchtvochtigheid, windsnelheid, bewolking, weercode en luchtdruk.
+Hiertoe behoren onder andere talrijke weergegevens zoals temperatuur, neerslag, luchtvochtigheid, windsnelheid, bewolking, weercode, en luchtdruk.
 Deze werden verkregen via een API van~\textcite{open_meteo_api}.
 Ook deze gegevens waren van belang omdat ze mogelijk een invloed konden hebben op de wedstrijdstatistieken en dus ook op de voorspellingen.
 
