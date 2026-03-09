@@ -1,112 +1,84 @@
+# Vragenlijst – Factorbelang & Voorspellingen (Sportexperts)
 
-# Vragenlijst – Factorbelang & Voorspellingen
+**Instructie:** Vul waar mogelijk een cijfer in van 1–5, waarbij 1 = helemaal niet belangrijk/onwaarschijnlijk, 5 = zeer belangrijk/zeer waarschijnlijk. Voor voorspellingen: geef percentages of concrete aantallen.
 
-## Deel 1 – Factorbelang (1–5 schaal)
+---
 
-### 1. Thuisvoordeel
-- Hoe belangrijk is het thuisvoordeel bij het voorspellen van winst/verlies? (1–5)
+## Deel 1 – Factorbelang van wedstrijdstatistieken
 
-### 2. Stadioncapaciteit
-- In welke mate beïnvloedt stadioncapaciteit de prestaties van de thuisploeg? (1–5)
+1. **Thuisvoordeel**  
+   Hoe belangrijk is het thuisvoordeel bij het voorspellen van winst/verlies? (1–5)  
 
-### 3. Weersomstandigheden – Regen
-- Invloed op aantal doelpunten? (1–5)
-- Invloed op aantal kaarten? (1–5)
+2. **Stadioncapaciteit**  
+   In welke mate beïnvloedt stadioncapaciteit het totaal aantal schoten in een wedstrijd? (1–5)  
 
-### 4. Huidige vorm (laatste 5 wedstrijden)
-- Hoe doorslaggevend is recente vorm voor resultaat? (1–5)
-- Hoe belangrijk is recente vorm voor doelpunten? (1–5)
+3. **Weersomstandigheden**  
+   - Invloed van regen op aantal doelpunten? (1–5)  
+   - Invloed van regen op aantal kaarten? (1–5)  
 
-### 5. Rangschil op de ranglijst
-- Hoe belangrijk is het verschil in klassement? (1–5)
+4. **Huidige vorm (laatste 5 wedstrijden)**  
+   - Hoe doorslaggevend is recente vorm voor het resultaat? (1–5)
 
-### 6. Onderlinge resultaten (H2H)
-- In welke mate spelen eerdere confrontaties een rol? (1–5)
+5. **Rangverschil op de ranglijst**  
+   Hoe belangrijk is het verschil in klassement voor het voorspellen van een wedstrijd? (1–5)  
+
+6. **Onderlinge resultaten (H2H)**  
+   In welke mate spelen eerdere confrontaties een rol in uw voorspelling? (1–5)  
 
 ---
 
 ## Deel 2 – Concrete voorspellingen
 
-### 7. Wedstrijdvoorspelling (totaal = 100%)
-- Kans thuiswinst (%):
-- Kans gelijkspel (%):
-- Kans uitwinst (%):
+7. **Wedstrijdresultaat** (verdeling totaal = 100%)  
+   - Kans op thuiswinst (%)  
+   - Kans op gelijkspel (%)  
+   - Kans op uitwinst (%)  
 
-### 8. Doelpuntenvoorspelling
-- Verwacht aantal doelpunten:
+8. **Doelpuntenvoorspelling**  
+   - Verwacht aantal doelpunten voor het thuisteam:  
+   - Verwacht aantal doelpunten voor het uitteam:  
 
----
-
-## Deel 3 – Ranking van factoren (meest → minst belangrijk)
-
-Rangschik de volgende factoren:
-1. Thuisvoordeel  
-2. Recente vorm  
-3. Rangverschil  
-4. Weersomstandigheden  
-5. Stadioncapaciteit  
+9. **Zekerheid van voorspelling**  
+   Hoe zeker bent u van uw voorspelling? (1–5)  
+   > Deze vraag maakt vergelijking van confidence vs accuracy mogelijk en biedt waardevolle inzichten over over- of onderschatting door experts.
 
 ---
 
-## Deel 4 – Intuïtieve causale vragen
+## Deel 3 – Ranking van factoren
 
-### 10. Als het hard regent in een vol stadion:
-- Meer/minder kaarten?
-- Meer/minder doelpunten?
-- Waarom?
+Rangschik de onderstaande factoren van meest belangrijk → minst belangrijk voor het voorspellen van het eindresultaat, aantal kaarten en aantal doelpunten:  
 
-### 11. Heeft publiekssupport invloed op het aantal kaarten via druk op de scheidsrechter?
-(Open antwoord)
-
-### 12. Waar vertrouwt u persoonlijk het meest op bij een voorspelling?
-(Open antwoord)
+- Thuisvoordeel  
+- Recente vorm  
+- Rangverschil  
+- Weersomstandigheden
+- Onderlinge resultaten (H2H) 
+- ...
 
 ---
 
-## Deel 5 – Mentale aspect en tijd van wedstrijd
+## Deel 4 – Intuïtieve causale inschattingen
 
-## Deel 6 - vragen over toekomstige wedstrijd met model berekenen en hun verwachting en dan kijken eenmaal de match is
+10. **Scenarioanalyse:** Als het hard regent:  
+    - Verwachte impact op aantal kaarten: meer/minder  
+    - Verwachte impact op aantal doelpunten: meer/minder
 
+11. **Verband schoten - corners**  
+    In welke mate verwacht u dat een hoger aantal schoten samenhangt met meer corners tijdens een wedstrijd?” (1–5)
 
-# Deel X – Motivatie & Wedstrijdbelang (1–5 schaal)
+---
 
-### 17. Belang van de wedstrijd voor beide teams
-Hoe belangrijk vindt u het wedstrijdbelang voor het voorspellen van het resultaat? (1–5)
+## Deel 5 – Mentale aspect en motivatie
 
-### 18. Specifieke motivatiecontext
-Geef aan hoe sterk u denkt dat de volgende situaties invloed hebben op het resultaat (1–5):
+13. **Belang van de wedstrijd**  
+    Hoe belangrijk is het wedstrijdbelang voor het voorspellen van het resultaat? (1–5)  
 
-- Team speelt voor de titel (1–5)
-- Team strijdt tegen degradatie (1–5)
-- Team vecht voor Europees ticket (1–5)
-- Team heeft “niets meer te winnen/verliezen” (1–5)
-- Eindeseizoen-wedstrijden (1–5)
+14. **Specifieke motivatiecontext**  
+    Geef aan hoe sterk u denkt dat de volgende situaties invloed hebben op het resultaat (1–5):  
+    - Team speelt voor de titel  
+    - Team strijdt tegen degradatie  
+    - Team vecht voor Europees ticket  
+    - Team heeft “niets meer te winnen/verliezen”  
+    - Eindeseizoen-wedstrijden  
 
-*(Interessant: experts overschatten dit vaak → model meestal minder → sterke bias-analyse.)*
-
-
-## Deel Y – Speelstijl-Matchup (experts vs model)
-
-### 19. Speelstijlmatch-up
-Sommige teams “liggen” elkaar niet, los van kwaliteit of ranking.  
-In welke mate denkt u dat onderstaande match‑up factoren invloed hebben op het resultaat? (1–5)
-
-- Een fysiek team tegen een technisch team (1–5)
-- Een ploeg met hoge pressing tegen een ploeg die moeite heeft met opbouwen (1–5)
-- Een counterploeg tegen een balbezitploeg (1–5)
-- Snelheid voorin tegen een trage verdediging (1–5)
-
-*(Experts gebruiken dit intuïtief heel vaak, terwijl modellen dit meestal enkel indirect capteren via resultaten. Daarom zeer waardevol voor bias-analyse.)*
-
-
-⭐ Eén extra vraag die je onderzoek nóg sterker maakt
-
-Voeg ergens toe:
-
-Hoe zeker bent u van uw voorspelling? (1–5)
-
-Waarom dit goud is:
-
-je kan confidence vs accuracy vergelijken
-
-vaak zijn experts overzeker → zeer interessante discussie.
+> Opmerking: Experts overschatten vaak motivatie; modellen wegen dit minder mee → interessante bias-analyse.
