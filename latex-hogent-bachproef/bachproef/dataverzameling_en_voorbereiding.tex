@@ -51,6 +51,14 @@ Figuur \ref{fig:databank-schema} toont de structuur van de databank met de versc
     \label{fig:databank-schema}
 \end{figure}
 
+\vspace{5pt}
+
+Hierin werd alle data van de wedstrijdstatistieken in de tabel \texttt{WedstrijdStatistiek} opgeslagen.
+Deze verwees naar de tabel \texttt{Wedstrijd}, waarin de details van elke wedstrijd werden bijgehouden, zoals datum, tijd en teams.
+Daarnaast was er nog een tabel \texttt{Team}, die de locatie en capaciteit van elk stadion bevatte.
+Overigens waren er nog twee tabellen voor de weerdata. De ene tabel, \texttt{WedstrijdWeer}, sloeg de weerdata op op het moment van de wedstrijd,
+terwijl de andere, \texttt{WedstrijdWeerVooraf}, weerdata bevatte van de voorbije 48 uur voor de wedstrijd.
+
 \section{Datavoorbereiding}
 
 Feature engineering, feature selectie, data normalisatie en data splitsing...
