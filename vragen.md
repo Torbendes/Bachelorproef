@@ -27,7 +27,7 @@
 
 ---
 
-## Deel 2 – Concrete voorspellingen
+## Deel 2 – Concrete voorspellingen (voor toekomstige wedstrijden)
 
 7. **Wedstrijdresultaat** (verdeling totaal = 100%)  
    - Kans op thuiswinst (%)  
@@ -51,7 +51,8 @@ Rangschik de onderstaande factoren van meest belangrijk → minst belangrijk voo
 - Thuisvoordeel  
 - Recente vorm  
 - Rangverschil  
-- Weersomstandigheden
+- neerslag
+- temperatuur
 - Onderlinge resultaten (H2H) 
 - ...
 
