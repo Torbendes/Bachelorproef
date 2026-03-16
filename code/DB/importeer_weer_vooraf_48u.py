@@ -70,7 +70,7 @@ def compute_training_weather(hourly, start_ts, end_ts):
 
             if precip > 0:
                 rain_hours += 1
-            if temp >= 20:
+            if temp >= 23:
                 heat_hours += 1
 
     if not temps:
