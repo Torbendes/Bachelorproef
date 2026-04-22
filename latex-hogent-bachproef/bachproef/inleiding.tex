@@ -30,13 +30,20 @@ en vergelijkt deze met de inschattingen van voetbalexperts.
 In het moderne voetbal worden steeds meer data gebruikt om prestaties en wedstrijden te begrijpen.
 Zeker in deze sport zijn er al heel wat voorspellingsmodellen gemaakt. Maar die leggen vaak de focus op de nauwkeurigheid 
 van de voorspellingen, en minder op de interpretatie van het model.
-Met \textit{"interprateerbaar"} bedoelen we dat we niet alleen willen weten wat de voorspelling is,
-maar ook het inzicht in welke factoren hierin bijdragen en in welke mate zij invloed uitoefenen.
+
+Met "\textit{interpreteerbaar}" bedoelen we dat we niet alleen willen weten wat de voorspelling is,
+maar ook inzicht in welke factoren hieraan bijdragen en in welke mate zij invloed uitoefenen.
 
 \vspace{5pt}
 
-Ook wordt er te weinig focus gelegd op zaken zoals totaal aantal doelpunten, schoten, kaarten, of andere wedstrijdstatistieken die ook relevant zijn voor het begrijpen van een wedstrijd.
-Deze factoren opzich worden ook beïnvloed door allerlei variabelen.
+De resultaten van dit onderzoek zijn relevant voor verschillende stakeholders binnen het voetbal.
+Deze inzichten kunnen worden gebruikt door clubs en analisten om beter te begrijpen welke factoren invloed hebben op wedstrijdstatistieken.
+Daarnaast biedt dit onderzoek waarde voor academisch onderzoek binnen machine learning en sport analytics, waar interpreteerbaarheid van modellen steeds belangrijker wordt naast de pure voorspellingskracht.
+
+\vspace{5pt}
+
+Ook wordt er te weinig focus gelegd op zaken zoals het totaal aantal doelpunten, schoten, kaarten of andere wedstrijdstatistieken die ook relevant zijn voor het begrijpen van een wedstrijd.
+Deze factoren worden op hun beurt beïnvloed door uiteenlopende variabelen.
 
 \vspace{5pt}
 
@@ -46,16 +53,8 @@ Echter heeft het menselijke inschattingsvermogen vaak een bias, zeker op het geb
 
 \vspace{5pt}
 
-Het probleem bestaat dan ook uit twee aspecten:
-enerzijds de nood aan bepalende factoren binnen wedstrijdstatistieken van de Jupiler Pro League, met bijhorende voorspellingen, 
-anderzijds de duiding van de verschillen en overeenkomsten met de inschattingen van experts.
-
-\vspace{5pt}
-
-Door zowel modelgebaseerde feature importance als statistische analyses te combineren,
-wordt nagegaan welke factoren daadwerkelijk bepalend zijn binnen de Belgische competitie.
-Deze resultaten worden vervolgens vergeleken met intuïtieve en expertgebaseerde verwachtingen,
-om zo eventuele verschillen of overeenkomsten bloot te leggen.
+Het centrale probleem van dit onderzoek is dan ook het gebrek aan inzicht in welke factoren daadwerkelijk bepalend zijn voor wedstrijdstatistieken in de Jupiler Pro League, 
+en in welke mate deze factoren invloed uitoefenen, evenals de mate waarin deze overeenkomen met intuïtieve en expertgebaseerde inschattingen.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
@@ -71,32 +70,32 @@ en in welke mate verschillen menselijke expertinschattingen van interpreteerbare
 
 Deze onderzoeksvraag wordt opgesplitst in volgende deelvragen:
 
-\textbf{Probleemdomein}
-\begin{itemize}
-    \item Welke wedstrijdstatistieken (zoals eindresultaat, aantal doelpunten en aantal kaarten) zijn het meest relevant om te voorspellen?
-    \item Welke externe en contextuele factoren (zoals ploeg, locatie, tijdstip, vorm, onderlinge resultaten en andere variabelen) hebben potentieel invloed op deze wedstrijdstatistieken?
-    \item Welke factoren beschouwen voetbalexperts als doorslaggevend bij het inschatten van wedstrijdverloop en -uitkomsten?
-\end{itemize}
+\begin{enumerate}
+    \item In welke mate kunnen voetbalwedstrijden in de Belgische competitie worden voorspeld op basis van historische wedstrijddata en contextuele factoren?
 
-\textbf{Oplossingsdomein}
-\begin{itemize}
-    \item Hoe kunnen relevante factoren worden verzameld, gestructureerd en geanalyseerd met behulp van data-analyse?
-    \item Welke machine-learningmodellen zijn het meest geschikt voor het voorspellen van wedstrijdstatistieken in de Jupiler Pro League?
-    \item Welke factoren worden door de geselecteerde modellen als belangrijk geïdentificeerd, en hoe verhouden deze zich tot de redenering van experts?
-    \item Hoe presteren de geselecteerde modellen in termen van nauwkeurigheid, betrouwbaarheid en generaliseerbaarheid bij het voorspellen van toekomstige wedstrijden?
-\end{itemize}
+    \item Welke factoren (zoals teamsterkte, vorm, speelstijl en wedstrijdcontext) hebben de grootste invloed op het eindresultaat van voetbalwedstrijden?
+
+    \item Welke factoren bepalen het aantal doelpunten, schoten, overtredingen en kaarten in een voetbalwedstrijd?
+
+    \item In welke mate beïnvloeden externe factoren zoals weersomstandigheden, stadioncapaciteit en tijdstip het verloop van wedstrijden?
+
+    \item In welke mate kunnen de belangrijkste invloedsfactoren worden verklaard en gevisualiseerd via machine-learningmethoden zoals feature importance en SHAP-waarden?
+
+    \item In welke mate komen data-gedreven inzichten overeen met intuïtieve en sportieve verwachtingen over voetbalwedstrijden?
+\end{enumerate}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
 Deze bachelorproef heeft als doel het ontwerpen en evalueren van transparante voorspellingsmodellen voor wedstrijdstatistieken in de Jupiler Pro League. 
+De modellen geven ook een overzicht welke factoren het meest bepalend zijn voor de voorspellingen.
 Vervolgens wordt een vergelijking gemaakt tussen de factoren die deze modellen als bepalend beschouwen en de oordelen van menselijke experts.
 
 Het beoogde resultaat is een vergelijkende studie waarin:
 \begin{itemize}
     \item een database wordt opgezet met verwerkte historische wedstrijdgegevens, inclusief externe factoren zoals weersomstandigheden en stadioncapaciteit;
     \item verschillende interpreteerbare machine-learningmodellen worden ontwikkeld en geëvalueerd;
-    \item de belangrijkste voorspellende factoren en bijbehorende modeluitkomsten worden vastgesteld aan de hand van feature-importance-analyses en machine-learningtechnieken;
+    \item de belangrijkste voorspellende factoren, de sterkte van hun invloed, en de bijbehorende modeluitkomsten worden vastgesteld aan de hand van feature-importance-analyses en machine-learningtechnieken;
     \item expertinschattingen worden verzameld en geanalyseerd;
     \item verschillen en overeenkomsten tussen modelverklaringen en menselijke redeneringen worden gedocumenteerd.
 \end{itemize}
@@ -119,12 +118,14 @@ om een antwoord te kunnen formuleren op de onderzoeksvragen.
 In Hoofdstuk~\ref{ch:dataverzameling} wordt de dataverzameling en voorbereiding van de dataset besproken, waaronder datacleaning, 
 feature-engineering en de opdeling in trainings- en testdata.
 
+In Hoofdstuk~\ref{ch:exploratieve-en-statistische-data-analyse} wordt de dataset verkend aan de hand van beschrijvende statistieken, 
+correlaties en significantietesten om statistisch aantoonbare verbanden in de historische data te identificeren. Deze inzichten vormen de basis voor de verdere modelontwikkeling.
+
 In Hoofdstuk~\ref{ch:modelontwikkeling} wordt de ontwikkeling en optimalisatie van de machine-learningmodellen toegelicht.
 
 In Hoofdstuk~\ref{ch:resultaten} worden de experimentele resultaten gepresenteerd, inclusief modelprestaties.
 
-In Hoofdstuk~\ref{ch:analyse-discussie} wordt dieper ingegaan op de belangrijkste voorspellende factoren en worden de resultaten vergeleken met expertinschattingen. 
-Vervolgens worden deze bevindingen kritisch geïnterpreteerd in functie van de gestelde onderzoeksvragen.
+In Hoofdstuk~\ref{ch:vergelijkende-studie} wordt een vergelijking gemaakt tussen de belangrijkste voorspellende factoren uit de modelresultaten en de expertinschattingen.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. 
 Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
