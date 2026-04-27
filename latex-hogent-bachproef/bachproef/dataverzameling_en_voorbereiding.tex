@@ -1,9 +1,8 @@
 \chapter{\IfLanguageName{dutch}{Dataverzameling en voorbereiding}{Data collection and preparation}}%
 \label{ch:dataverzameling}
 
-In dit hoofdstuk richten we ons op de gebruikte data en hoe deze verzameld en voorbereid zijn voor analyse. 
+In dit hoofdstuk concentreren we ons op de gebruikte data en hoe deze verzameld en voorbereid zijn voor analyse. 
 Eerst wordt overlopen waar de gegevens vandaan komen, hoe de dataset eruitziet en waarom deze gegevens waardevol zijn voor de bachelorproef.
-Vervolgens worden de stappen doorgenomen die zijn gezet om de gegevens geschikt te maken voor modelontwikkeling.
 
 \section{Dataverzameling}
 
@@ -16,7 +15,7 @@ alsook externe factoren zoals weerdata en stadioninformatie. Nadien werden deze 
 \subsection{Wedstrijddata}
 
 Eerst werden 7 CSV-bestanden gedownload~\autocite{football_data_belgium}.
-Elk bestand bevatte een bepaald seizoen van de Jupiler Pro League, beginnend bij het seizoen 2019-2020 en eindigend midden het seizoen 2025-2026.
+Elk bestand bevatte een bepaald seizoen van de Jupiler Pro League, beginnend bij het seizoen 2019-2020 en eindigend voor de play-offs van het seizoen 2025-2026.
 Voorgaande seizoenen werden niet opgenomen omdat er in deze bestanden bepaalde statistieken ontbraken die van belang waren.
 Uit deze bron werden diverse wedstrijdstatistieken verzameld, 
 waaronder de deelnemende teams, speeldatum, doelpunten, uitslagen, schoten, overtredingen, corners, en kaarten voor zowel de thuis- als uitploeg.
@@ -28,7 +27,7 @@ Overige data van de scheidsrechter, teamopstellingen, blessures en transfers war
 
 Daarnaast werden ook externe factoren toegevoegd aan de dataset.
 Hiertoe behoren onder andere talrijke weergegevens zoals temperatuur, neerslag, luchtvochtigheid, windsnelheid, bewolking, weercode, en luchtdruk.
-Deze werden verkregen via een API van~\textcite{open_meteo_api}.
+Deze variabelen werden per uur opgehaald via een API van~\textcite{open_meteo_api}.
 Ook deze gegevens waren van belang omdat ze mogelijk een invloed konden hebben op de wedstrijdstatistieken en dus ook op de voorspellingen.
 
 \vspace{5pt}
@@ -58,7 +57,3 @@ Deze verwees naar de tabel \texttt{Wedstrijd}, waarin de details van elke wedstr
 Daarnaast was er nog een tabel \texttt{Team}, die de locatie en capaciteit van elk stadion bevatte.
 Overigens waren er nog twee tabellen voor de weerdata. De ene tabel, \texttt{WedstrijdWeer}, sloeg de weerdata op op het moment van de wedstrijd,
 terwijl de andere, \texttt{WedstrijdWeerVooraf}, weerdata bevatte van de voorbije 48 uur voor de wedstrijd.
-
-\section{Datavoorbereiding}
-
-Feature engineering, feature selectie, data normalisatie en data splitsing...
