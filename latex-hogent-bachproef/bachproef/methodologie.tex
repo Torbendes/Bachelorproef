@@ -3,47 +3,60 @@
 
 In dit hoofdstuk wordt een overzicht gegeven van de verschillende stappen die ondernomen zijn
 om de onderzoeksvraag met bijhorende deelvragen succesvol te kunnen beantwoorden.
-Per hoofdstuk wordt de werkwijze overlopen waarbij telkens de belangrijkste keuzes worden toegelicht,
+Per hoofdstuk wordt de werkwijze overlopen, waarbij telkens de belangrijkste keuzes worden toegelicht,
 zonder concreet in te gaan op details.
 
 \section{Onderzoeksopzet}
 
 Deze bachelorproef behandelt een stapsgewijze aanpak waarbij historische wedstrijdgegevens,
-aangevuld door externe factoren zoals weersomstandigheden en stadioncapaciteit, worden gebruikt
-om machine-learningmodellen te trainen. Vervolgens zullen deze modellen gebruikt worden om menselijke expertinschattingen te vergelijken
-met algoritmische voorspellingen en factorbelangen.
+aangevuld met externe factoren zoals weersomstandigheden en stadioncapaciteit, worden gebruikt
+om machine-learningmodellen te trainen. 
+Deze bieden de mogelijkheid om zowel voorspellingen te doen als inzicht te krijgen in de belangrijkste factoren die van invloed zijn op wedstrijdstatistieken.
+Vervolgens worden deze resultaten vergeleken met menselijke expertinschattingen.
 
-Het onderzoek werd opgebouwd in vier opeenvolgende fasen:
+Het onderzoek werd opgebouwd in vijf opeenvolgende fasen:
 \begin{itemize}
     \item dataverzameling en voorbereiding,
-    \item modelontwikkeling,
-    \item evaluatie van modelprestaties,
-    \item vergelijking met expertvoorspellingen en interpretatie.
+    \item feature engineering,
+    \item exploratieve en statistische analyse,
+    \item modelontwikkeling en evaluatie,
+    \item modelinterpretatie en vergelijking.
 \end{itemize}
 
 Elke fase wordt in een afzonderlijk onderdeel verder uitgewerkt.
 
 \section{Dataverzameling en voorbereiding}
 
-In de eerste fase werden historische wedstrijdgegevens van de Jupiler Pro League van 2019 tot 2026 verzameld.
+In de eerste fase werden historische wedstrijdgegevens van de Jupiler Pro League verzameld, vanaf het seizoen 2019/2020 tot en met de play-offs van 2025/2026.
 Ook externe factoren zoals weersomstandigheden en stadioncapaciteit werden toegevoegd aan de dataset.
 De keuze van deze selectie was gebaseerd op een combinatie van domeinkennis, literatuuronderzoek en praktische overwegingen omtrent datakwaliteit en beschikbaarheid.
 
 \vspace{5pt}
 
-Om al deze data op te slaan werd er gebruikgemaakt van een relationele databank, waarbij de verschillende datasets werden geïntegreerd in een gestructureerde vorm.
+Om al deze data op te slaan, werd er gebruikgemaakt van een relationele databank, waarbij de verschillende datasets werden geïntegreerd in een gestructureerde vorm.
+
+\section{Feature engineering}
+In de tweede fase werd aandacht besteed aan feature engineering, waarbij op basis van de beschikbare data nieuwe variabelen werden gecreëerd.
+Hoewel feature engineering technisch deel uitmaakt van de datavoorbereiding, 
+wordt deze stap afzonderlijk besproken vanwege het belang van domeinkennis en de impact op de modelprestaties.
 
 \vspace{5pt}
 
-Nadien werd de data voorbereid voor modeltraining.
-Hierbij werd een Jupyter Notebook opgezet waarin stapsgewijs de nodige data cleaning, feature engineering en normalisatie kon gedaan worden.
-Als laatste stap van de voorbereiding werd de dataset opgesplitst in trainings-, validatie- en testsets,
+De data werd in deze fase optimaal voorbereid voor modeltraining.
+Hierbij werd een Jupyter Notebook opgezet waarin stapsgewijs de nodige data cleaning, feature engineering, one-hot encoding en normalisatie werden uitgevoerd.
+Als laatste stap van de voorbereiding werd de dataset opgesplitst in een trainingsset en een testset,
 waarbij er bewust voor gekozen werd om een tijdsgebaseerde splitsing te hanteren om datalekken te voorkomen.
 Bovenstaande procedures waren cruciaal om kwalitatieve en reproduceerbare modeltraining mogelijk te maken.
 
-\section{Modelontwikkeling}
+\section{Exploratieve en statistische data-analyse}
 
-In de tweede fase werden verschillende machine-learningmodellen ontwikkeld.
+In de derde fase werd de dataset verkend aan de hand van beschrijvende statistieken,
+correlaties en significantietesten om statistisch aantoonbare verbanden in de historische data te identificeren. 
+Deze inzichten vormden de basis voor de verdere modelontwikkeling.
+
+\section{Modelontwikkeling en evaluatie}
+
+In de vierde fase werden verschillende machine-learningmodellen ontwikkeld.
 
 Tijdens deze fase werd aandacht besteed aan:
 \begin{itemize}
@@ -52,30 +65,28 @@ Tijdens deze fase werd aandacht besteed aan:
     \item het beperken van overfitting via geschikte validatiestrategieën.
 \end{itemize}
 
-Verder werden technieken ontwikkeld om de resultaten van modellen inzichtelijk te maken.
-
-\section{Evaluatie van modelprestaties}
-
-In de derde fase werden de ontwikkelde modellen kritisch geëvalueerd aan de hand van verschillende classificatiemetrieken.
-Hieronder vielen onder andere accuracy, precision, recall en F1-score, die in combinatie een globaal beeld geven van de prestaties van de modellen.
-Niet enkel de uiteindelijke winnaar werd voorspeld, maar ook allerlei andere relevante uitkomstvariabelen.
+Verder werden technieken toegepast om de resultaten van modellen inzichtelijk te maken, zoals feature importances en SHAP-waarden.
 
 \vspace{5pt}
 
-Eerst werd er gekeken naar de prestaties op de validatieset. Op basis hiervan werd het beste model geselecteerd, samen met de best scorende hyperparameters.
+Daarnaast werden de ontwikkelde modellen kritisch geëvalueerd aan de hand van verschillende classificatiemetrieken.
+Hieronder vielen onder andere accuracy, precision, recall, F1-score en log loss, die in combinatie een globaal beeld geven van de prestaties van de modellen.
+
+\vspace{5pt}
+
+Eerst werd er gebruikgemaakt van grid search om de prestaties op de validatiesets te beoordelen met behulp van cross-validatie. 
+Op basis hiervan werd het beste model geselecteerd, samen met de best scorende hyperparameters.
 Daarna werden van dit model de metrieken berekend op de testset, zodat er een realistisch beeld verkregen werd van de generaliseerbaarheid van het model op ongeziene data.
 
-\vspace{5pt}
+\section{Modelinterpretatie en vergelijking}
 
-Naast het meten van de prestatiewaarden van de modellen, werd er ook een diepgaande analyse gemaakt van de feature importance.
-Behalve de voorspellingen was het eveneens essentieel om de grootste invloedfactoren in kaart te brengen.
+In de laatste fase werden enerzijds de modellen geanalyseerd om de belangrijkste voorspellende variabelen te identificeren.
+Anderzijds werden deze inzichten vergeleken met menselijke expertinschattingen.
 
-\section{Vergelijking met menselijke expertise}
-
-In de laatste fase werden de voorspellingen vergeleken met menselijke expertinschattingen.
-Er werd geanalyseerd in welke mate er verschillen optraden in nauwkeurigheid, consistentie en patroonherkenning.
-Hierbij werd niet alleen gekeken naar de technische prestaties,
-maar ook naar wat dit betekent voor de positie van de mens tegenover machine learning.
+Naast het meten van de prestatiewaarden van de modellen, werd er dus ook een diepgaande analyse gemaakt van de feature importance.
+Behalve de voorspellingen was het eveneens essentieel om de belangrijkste invloedsfactoren in kaart te brengen.
+Daarnaast werden ook de bijbehorende SHAP-waarden geanalyseerd. 
+Hierdoor werd specifiek duidelijk welke variabelen een positieve of negatieve invloed hadden op de voorspellingen van het model, en in welke mate.
 
 \vspace{5pt}
 
