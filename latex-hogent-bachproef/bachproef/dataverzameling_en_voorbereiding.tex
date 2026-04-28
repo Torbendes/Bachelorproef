@@ -1,41 +1,42 @@
 \chapter{\IfLanguageName{dutch}{Dataverzameling en voorbereiding}{Data collection and preparation}}%
 \label{ch:dataverzameling}
 
-In dit hoofdstuk concentreren we ons op de gebruikte data en hoe deze verzameld en voorbereid zijn voor analyse. 
-Eerst wordt overlopen waar de gegevens vandaan komen, hoe de dataset eruitziet en waarom deze gegevens waardevol zijn voor de bachelorproef.
+In dit hoofdstuk concentreren we ons op de gebruikte data en hoe deze verzameld en voorbereid zijn voor analyse.
+Eerst wordt besproken waar de gegevens vandaan komen, hoe de dataset eruitziet en waarom deze gegevens waardevol zijn voor de bachelorproef.
 
 \section{Dataverzameling}
 
-Voordat de data verwerkt kan worden voor de modellen, moet deze eerst verzameld worden.
-Daarom werd er voorafgaand grondig op zoek gegaan naar verschillende bronnen met bruikbare ruwe data, 
+Voordat de dataset verwerkt kan worden voor de modellen, moet deze eerst verzameld worden.
+Daarom werd er vooraf grondig gezocht naar verschillende bronnen met bruikbare ruwe data,
 die later tot een gestructureerd geheel konden worden gebracht.
-Deze gegevens bestonden uit wedstrijdstatistieken van de Jupiler Pro League, 
-alsook externe factoren zoals weerdata en stadioninformatie. Nadien werden deze gestructureerd en opgeslagen in een relationele databank.
+Deze gegevens bestonden uit wedstrijdstatistieken van de Jupiler Pro League,
+evenals externe factoren zoals weerdata en stadioninformatie. Nadien werden deze gestructureerd en opgeslagen in een relationele databank.
 
 \subsection{Wedstrijddata}
 
 Eerst werden 7 CSV-bestanden gedownload~\autocite{football_data_belgium}.
-Elk bestand bevatte een bepaald seizoen van de Jupiler Pro League, beginnend bij het seizoen 2019-2020 en eindigend voor de play-offs van het seizoen 2025-2026.
+Elk bestand bevatte een bepaald seizoen van de Jupiler Pro League, beginnend bij het seizoen 2019-2020 en eindigend vóór de play-offs van het seizoen 2025-2026.
 Voorgaande seizoenen werden niet opgenomen omdat er in deze bestanden bepaalde statistieken ontbraken die van belang waren.
-Uit deze bron werden diverse wedstrijdstatistieken verzameld, 
-waaronder de deelnemende teams, speeldatum, doelpunten, uitslagen, schoten, overtredingen, corners, en kaarten voor zowel de thuis- als uitploeg.
+Uit deze bron werden diverse wedstrijdstatistieken verzameld,
+waaronder de deelnemende teams, de speeldatum en de uiteindelijke winnaar.
+Daarnaast werden ook het aantal doelpunten, schoten, overtredingen, corners en kaarten voor zowel de thuis- als uitploeg verzameld.
 Voor de feature-importance-analyse en de voorspellingen waren deze variabelen uiteraard cruciaal.
-Features zoals betting odds werden bewust niet opgenomen omdat deze juist voorspeld moesten worden.
-Overige data van de scheidsrechter, teamopstellingen, blessures en transfers waren enkel ter beschikking bij betaalde bronnen en werden daarom niet opgenomen.
+Variabelen zoals betting odds werden bewust niet opgenomen omdat deze juist voorspeld moesten worden.
+Overige data van de scheidsrechter, teamopstellingen, blessures en transfers waren enkel beschikbaar via betaalde bronnen en werden daarom niet opgenomen.
 
 \subsection{Externe factoren}
 
-Daarnaast werden ook externe factoren toegevoegd aan de dataset.
-Hiertoe behoren onder andere talrijke weergegevens zoals temperatuur, neerslag, luchtvochtigheid, windsnelheid, bewolking, weercode, en luchtdruk.
-Deze variabelen werden per uur opgehaald via een API van~\textcite{open_meteo_api}.
+Eveneens werden externe factoren toegevoegd aan de dataset.
+Hiertoe behoren onder andere weergegevens zoals temperatuur, neerslag, luchtvochtigheid, windsnelheid, bewolking, weercode en luchtdruk.
+Deze variabelen werden per uur opgehaald via de API van~\textcite{open_meteo_api}.
 Ook deze gegevens waren van belang omdat ze mogelijk een invloed konden hebben op de wedstrijdstatistieken en dus ook op de voorspellingen.
 
 \vspace{5pt}
 
-Aanvullend werden de coördinaten van de verschillende stadions opgezocht. Deze waren enerzijds vereist als parameter voor het ophalen van de weerdata, 
-maar konden anderzijds ook gebruikt worden om de afstand tussen de thuisspelende ploeg en de uitspelende ploeg te berekenen.
-Naast de ligging van het stadion werd ook de capaciteit ervan toegevoegd als feature. 
-Zo kon er ook gekeken worden of er enige correlatie bestond tussen het aantal toeschouwers en de wedstrijdstatistieken.
+Aanvullend werden de coördinaten van de verschillende stadions opgezocht. Deze waren enerzijds vereist als parameters voor het ophalen van de weerdata,
+maar konden anderzijds ook gebruikt worden om de afstand tussen de thuisploeg en de uitploeg te berekenen.
+Naast de ligging van het stadion werd ook de capaciteit ervan toegevoegd als feature.
+Zo kon ook onderzocht worden of er een correlatie bestond tussen het aantal toeschouwers en de wedstrijdstatistieken.
 
 \subsection{Dataopslag}
 
@@ -44,16 +45,16 @@ Deze databank werd beheerd met behulp van Microsoft SQL Server in SQL Server Man
 Figuur \ref{fig:databank-schema} toont de structuur van de databank met de verschillende tabellen en relaties.
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{databank_schema.png}
-    \caption{Schematische weergave van de relationele databank}
-    \label{fig:databank-schema}
+\centering
+\includegraphics[width=0.8\textwidth]{databank_schema.png}
+\caption{Schematische weergave van de relationele databank}
+\label{fig:databank-schema}
 \end{figure}
 
 \vspace{5pt}
 
 Hierin werd alle data van de wedstrijdstatistieken in de tabel \texttt{WedstrijdStatistiek} opgeslagen.
-Deze verwees naar de tabel \texttt{Wedstrijd}, waarin de details van elke wedstrijd werden bijgehouden, zoals datum, tijd en teams.
+Deze tabel verwees naar de tabel \texttt{Wedstrijd}, waarin de details van elke wedstrijd werden bijgehouden, zoals datum, tijd en teams.
 Daarnaast was er nog een tabel \texttt{Team}, die de locatie en capaciteit van elk stadion bevatte.
 Overigens waren er nog twee tabellen voor de weerdata. De ene tabel, \texttt{WedstrijdWeer}, sloeg de weerdata op op het moment van de wedstrijd,
 terwijl de andere, \texttt{WedstrijdWeerVooraf}, weerdata bevatte van de voorbije 48 uur voor de wedstrijd.

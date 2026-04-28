@@ -1,6 +1,3 @@
-Welke data mist nog?
+48 u voor wedstrijd weggelaten vanwege irrelevant, maar moet dit dan nog vermeld worden in bachelorproef?
 
-Alle preprocessing in DB of ook nog waarden zoals boolean rain wanneer er meer dan 0 regen valt in ML doen?
-
-Alle benamingen in het engels of nederlands?
-
+stadioncapaciteit vertekend beeld (grote clubs met meer budget hebben groter stadion en dus ook hoogstwaarschijnlijk een betere ploeg), wat mee doen?
