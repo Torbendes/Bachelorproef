@@ -96,13 +96,18 @@ Standard & RSC Anderlecht \\
 \subsection{Speelstijl van teams}
 
 Voor elk team werd een speelstijlscore berekend op basis van geaggregeerde prestatie-indicatoren over de laatste vijf wedstrijden. 
-Hierbij werden onder meer het aantal doelpunten, schoten en corners meegenomen.
+Hierbij werden het aantal doelpunten en schoten meegenomen.
 
 De stijlscore werd gedefinieerd als:
 
 \[
 \text{Style Score} = (\text{doelpunten} + 0.3 \cdot \text{schoten}) - (\text{tegendoelpunten} + 0.3 \cdot \text{schoten tegen})
 \]
+
+Het gewicht van 0.3 voor schoten werd gekozen om het belang van scoringskansen te reflecteren, 
+zonder dat deze de effectiviteit (doelpunten) domineren.
+
+\vspace{5pt}
 
 Op basis van de verdeling van deze score werden teams ingedeeld in drie categorieën:
 \begin{itemize}
@@ -111,7 +116,8 @@ Op basis van de verdeling van deze score werden teams ingedeeld in drie categori
     \item Verdedigend
 \end{itemize}
 
-De drempels werden bepaald op basis van de 33e en 66e percentielen.
+De drempels werden bepaald op basis van de 33e en 66e percentielen van de verdeling van de speelstijlscore. 
+Hierdoor is de indeling van speelstijlen relatief en afhankelijk van de verdeling binnen de dataset.
 
 \vspace{5pt}
 
