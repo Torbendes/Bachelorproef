@@ -1,29 +1,20 @@
 \chapter{Feature Engineering}
 \label{ch:feature-engineering}
 
-In deze fase van het onderzoek werd feature engineering toegepast om op basis van ruwe wedstrijddata nieuwe, informatieve variabelen te construeren. 
-Het doel van deze stap is het verhogen van de voorspellende kracht van de dataset en het toevoegen 
-van contextuele en interpreteerbare informatie voor de machine learning-modellen. Alle dynamische features werden zodanig geconstrueerd 
-dat uitsluitend gebruik werd gemaakt van historische informatie om datalekage te vermijden.
-
-\vspace{5pt}
-
-\subsection{Seizoensvariabele}
-
-Elke wedstrijd werd toegewezen aan een specifiek seizoen op basis van de datum. 
-Wedstrijden gespeeld tussen juli en december werden toegewezen aan het seizoen startjaar/startjaar+1, 
-terwijl wedstrijden tussen januari en juni werden toegewezen aan het vorige startjaar/startjaar+1 seizoen. 
-Deze variabele maakt het mogelijk om prestaties te groeperen binnen competitieve contexten.
+In dit onderdeel wordt de feature engineering gedetailleerd uitgelegd. Nieuw variabelen worden gecreëerd aan de hand van de bestaande data.
+Hieronder vallen statistische parameters zoals rangschikking, voorgaande resultaten van deze ploegen en speelstijl. 
+Ook de mentale facoren zoals recente vorm, titel -en degradatiewedstrijden en rivaliteit werden verwerkt.
+Bovendien zullen deze variabelen ook later van belang zijn bij de data-analyse en machine-learningmodellen.
 
 \vspace{5pt}
 
 \subsection{Dynamische rangschikking}
 
-Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen. 
-Teams kregen 3 punten voor een overwinning, 1 punt voor een gelijkspel en 0 punten voor een nederlaag. 
-Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten.
+Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen.
+Deze volgde de standaard berekening: teams kregen 3 punten voor een overwinning, 1 punt voor een gelijkspel en 0 punten voor een nederlaag. 
+Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten, waar op gebasseerd wordt indien ploegen hetzelfde aantal punten hadden.
 
-De rangschikking werd dynamisch bepaald op elk wedstrijdmoment door teams te sorteren op:
+De rangschikking werd dus dynamisch bepaald op elk wedstrijdmoment door teams te sorteren op:
 \begin{itemize}
     \item totaal aantal punten (aflopend)
     \item doelsaldo (aflopend)
@@ -46,7 +37,7 @@ Formeel:
 
 waarbij $P_i$ het aantal behaalde punten in wedstrijd $i$ is.
 
-Deze variabele geeft een indicatie van de recente prestatiecurve van een team en vangt tijdelijke fluctuaties in vorm op.
+Deze variabele geeft een indicatie van de recente prestaties van een team en vangt tijdelijke veranderingen in vorm op.
 
 \vspace{5pt}
 
@@ -73,8 +64,8 @@ Wedstrijden werden geclassificeerd als titelduels indien aan volgende voorwaarde
     \item het puntenverschil bedraagt maximaal 5 punten
 \end{itemize}
 
-Degradatiewedstrijden werden gedefinieerd als wedstrijden die laat in het seizoen plaatsvinden waarbij 
-beide teams zich in de onderste regionen van de rangschikking bevinden (laatste drie plaatsen) en het puntenverschil maximaal 3 punten bedraagt.
+Degradatiewedstrijden werden gedefinieerd als wedstrijden die laat in het seizoen plaatsvinden (na 20 wedstrijden) waarbij 
+beide teams zich in de onderste regionen van de rangschikking bevinden (laatste drie plaatsen) en het puntenverschil maximaal 6 punten bedraagt.
 
 \vspace{5pt}
 
@@ -82,6 +73,23 @@ beide teams zich in de onderste regionen van de rangschikking bevinden (laatste 
 
 Op basis van vooraf gedefinieerde clubparen werd een binaire variabele toegevoegd die aangeeft of een wedstrijd een klassieke rivaliteit of derby betreft. 
 Dit omvat onder andere regionale derby’s en historisch belangrijke confrontaties.
+
+\begin{table}[h]
+\centering
+\caption{Overzicht van gedefinieerde rivaliteitswedstrijden}
+\label{tab:derby_pairs}
+\begin{tabular}{ll}
+\hline
+\textbf{Thuisploeg} & \textbf{Uitploeg} \\
+\hline
+Antwerp & Beerschot VA \\
+RSC Anderlecht & Club Brugge \\
+Club Brugge & Cercle Brugge \\
+Club Brugge & Union Saint-Gilloise \\
+Standard & RSC Anderlecht \\
+\hline
+\end{tabular}
+\end{table}
 
 \vspace{5pt}
 
@@ -114,7 +122,7 @@ Daarnaast werden verschillende contextuele features toegevoegd:
 \begin{itemize}
     \item Weekdag en weekendindicator
     \item Avondwedstrijden (start ≥ 18:00)
-    \item Weersomstandigheden (regen, harde regen, hoge temperatuur)
+    \item Weersomstandigheden (harde regen vanaf 2 mm en warm vanaf 23 graden)
     \item Stadioncapaciteit (gecategoriseerd in klein, middel en groot via kwantielen)
 \end{itemize}
 
