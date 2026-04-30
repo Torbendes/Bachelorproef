@@ -6,9 +6,16 @@ import json
 INPUT_NOTEBOOK = "jpl_analyse.ipynb"
 OUTPUT_NOTEBOOK = "jpl_analyse_clean.ipynb"
 
-MAX_TEXT_LINES = 25          # max toegelaten regels tekst-output
-MAX_TEXT_CHARS = 1500        # extra veiligheid
-REMOVE_HTML = True           # verwijder HTML-tabellen volledig
+MAX_TEXT_LINES = 25
+MAX_TEXT_CHARS = 1500
+REMOVE_HTML = True
+
+IMAGE_KEYS = {
+    "image/png",
+    "image/jpeg",
+    "image/jpg",
+    "image/svg+xml"
+}
 
 # =============================
 # NOTEBOOK INLADEN
@@ -27,28 +34,39 @@ for cell in nb.get("cells", []):
 
     for out in cell.get("outputs", []):
 
-        # ---- 1️⃣ HTML outputs (grote tabellen) ----
-        if REMOVE_HTML and out.get("data", {}).get("text/html"):
+        data = out.get("data", {})
+
+        # ---- 1️⃣ HTML outputs ----
+        if REMOVE_HTML and "text/html" in data:
             continue
 
-        # ---- 2️⃣ Stream / text output ----
+        # ---- 2️⃣ AFBEELDINGEN STRIKT VERWIJDEREN ----
+        if any(key in data for key in IMAGE_KEYS):
+            continue
+
+        # extra safety: soms zit image in metadata/empty display_data
+        if out.get("output_type") == "display_data" and any(
+            isinstance(v, str) and v.startswith("iVBOR") for v in data.values()
+        ):
+            continue
+
+        # ---- 3️⃣ STREAM / TEXT ----
         if out.get("output_type") in ["stream", "execute_result", "display_data"]:
 
             text = ""
+
             if "text" in out:
                 text = "".join(out["text"])
-            elif "data" in out and "text/plain" in out["data"]:
-                text = "".join(out["data"]["text/plain"])
+            elif "text/plain" in data:
+                text = "".join(data["text/plain"])
 
-            # Controle op lengte
             if text:
                 lines = text.count("\n")
                 chars = len(text)
 
                 if lines > MAX_TEXT_LINES or chars > MAX_TEXT_CHARS:
-                    continue  # te lang → skippen
+                    continue
 
-        # ✅ Output is acceptabel
         clean_outputs.append(out)
 
     cell["outputs"] = clean_outputs
@@ -60,4 +78,4 @@ for cell in nb.get("cells", []):
 with open(OUTPUT_NOTEBOOK, "w", encoding="utf-8") as f:
     json.dump(nb, f, indent=2, ensure_ascii=False)
 
-print(f"✅ Selectieve opschoning klaar:\n→ {OUTPUT_NOTEBOOK}")
+print(f"✅ Afbeeldingen + grote outputs verwijderd:\n→ {OUTPUT_NOTEBOOK}")
