@@ -27,19 +27,19 @@ en vergelijkt deze met de inschattingen van voetbalexperts.
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-In het moderne voetbal worden steeds meer data gebruikt om prestaties en wedstrijden te begrijpen.
-Zeker in deze sport zijn er al heel wat voorspellingsmodellen gemaakt. Maar die leggen vaak de focus op de nauwkeurigheid 
-van de voorspellingen, en minder op de interpretatie van het model.
-
-Met "\textit{interpreteerbaar}" bedoelen we dat we niet alleen willen weten wat de voorspelling is,
-maar ook inzicht in welke factoren hieraan bijdragen en in welke mate zij invloed uitoefenen.
+Weliswaar kunnen bestaande moddellen behoorlijk accuraat voetbalwedstrijden voorspellen, 
+echter is het vaak onduidelijk welke variabelen nu precies deze voorspellingen sturen.
+Omdat deze modellen deze informatie niet bevatten, hebben ze een beperkte bruikbaarheid voor gebruikers die behalve de uitkomst ook de onderliggende verklaringen willen weten.
+Verder is er in de literatuur weinig aandacht voor de vergelijking van de verklaringen die uit een model gehaald worden met de gedachtegang van voetbalexperts.
 
 \vspace{5pt}
 
-De resultaten van dit onderzoek zijn interessant voor diverse belanghebbenden binnen het voetbal.
-Dergelijke inzichten kunnen worden gebruikt door clubs en analisten om te bepalen welke factoren impact hebben op de wedstrijdstatistieken.
-Tevens biedt dit onderzoek waarde voor academisch onderzoek binnen machine learning en sport analytics, 
-waar interpreteerbaarheid van modellen steeds belangrijker wordt naast de pure voorspellingskracht.
+De uitkomsten van deze studie zijn dus interessant voor uiteenlopende stakeholders in het voetbal.
+Met deze informatie in handen kunnen clubs en analisten identificeren welke factoren echt invloed hebben op de statistieken tijdens een wedstrijd.
+Bovendien is deze studie van nut bij studies rond machine learning en sportanalytics
+waarbij naast de zuivere voorspelfunctie, ook het kunnen verklaren van de voorspelling van belang is.
+Onder "\textit{interpreteerbaarheid}" verstaan we dat we niet enkel de voorspelling willen
+maar ook weten welke factoren daarbij een rol spelen en hoe zwaar zij mee tellen.
 
 \vspace{5pt}
 
@@ -72,17 +72,17 @@ en in welke mate verschillen menselijke expertinschattingen van interpreteerbare
 Deze onderzoeksvraag wordt opgesplitst in volgende deelvragen:
 
 \begin{enumerate}
-    \item In welke mate kunnen voetbalwedstrijden in de Belgische competitie worden voorspeld op basis van historische wedstrijddata en contextuele factoren?
 
-    \item Welke factoren (zoals teamsterkte, vorm, speelstijl en wedstrijdcontext) hebben de grootste invloed op het eindresultaat van voetbalwedstrijden?
+    \item Welke kenmerken van teams en wedstrijden dragen het sterkst bij aan het voorspellen van het eindresultaat in de Jupiler Pro League?
 
-    \item Welke factoren bepalen het aantal doelpunten, schoten, overtredingen en kaarten in een voetbalwedstrijd?
+    \item Welke variabelen verklaren het verloop van belangrijke wedstrijdstatistieken, zoals doelpunten, schoten, overtredingen en kaarten?
 
-    \item In welke mate beïnvloeden externe factoren zoals weersomstandigheden, stadioncapaciteit en tijdstip het verloop van wedstrijden?
+    \item Welke rol spelen externe contextuele factoren, zoals weersomstandigheden, stadioncapaciteit en tijdstip van de wedstrijd, in het verloop van wedstrijden?
 
-    \item In welke mate kunnen de belangrijkste invloedsfactoren worden verklaard en gevisualiseerd via machine-learningmethoden zoals feature importance en SHAP-waarden?
+    \item Hoe kunnen de belangrijkste verklarende variabelen worden geïdentificeerd en geïnterpreteerd met behulp van machine-learningtechnieken zoals feature importance en SHAP-waarden?
 
-    \item In welke mate komen data-gedreven inzichten overeen met intuïtieve en sportieve verwachtingen over voetbalwedstrijden?
+    \item In welke mate stemmen data-gedreven inzichten overeen met de inschattingen en intuïtie van voetbalexperten?
+
 \end{enumerate}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%

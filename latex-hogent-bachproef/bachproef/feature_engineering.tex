@@ -1,6 +1,137 @@
 \chapter{Feature Engineering}
 \label{ch:feature-engineering}
 
-In dit hoofdstuk wordt het proces van feature engineering beschreven, waarbij de ruwe data wordt omgezet in betekenisvolle input voor de machine-learningmodellen.
-Feature engineering is een cruciale stap in het machine-learningproces, 
-omdat de kwaliteit en relevantie van de features een grote invloed hebben op de prestaties van de modellen.
+In deze fase van het onderzoek werd feature engineering toegepast om op basis van ruwe wedstrijddata nieuwe, informatieve variabelen te construeren. 
+Het doel van deze stap is het verhogen van de voorspellende kracht van de dataset en het toevoegen 
+van contextuele en interpreteerbare informatie voor de machine learning-modellen. Alle dynamische features werden zodanig geconstrueerd 
+dat uitsluitend gebruik werd gemaakt van historische informatie om datalekage te vermijden.
+
+\vspace{5pt}
+
+\subsection{Seizoensvariabele}
+
+Elke wedstrijd werd toegewezen aan een specifiek seizoen op basis van de datum. 
+Wedstrijden gespeeld tussen juli en december werden toegewezen aan het seizoen startjaar/startjaar+1, 
+terwijl wedstrijden tussen januari en juni werden toegewezen aan het vorige startjaar/startjaar+1 seizoen. 
+Deze variabele maakt het mogelijk om prestaties te groeperen binnen competitieve contexten.
+
+\vspace{5pt}
+
+\subsection{Dynamische rangschikking}
+
+Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen. 
+Teams kregen 3 punten voor een overwinning, 1 punt voor een gelijkspel en 0 punten voor een nederlaag. 
+Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten.
+
+De rangschikking werd dynamisch bepaald op elk wedstrijdmoment door teams te sorteren op:
+\begin{itemize}
+    \item totaal aantal punten (aflopend)
+    \item doelsaldo (aflopend)
+\end{itemize}
+
+Deze aanpak simuleert de evolutie van de competitietabel doorheen het seizoen.
+
+\vspace{5pt}
+
+\subsection{Recente vorm}
+
+De vorm van een team werd gedefinieerd als het gemiddelde aantal behaalde punten over de laatste vijf gespeelde wedstrijden vóór de betreffende wedstrijd. 
+Elke wedstrijdresultaat werd omgezet naar een numerieke score (3 voor winst, 1 voor gelijkspel, 0 voor verlies). 
+
+Formeel:
+
+\[
+\text{Form}_{t} = \frac{1}{5} \sum_{i=t-5}^{t-1} P_i
+\]
+
+waarbij $P_i$ het aantal behaalde punten in wedstrijd $i$ is.
+
+Deze variabele geeft een indicatie van de recente prestatiecurve van een team en vangt tijdelijke fluctuaties in vorm op.
+
+\vspace{5pt}
+
+\subsection{Head-to-head statistieken}
+
+Voor elke wedstrijd werden historische onderlinge confrontaties tussen beide teams geanalyseerd. 
+Hierbij werd gekeken naar de laatste drie onderlinge wedstrijden vóór het huidige moment. De volgende variabelen werden berekend:
+
+\begin{itemize}
+    \item aantal overwinningen van het thuisteam
+    \item aantal overwinningen van het uitteam
+\end{itemize}
+
+Op basis hiervan werd een binaire classificatie afgeleid die aangeeft welk team historisch voordeel heeft in de onderlinge duels.
+
+\vspace{5pt}
+
+\subsection{Titel- en degradatiewedstrijden}
+
+Wedstrijden werden geclassificeerd als titelduels indien aan volgende voorwaarden werd voldaan:
+\begin{itemize}
+    \item beide teams staan in de top 2 van de rangschikking
+    \item beide teams hebben meer dan 40 punten
+    \item het puntenverschil bedraagt maximaal 5 punten
+\end{itemize}
+
+Degradatiewedstrijden werden gedefinieerd als wedstrijden die laat in het seizoen plaatsvinden waarbij 
+beide teams zich in de onderste regionen van de rangschikking bevinden (laatste drie plaatsen) en het puntenverschil maximaal 3 punten bedraagt.
+
+\vspace{5pt}
+
+\subsection{Rivaliteitsindicator}
+
+Op basis van vooraf gedefinieerde clubparen werd een binaire variabele toegevoegd die aangeeft of een wedstrijd een klassieke rivaliteit of derby betreft. 
+Dit omvat onder andere regionale derby’s en historisch belangrijke confrontaties.
+
+\vspace{5pt}
+
+\subsection{Speelstijl van teams}
+
+Voor elk team werd een speelstijlscore berekend op basis van geaggregeerde prestatie-indicatoren over de laatste vijf wedstrijden. 
+Hierbij werden onder meer het aantal doelpunten, schoten en corners meegenomen.
+
+De stijlscore werd gedefinieerd als:
+
+\[
+\text{Style Score} = (\text{doelpunten} + 0.3 \cdot \text{schoten}) - (\text{tegendoelpunten} + 0.3 \cdot \text{schoten tegen})
+\]
+
+Op basis van de verdeling van deze score werden teams ingedeeld in drie categorieën:
+\begin{itemize}
+    \item Aanvallend
+    \item Gebalanceerd
+    \item Verdedigend
+\end{itemize}
+
+De drempels werden bepaald op basis van de 33e en 66e percentielen.
+
+\vspace{5pt}
+
+\subsection{Contextuele variabelen}
+
+Daarnaast werden verschillende contextuele features toegevoegd:
+
+\begin{itemize}
+    \item Weekdag en weekendindicator
+    \item Avondwedstrijden (start ≥ 18:00)
+    \item Weersomstandigheden (regen, harde regen, hoge temperatuur)
+    \item Stadioncapaciteit (gecategoriseerd in klein, middel en groot via kwantielen)
+\end{itemize}
+
+\vspace{5pt}
+
+\subsection{Relatieve verschillen}
+
+Tot slot werden relatieve verschillen tussen teams berekend:
+
+\begin{itemize}
+    \item Rangverschil: verschil in positie op de dynamische ranglijst
+    \item Vormverschil: verschil in recente vorm (5 wedstrijden)
+\end{itemize}
+
+Deze features laten toe om directe comparatieve sterkte tussen teams te modelleren.
+
+\vspace{5pt}
+
+Door deze combinatie van domeinkennis, statistische aggregatie en contextuele informatie werd een uitgebreide feature space gecreëerd. 
+Deze verrijkte dataset vormt de input voor de verdere exploratieve en statische data-analyse en de machine learning-modellen.
