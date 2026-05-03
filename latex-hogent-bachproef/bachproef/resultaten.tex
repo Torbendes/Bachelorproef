@@ -1,102 +1,158 @@
-\chapter{Resultaten en vergelijking tussen data en expertkennis}
+% ==========================================
+% THESIS TEMPLATE
+% Resultaten & Mens vs Model Vergelijking
+% ==========================================
+
+\chapter{Resultaten en vergelijking tussen data, modellen en expertkennis}
 \label{ch:resultaten}
 
-In dit hoofdstuk worden de bevindingen uit de historische data-analyse, 
-de machine-learningmodellen en de expertbevraging samengebracht besproken. 
-De analyse wordt voor volgende wedstrijdvariabele uitgevoerd: wedstrijdresultaat, aantal doelpunten, aantal schoten en aantal kaarten. 
-Bij elk onderdeel worden eerst de belangrijkste patronen in de data verkend, 
-daarna de inzichten uit de modellen en de schattingen van de experten bekeken, waarna een vergelijking wordt gemaakt tussen beiden.
+% -------------------------------------------------
+% INTRODUCTIE
+% -------------------------------------------------
+In dit hoofdstuk worden de inzichten uit drie werelden samengebracht:
+(1) de historische wedstrijddata,
+(2) de machine learning modellen,
+(3) en de inschattingen van experten uit de enquête.
 
-\section{Wedstrijdresultaat}
+In plaats van een klassieke opsomming per variabele, wordt elke wedstrijdcomponent
+benaderd als een "voorspellingsdomein" waarin mens en machine elkaar ontmoeten.
+
+% =================================================
+\section{Het wedstrijdresultaat: wie wint echt?}
 \label{sec:resultaat}
+% =================================================
 
-\subsection{Historische data-analyse}
-\label{subsec:resultaat_data}
+Dit onderdeel onderzoekt in welke mate een wedstrijd voorspelbaar is op basis van
+teamsterkte, vorm en context.
 
-Beschrijf hier:
-- Beschrijvende statistieken
-- Correlaties / p-waardes
-- Belangrijkste patronen
+% ------------------------------
+\subsection{Wat zegt de data?}
+% ------------------------------
+Hier beschrijf je patronen uit je analyse:
+- Thuisvoordeel (H/A/D verdeling)
+- Rankverschil en uitkomst
+- Vorm en H2H effecten
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/resultaat_data.png}
-    \caption{Titel van de grafiek}
+    \caption{Verdeling van wedstrijdresultaten en belangrijkste statistische patronen}
     \label{fig:resultaat_data}
 \end{figure}
 
-Interpretatie van de figuur.
+Interpretatie:
+% -> schrijf hier verhaal, geen opsomming
 
-\subsection{Machine-learning inzichten}
-\label{subsec:resultaat_ml}
-
-Beschrijf hier:
-- Modelprestaties (accuracy, F1, etc.)
-- Feature importance / SHAP
-- Belangrijkste variabelen
+% ------------------------------
+\subsection{Wat voorspelt het model?}
+% ------------------------------
+Hier focus je op ML:
+- Model type (LogReg / XGBoost)
+- Accuracy / F1 / logloss
+- Belangrijkste features (SHAP of feature importance)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/resultaat_ml.png}
-    \caption{Feature importance voor wedstrijdresultaat}
+    \caption{Belangrijkste factoren volgens het voorspellingsmodel}
     \label{fig:resultaat_ml}
 \end{figure}
 
-Interpretatie van de resultaten.
+Interpretatie:
+% -> welke variabelen domineren het model?
 
-\subsection{Expertinschattingen}
-\label{subsec:resultaat_experts}
-
-Beschrijf hier:
-- Resultaten uit je enquête
-- Gemiddelde scores
-- Belangrijkste inzichten
+% ------------------------------
+\subsection{Wat denken mensen? (expertinschattingen)}
+% ------------------------------
+Hier verwerk je enquête:
+- Verwachte kans thuis/gelijk/uit
+- Belangrijkheid van factoren (Likert schaal)
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/resultaat_experts.png}
-    \caption{Inschattingen van experten}
-    \label{fig:resultaat_experts}
+    \includegraphics[width=0.8\textwidth]{figures/resultaat_enquete.png}
+    \caption{Expertinschattingen van wedstrijdresultaat}
+    \label{fig:resultaat_enquete}
 \end{figure}
 
+Interpretatie:
+% -> waar overschatten of onderschatten mensen?
+
+% ------------------------------
+\subsection{De confrontatie: mens vs model vs realiteit}
+% ------------------------------
+Hier gebeurt de echte analyse:
+- Waar zijn mens en model het eens?
+- Waar wijken ze af?
+- Welke signalen ziet het model dat mensen missen?
+
+% =================================================
+\section{Doelpunten: wanneer wordt er gescoord?}
+% =================================================
+
+\subsection{Data-perspectief}
+% regen, temperatuur, speelstijl, etc.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/goals_data.png}
+    \caption{Patronen in doelpunten onder verschillende omstandigheden}
+\end{figure}
+
+\subsection{Model-perspectief}
+% XGBoost regressie, belangrijkste features
+
+\subsection{Menselijk perspectief}
+% regen invloed, verwachting doelpunten
+
 \subsection{Vergelijking}
-\label{subsec:resultaat_vergelijking}
+% waar klopt intuïtie / waar niet?
 
-Vergelijk hier:
-- Data vs model vs experts
-- Overeenkomsten
-- Verschillen
-- Mogelijke verklaringen
+% =================================================
+\section{Schoten: druk, tempo en aanvalskracht}
+% =================================================
 
-\vspace{5pt}
+\subsection{Data-perspectief}
+% stadioncapaciteit, derby, temperatuur
 
-\section{Aantal doelpunten}
-\label{sec:doelpunten}
+\subsection{Model-perspectief}
 
-\subsection{Historische data-analyse}
-\subsection{Machine-learning inzichten}
-\subsection{Expertinschattingen}
+\subsection{Menselijk perspectief}
+
 \subsection{Vergelijking}
 
-\section{Aantal schoten}
-\label{sec:schoten}
+% =================================================
+\section{Kaarten: emoties en context}
+% =================================================
 
-\subsection{Historische data-analyse}
-\subsection{Machine-learning inzichten}
-\subsection{Expertinschattingen}
+\subsection{Data-perspectief}
+% regen, derby, degradatie
+
+\subsection{Model-perspectief}
+
+\subsection{Menselijk perspectief}
+
 \subsection{Vergelijking}
 
-\section{Aantal kaarten}
-\label{sec:kaarten}
+% =================================================
+\section{Het grotere beeld: hoe goed voorspellen mensen voetbal?}
+% =================================================
 
-\subsection{Historische data-analyse}
-\subsection{Machine-learning inzichten}
-\subsection{Expertinschattingen}
-\subsection{Vergelijking}
+In deze laatste sectie worden alle inzichten samengebracht:
+- Waar presteert het model beter dan mensen?
+- Welke variabelen worden onderschat door experts?
+- Welke factoren zijn consistent in alle drie de bronnen?
 
-\section{Samenvattende bevindingen}
-\label{sec:samenvatting_resultaten}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/overall_comparison.png}
+    \caption{Samenvatting van mens vs model vs data}
+\end{figure}
 
-Vat hier kort samen:
-- Belangrijkste inzichten over alle onderdelen heen
-- Eerste indicaties van overeenkomsten/verschillen tussen mens en model
+% =================================================
+\section{Slotreflectie}
+% =================================================
+
+Dit hoofdstuk toont dat voetbalvoorspelling niet enkel draait om statistiek,
+maar om het spanningsveld tussen intuïtie en data-gedreven logica.
+
+De grootste inzichten komen niet uit één bron, maar uit de verschillen ertussen.
