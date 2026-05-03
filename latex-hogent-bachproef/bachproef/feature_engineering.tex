@@ -71,16 +71,16 @@ beide teams zich in de onderste regionen van de rangschikking bevinden (laatste 
 
 \subsection{Rivaliteitsindicator}
 
-Op basis van vooraf gedefinieerde clubparen werd een binaire variabele toegevoegd die aangeeft of een wedstrijd een klassieke rivaliteit of derby betreft. 
+Op basis van vooraf bepaalde teamcombinaties werd een binaire variabele toegevoegd die aangeeft of een wedstrijd een klassieke rivaliteit of derby betreft. 
 Dit omvat onder andere regionale derby’s en historisch belangrijke confrontaties.
 
 \begin{table}[h]
 \centering
-\caption{Overzicht van gedefinieerde rivaliteitswedstrijden}
-\label{tab:derby_pairs}
+\caption{Overzicht van rivalen en derby's}
+\label{tab:riv_or_derby_pairs}
 \begin{tabular}{ll}
 \hline
-\textbf{Thuisploeg} & \textbf{Uitploeg} \\
+\textbf{Ploeg 1} & \textbf{Ploeg 2} \\
 \hline
 Antwerp & Beerschot VA \\
 RSC Anderlecht & Club Brugge \\
@@ -95,8 +95,7 @@ Standard & RSC Anderlecht \\
 
 \subsection{Speelstijl van teams}
 
-Voor elk team werd een speelstijlscore berekend op basis van geaggregeerde prestatie-indicatoren over de laatste vijf wedstrijden. 
-Hierbij werden het aantal doelpunten en schoten meegenomen.
+Voor ieder team werd een speelstijlscore berekend aan de hand van de meest recente vijf duels, met oog voor het aantal doelpunten en schoten.
 
 De stijlscore werd gedefinieerd als:
 
@@ -143,9 +142,9 @@ Tot slot werden relatieve verschillen tussen teams berekend:
     \item Vormverschil: verschil in recente vorm (5 wedstrijden)
 \end{itemize}
 
-Deze features laten toe om directe comparatieve sterkte tussen teams te modelleren.
+Deze features maken het mogelijk om relatieve verhoudingen tussen de strijdende teams inzichtelijk weer te geven.
 
 \vspace{5pt}
 
-Door deze combinatie van domeinkennis, statistische aggregatie en contextuele informatie werd een uitgebreide feature space gecreëerd. 
-Deze verrijkte dataset vormt de input voor de verdere exploratieve en statische data-analyse en de machine learning-modellen.
+De combinatie van deze variabelen samen vormen een hele rijke, diverse feature space die complexiteit van voetbalprestaties erg goed weergeeft. 
+Deze feature space is daarmee een stevige fundering voor het verdere data‐onderzoek en de ontwikkeling van de machine learningmodellen.
