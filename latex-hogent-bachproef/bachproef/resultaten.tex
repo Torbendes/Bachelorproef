@@ -1,23 +1,102 @@
-\chapter{\IfLanguageName{dutch}{Resultaten}{Results}}%
+\chapter{Resultaten en vergelijking tussen data en expertkennis}
 \label{ch:resultaten}
 
-In dit hoofdstuk worden de bekomen resultaten objectief gerapporteerd. 
-De nadruk ligt op het weergeven van de prestaties van de modellen zonder interpretatieve duiding.
+In dit hoofdstuk worden de bevindingen uit de historische data-analyse, 
+de machine-learningmodellen en de expertbevraging samengebracht besproken. 
+De analyse wordt voor volgende wedstrijdvariabele uitgevoerd: wedstrijdresultaat, aantal doelpunten, aantal schoten en aantal kaarten. 
+Bij elk onderdeel worden eerst de belangrijkste patronen in de data verkend, 
+daarna de inzichten uit de modellen en de schattingen van de experten bekeken, waarna een vergelijking wordt gemaakt tussen beiden.
 
-\section{Modelprestaties}
+\section{Wedstrijdresultaat}
+\label{sec:resultaat}
 
-Eerst worden de prestaties van de verschillende modellen gepresenteerd. Hierbij wordt gerapporteerd:
-\begin{itemize}
-    \item de behaalde nauwkeurigheid,
-    \item aanvullende evaluatiemetrieken zoals precision, recall en F1-score,
-    \item verschillen tussen trainings- en testresultaten.
-\end{itemize}
+\subsection{Historische data-analyse}
+\label{subsec:resultaat_data}
 
-\section{Vergelijking met expertvoorspellingen}
+Beschrijf hier:
+- Beschrijvende statistieken
+- Correlaties / p-waardes
+- Belangrijkste patronen
 
-Vervolgens worden de prestaties van de modellen vergeleken met die van menselijke experts. Hierbij wordt besproken:
-\begin{itemize}
-    \item welke methode gemiddeld het beste scoorde,
-    \item in welke situaties experts beter presteerden,
-    \item waar modellen duidelijke voordelen vertoonden.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/resultaat_data.png}
+    \caption{Titel van de grafiek}
+    \label{fig:resultaat_data}
+\end{figure}
+
+Interpretatie van de figuur.
+
+\subsection{Machine-learning inzichten}
+\label{subsec:resultaat_ml}
+
+Beschrijf hier:
+- Modelprestaties (accuracy, F1, etc.)
+- Feature importance / SHAP
+- Belangrijkste variabelen
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/resultaat_ml.png}
+    \caption{Feature importance voor wedstrijdresultaat}
+    \label{fig:resultaat_ml}
+\end{figure}
+
+Interpretatie van de resultaten.
+
+\subsection{Expertinschattingen}
+\label{subsec:resultaat_experts}
+
+Beschrijf hier:
+- Resultaten uit je enquête
+- Gemiddelde scores
+- Belangrijkste inzichten
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/resultaat_experts.png}
+    \caption{Inschattingen van experten}
+    \label{fig:resultaat_experts}
+\end{figure}
+
+\subsection{Vergelijking}
+\label{subsec:resultaat_vergelijking}
+
+Vergelijk hier:
+- Data vs model vs experts
+- Overeenkomsten
+- Verschillen
+- Mogelijke verklaringen
+
+\vspace{5pt}
+
+\section{Aantal doelpunten}
+\label{sec:doelpunten}
+
+\subsection{Historische data-analyse}
+\subsection{Machine-learning inzichten}
+\subsection{Expertinschattingen}
+\subsection{Vergelijking}
+
+\section{Aantal schoten}
+\label{sec:schoten}
+
+\subsection{Historische data-analyse}
+\subsection{Machine-learning inzichten}
+\subsection{Expertinschattingen}
+\subsection{Vergelijking}
+
+\section{Aantal kaarten}
+\label{sec:kaarten}
+
+\subsection{Historische data-analyse}
+\subsection{Machine-learning inzichten}
+\subsection{Expertinschattingen}
+\subsection{Vergelijking}
+
+\section{Samenvattende bevindingen}
+\label{sec:samenvatting_resultaten}
+
+Vat hier kort samen:
+- Belangrijkste inzichten over alle onderdelen heen
+- Eerste indicaties van overeenkomsten/verschillen tussen mens en model
