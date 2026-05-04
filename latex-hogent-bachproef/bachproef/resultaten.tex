@@ -35,8 +35,36 @@ Hier beschrijf je patronen uit je analyse:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/resultaat_data.png}
-    \caption{Verdeling van wedstrijdresultaten en belangrijkste statistische patronen}
+    \includegraphics[width=0.8\textwidth]{data_resultaat_verdeling_wedstrijdresultaten.png}
+    \caption{Verdeling van wedstrijdresultaten}
+    \label{fig:resultaat_data}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_thuiswinst_recentevorm.png}
+    \caption{Thuiswinstpercentage op basis van recente vorm}
+    \label{fig:resultaat_data}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_uitkomstverdeling_h2h.png}
+    \caption{Historische uitkomstverdeling per H2H-sterkste}
+    \label{fig:resultaat_data}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_verdeling_rangverschil_10.png}
+    \caption{Verdeling van wedstrijdresultaten bij rangverschil van 10}
+    \label{fig:resultaat_data}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_3opeenvolgendeverliezen.png}
+    \caption{Wat gebeurde er na 3 opeenvolgende verliezen?}
     \label{fig:resultaat_data}
 \end{figure}
 
@@ -53,8 +81,8 @@ Hier focus je op ML:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/resultaat_ml.png}
-    \caption{Belangrijkste factoren volgens het voorspellingsmodel}
+    \includegraphics[width=0.8\textwidth]{fi_resultaat.png}
+    \caption{Belangrijkste factoren volgens het voorspellingsmodel voor wedstrijdresultaat}
     \label{fig:resultaat_ml}
 \end{figure}
 
@@ -70,8 +98,50 @@ Hier verwerk je enquête:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/resultaat_enquete.png}
-    \caption{Expertinschattingen van wedstrijdresultaat}
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_thuisvoordeel.png}
+    \caption{Verwachte invloed van thuisvoordeel op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_recente_vorm.png}
+    \caption{Verwachte invloed van recente vorm op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil.png}
+    \caption{Verwachte invloed van rangverschil op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_h2h.png}
+    \caption{Verwachte invloed van eerdere confrontaties op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_3opeenvolgendeverliezen.png}
+    \caption{Verwachte invloed van 3 opeenvolgende nederlagen op volgende wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_factorbelang.png}
+    \caption{Rangschikking belangrijkste factoren voor wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_factorbelang_1.png}
+    \caption{Factoren die het meest op 1 werden gezet voor wedstrijdresultaat volgens experts}
     \label{fig:resultaat_enquete}
 \end{figure}
 
@@ -92,11 +162,6 @@ Hier gebeurt de echte analyse:
 
 \subsection{Data-perspectief}
 % regen, temperatuur, speelstijl, etc.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/goals_data.png}
-    \caption{Patronen in doelpunten onder verschillende omstandigheden}
-\end{figure}
 
 \subsection{Model-perspectief}
 % XGBoost regressie, belangrijkste features
@@ -142,11 +207,6 @@ In deze laatste sectie worden alle inzichten samengebracht:
 - Welke variabelen worden onderschat door experts?
 - Welke factoren zijn consistent in alle drie de bronnen?
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/overall_comparison.png}
-    \caption{Samenvatting van mens vs model vs data}
-\end{figure}
 
 % =================================================
 \section{Slotreflectie}
