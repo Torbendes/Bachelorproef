@@ -205,7 +205,7 @@ Hoewel er een lichte tendens zichtbaar is in de richting van de historisch sterk
 Wanneer dit wordt vergeleken met de enquête, is er een duidelijke overeenkomst. 
 Zowel experten als data geven aan dat H2H-geschiedenis een relatief kleine rol speelt in vergelijking met andere factoren zoals vorm of teamkwaliteit.
 
-Op basis hiervan kan dus vanuit gegaan worden dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
+Op basis hiervan kan dus van uitgegaan worden dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
 Wat uit bovenstaande heatmap wel weer duidelijk wordt, is dat het thuisvoordeel weer aanwezig is.
 
 \subsection{Rangverschil: een indicator voor wedstrijduitkomst?}
@@ -267,10 +267,10 @@ Het antwoord was vrijwel unaniem.
     \centering
     \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil10.png}
     \caption{Enquête: wedstrijdresultaten bij rangverschil van 10}
-    \label{fig:resultaat_enquete_rangverschil}
+    \label{fig:resultaat_enquete_rangverschil_10}
 \end{figure}
 
-Uit grafiek~\ref{fig:resultaat_enquete_rangverschil} blijkt dat de experts een zeer hoge kans toekennen aan een overwinning van het hoger gerangschikte team.
+Uit grafiek~\ref{fig:resultaat_enquete_rangverschil_10} blijkt dat de experts een zeer hoge kans toekennen aan een overwinning van het hoger gerangschikte team.
 De violin plot toont een sterk geconcentreerde verdeling waarbij vrijwel alle schattingen zich situeren tussen 70\% en 100\%.
 De individuele datapunten liggen dicht bij elkaar, wat wijst op een opvallend hoge mate van consensus onder de respondenten.
 Dit suggereert dat experts een rangverschil van tien plaatsen beschouwen als een bijzonder sterke indicator voor een overwinning van het hoger geplaatste team,
@@ -287,7 +287,7 @@ Om dit effect verder te illustreren, wordt in Figuur~\ref{fig:data_resultaat_ran
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{08d7ed46-41de-4214-bdcf-454235933fd6.png}
+    \includegraphics[width=0.8\textwidth]{data_resultaat_verdeling_rangverschil_10.png}
     \caption{Verdeling van wedstrijdresultaten bij rangverschil van 10}
     \label{fig:data_resultaat_rangverschil_10}
 \end{figure}
@@ -297,105 +297,168 @@ Slechts 9{,}2\% van de wedstrijden wordt gewonnen door het lager gerangschikte t
 Dit versterkt de eerdere vaststelling dat een groot rangverschil een sterke indicatie vormt voor het wedstrijdresultaat, 
 waarbij het beter gerangschikte team duidelijk in het voordeel is.
 
+\vspace{5pt}
 
-\subsection{Wat voorspelt het model?}
-% ------------------------------
-Hier focus je op ML:
-- Model type (LogReg / XGBoost)
-- Accuracy / F1 / logloss
-- Belangrijkste features (SHAP of feature importance)
+\subsection{Factor rangschikking met machine-learning: prestaties en vergelijking met expertinschattingen}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{fi_resultaat.png}
-    \caption{Belangrijkste factoren volgens het voorspellingsmodel voor wedstrijdresultaat}
-    \label{fig:resultaat_ml}
+Om de voorspellende kracht van de ontwikkelde modellen te beoordelen, werden vier interpreteerbare classificatiemodellen geëvalueerd: \textit{Logistic Regression}, \textit{Random Forest}, \textit{Gradient Boosting} en \textit{XGBoost}. 
+Elk model werd getraind op dezelfde feature space en getest op een identieke hold-out set van 402 wedstrijden.
+
+Een belangrijke kanttekening is dat \textbf{thuisvoordeel niet als feature kon worden opgenomen}. 
+Door de manier waarop de dataset werd opgebouwd (met genormaliseerde en relatieve variabelen), zou een expliciete thuisvariabele sterk correleren met bestaande kenmerken. 
+Hierdoor ontbreekt een factor die zowel in de data-analyse als in de enquête naar voren kwam als belangrijk.
+
+\vspace{6pt}
+
+De classificatieresultaten tonen een duidelijk en consistent patroon over alle modellen heen. 
+Thuisoverwinningen (H) worden relatief goed voorspeld, met hoge recallwaarden (tot 0{,}89 bij Logistic Regression). 
+Uitoverwinningen (A) worden matig voorspeld, met f1-scores rond 0{,}52--0{,}57. 
+Gelijkspelen (D) blijken het moeilijkst te modelleren, met zeer lage recallwaarden (tussen 0{,}03 en 0{,}19). 
+Dit bevestigt dat gelijke spelen minder duidelijke patronen vertonen en moeilijk voorspelbaar zijn.
+
+\vspace{6pt}
+
+De globale prestaties van de modellen zijn samengevat in Tabel~\ref{tab:modelvergelijking}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Model} & \textbf{Accuracy} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} \\
+\hline
+Logistic Regression & 0{,}5597 & 0{,}4393 & 0{,}5377 & 0{,}5071 \\
+XGBoost             & 0{,}5498 & 0{,}4803 & 0{,}4954 & 0{,}5075 \\
+Random Forest       & 0{,}5398 & 0{,}4497 & 0{,}4935 & 0{,}4932 \\
+Gradient Boosting   & 0{,}5299 & 0{,}4779 & 0{,}4814 & 0{,}4927 \\
+\hline
+\end{tabular}
+\caption{Vergelijking van de vier modellen op de testset.}
+\label{tab:modelvergelijking}
+\end{table}
+
+Uit deze vergelijking blijkt dat \textit{Logistic Regression} de hoogste accuracy behaalt en tegelijk de laagste log loss (0{,}9352), wat wijst op stabielere en betrouwbaardere voorspellingen. 
+Hoewel andere modellen op bepaalde metrics licht beter scoren, is Logistic Regression het meest consistent over alle evaluatiemaatstaven.
+
+\vspace{6pt}
+
+Op basis hiervan werd \textit{Logistic Regression} geselecteerd als het beste model. 
+De algemene prestaties blijven echter beperkt, wat aangeeft dat het voorspellen van voetbalwedstrijden intrinsiek moeilijk blijft en afhankelijk is van factoren die niet volledig in de data vervat zitten.
+
+\vspace{6pt}
+
+De analyse van de feature importance toont aan dat vooral \textbf{form\_diff} (recente vormverschillen) en \textbf{rank\_diff} (rangverschil) de belangrijkste determinanten zijn. 
+Daarnaast spelen seizoenseffecten, speelstijlcombinaties en in mindere mate H2H-resultaten een rol. 
+Omgevingsfactoren zoals temperatuur, bewolking en wind blijken slechts een minimale invloed te hebben.
+
+Figuur~\ref{fig:fi_best_model} toont de top 15 belangrijkste features van het beste model.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{fi_resultaat.png}
+\caption{Top 15 belangrijkste features van het beste model.}
+\label{fig:fi_best_model}
 \end{figure}
 
+\vspace{6pt}
 
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_factorbelang.png}
-    \caption{Rangschikking belangrijkste factoren voor wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_factorbelang_1.png}
-    \caption{Factoren die het meest op 1 werden gezet voor wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
-
-
-
-\subsection{De confrontatie: mens vs model vs realiteit}
-
-Hier gebeurt de echte analyse:
-- Waar zijn mens en model het eens?
-- Waar wijken ze af?
-- Welke signalen ziet het model dat mensen missen?
-
-% =================================================
-\section{Doelpunten: wanneer wordt er gescoord?}
-% =================================================
-
-\subsection{Data-perspectief}
-% regen, temperatuur, speelstijl, etc.
-
-\subsection{Model-perspectief}
-% XGBoost regressie, belangrijkste features
-
-\subsection{Menselijk perspectief}
-% regen invloed, verwachting doelpunten
-
-\subsection{Vergelijking}
-% waar klopt intuïtie / waar niet?
-
-% =================================================
-\section{Schoten: druk, tempo en aanvalskracht}
-% =================================================
-
-\subsection{Data-perspectief}
-% stadioncapaciteit, derby, temperatuur
-
-\subsection{Model-perspectief}
-
-\subsection{Menselijk perspectief}
-
-\subsection{Vergelijking}
-
-% =================================================
-\section{Kaarten: emoties en context}
-% =================================================
-
-\subsection{Data-perspectief}
-% regen, derby, degradatie
-
-\subsection{Model-perspectief}
-
-\subsection{Menselijk perspectief}
-
-\subsection{Vergelijking}
-
-% =================================================
-\section{Het grotere beeld: hoe goed voorspellen mensen voetbal?}
-% =================================================
-
-In deze laatste sectie worden alle inzichten samengebracht:
-- Waar presteert het model beter dan mensen?
-- Welke variabelen worden onderschat door experts?
-- Welke factoren zijn consistent in alle drie de bronnen?
 
 
 % =================================================
-\section{Slotreflectie}
+\section{Aantal doelpunten: wanneer wordt er gescoord?}
 % =================================================
 
-Dit hoofdstuk toont dat voetbalvoorspelling niet enkel draait om statistiek,
-maar om het spanningsveld tussen intuïtie en data-gedreven logica.
+\subsection{Data-analyse}
 
-De grootste inzichten komen niet uit één bron, maar uit de verschillen ertussen.
+In dit onderdeel wordt onderzocht welke factoren een invloed hebben op het aantal doelpunten in een wedstrijd. 
+Op basis van de historische data wordt nagegaan hoe variabelen zoals vorm, rangverschil, weersomstandigheden en wedstrijdcontext samenhangen met het aantal gescoorde doelpunten.
+
+
+
+\vspace{5pt}
+
+% Interpretatie van de grafiek en belangrijkste inzichten
+
+\vspace{5pt}
+
+\subsection{Modelanalyse}
+
+Voor het voorspellen van het aantal doelpunten werd een regressiemodel gebruikt. 
+De prestaties van het model worden geëvalueerd aan de hand van geschikte metrics (zoals RMSE, MAE of $R^2$).
+
+\begin{itemize}
+    \item \textbf{RMSE:} ...
+    \item \textbf{MAE:} ...
+    \item \textbf{$R^2$:} ...
+\end{itemize}
+
+\vspace{5pt}
+
+De belangrijkste features volgens het model zijn:
+
+\begin{itemize}
+    \item ...
+    \item ...
+    \item ...
+\end{itemize}
+
+
+
+\vspace{5pt}
+
+\subsection{Expertinschattingen}
+
+Uit de enquête blijkt hoe experten het belang van verschillende factoren inschatten bij het voorspellen van het aantal doelpunten.
+
+
+
+\vspace{5pt}
+
+% Beschrijving van belangrijkste bevindingen uit enquête
+
+\vspace{5pt}
+
+\subsection{Vergelijking: data vs model vs expert}
+
+Wanneer de drie perspectieven naast elkaar worden gelegd, ontstaan zowel overeenkomsten als verschillen.
+
+\begin{itemize}
+    \item Overeenkomsten: ...
+    \item Verschillen: ...
+    \item Opvallende inzichten: ...
+\end{itemize}
+
+\vspace{5pt}
+
+Samenvattend kan worden gesteld dat ...
+
+
+
+% =================================================
+\section{Aantal schoten: druk en aanvalskracht}
+% =================================================
+
+\subsection{Data-analyse}
+
+% Zelfde structuur als hierboven
+
+\subsection{Modelanalyse}
+
+\subsection{Expertinschattingen}
+
+\subsection{Vergelijking: data vs model vs expert}
+
+
+
+% =================================================
+\section{Aantal kaarten: intensiteit en emoties}
+% =================================================
+
+\subsection{Data-analyse}
+
+% Zelfde structuur als hierboven
+
+\subsection{Modelanalyse}
+
+\subsection{Expertinschattingen}
+
+\subsection{Vergelijking: data vs model vs expert}
