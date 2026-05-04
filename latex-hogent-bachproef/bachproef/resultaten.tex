@@ -22,16 +22,24 @@ benaderd als een "voorspellingsdomein" waarin mens en machine elkaar ontmoeten.
 \label{sec:resultaat}
 % =================================================
 
-Dit onderdeel onderzoekt in welke mate een wedstrijd voorspelbaar is op basis van
-teamsterkte, vorm en context.
+Dit onderdeel bestudeert de impact van allerlei factoren op het uiteindelijke resultaat.
+De nadruk ligt vooral op onderstaande variabelen:
+
+\begin{itemize}
+    \item Thuisvoordeel
+    \item Recente vorm
+    \item Rangverschil
+    \item Historische confrontaties (H2H)
+    \item Psychologische factoren (3 opeenvolgende nederlagen)
+\end{itemize}
 
 % ------------------------------
-\subsection{Wat zegt de data?}
+\subsection{Thuisvoordeel: een mythe of realiteit?}
 % ------------------------------
-Hier beschrijf je patronen uit je analyse:
-- Thuisvoordeel (H/A/D verdeling)
-- Rankverschil en uitkomst
-- Vorm en H2H effecten
+
+Vaak spreekt men van een thuisvoordeel, maar is dit ook empirisch aantoonbaar? 
+Op basis van de geanalyseerde historische dataset blijkt dat thuisteams significant vaker winnen dan uitteams. 
+Concreet werd 43{,}28\% van de wedstrijden gewonnen door de thuisploeg, tegenover 32{,}37\% door de uitploeg en 24{,}35\% eindigde in een gelijkspel.
 
 \begin{figure}[H]
     \centering
@@ -40,12 +48,82 @@ Hier beschrijf je patronen uit je analyse:
     \label{fig:resultaat_data}
 \end{figure}
 
+Om te toetsen of dit verschil statistisch significant is, werd een chi-kwadraattoets uitgevoerd. 
+Deze analyse resulteerde in een $\chi^2$-waarde van 108{,}71 met een bijbehorende p-waarde van $2{,}48 \times 10^{-24}$. 
+Aangezien deze p-waarde ruim onder de conventionele significantiedrempel ($\alpha = 0{,}05$) ligt, 
+kan de nulhypothese, namelijk dat er geen verschil is in winstkansen tussen thuis- en uitteams, verworpen worden.
+Hieruit kan dus geconcludeerd worden dat er sprake is van een statistisch significant thuisvoordeel binnen de onderzochte dataset.
+
+\vspace{5pt}
+
+Figuur~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag waarin experten werd gevraagd naar de verwachte invloed van het thuisvoordeel op het voorspellen van winst of verlies.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_thuisvoordeel.png}
+    \caption{Verwachte invloed van thuisvoordeel op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete}
+\end{figure}
+
+Uit de resultaten blijkt dat score 3 het vaakst werd geselecteerd, met 50{,}0\% van de respondenten. 
+Dit suggereert dat de meerderheid het thuisvoordeel als een matig belangrijke factor beschouwt. 
+Scores 1, 2 en 4 werden elk door 16{,}7\% van de respondenten aangeduid, wat wijst op een spreiding in perceptie van weinig tot vrij belangrijke invloed.
+
+Wanneer deze percepties worden vergeleken met de resultaten uit de historische data-analyse, is er een duidelijke overeenkomst in de algemene tendens. 
+De data tonen aan dat thuisvoordeel een significante invloed heeft op wedstrijdresultaten, maar de grootte van dit effect blijft relatief beperkt (ongeveer 43\% thuisoverwinningen tegenover 32\% uitoverwinningen). 
+Dit sluit aan bij de inschatting van experten, die het thuisvoordeel wel degelijk als een relevante factor beschouwen, maar niet als doorslaggevend.
+
+Hieruit kan worden afgeleid dat het thuisvoordeel zowel statistisch aantoonbaar is als erkend wordt in de praktijk, zij het als een factor met een gematigde invloed binnen een breder geheel van bepalende variabelen.
+
+\subsection{Recente vorm: hoe belangrijk is momentum?}
+
+Naast het thuisvoordeel kan ook de recente vorm van een team een belangrijke rol spelen bij het voorspellen van wedstrijdresultaten. 
+In deze analyse werd de vorm van zowel het thuis- als uitteam bepaald op basis van de prestaties in de laatste vijf wedstrijden (zoals eerder beschreven in hoofdstuk~\ref{sec:feature_engineering}). 
+Deze waarden werden ingedeeld in drie categorieën: \textit{slecht} (lager dan 1), \textit{normaal} (tussen 1 en 1.7) en \textit{goed} (hoger dan 1.7).
+
+Figuur~\ref{fig:resultaat_vorm} geeft het percentage thuisoverwinningen weer voor elke combinatie van vormcategorieën.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{data_resultaat_thuiswinst_recentevorm.png}
     \caption{Thuiswinstpercentage op basis van recente vorm}
-    \label{fig:resultaat_data}
+    \label{fig:resultaat_vorm}
 \end{figure}
+
+Uit de resultaten blijkt dat de recente vorm duidelijk samenhangt met het wedstrijdresultaat. 
+Wanneer het thuisteam in goede vorm is en het uitteam in slechte vorm, bedraagt het aandeel thuisoverwinningen 57\%. 
+Wanneer de situatie omgekeerd is, daalt dit tot 31\%. 
+
+Daarnaast tonen de resultaten aan dat het verschil in vorm tussen beide teams belangrijk is. 
+Bijvoorbeeld, wanneer beide teams in goede vorm zijn, bedraagt het percentage thuisoverwinningen 47\%, terwijl dit stijgt tot 53\% wanneer het thuisteam in goede vorm is en het uitteam in normale vorm verkeert.
+
+Om na te gaan of deze verschillen statistisch significant zijn, werd een chi-kwadraattoets uitgevoerd. 
+Dit resulteerde in een $\chi^2$-waarde van 66{,}92 met een p-waarde van $2{,}01 \times 10^{-11}$. 
+Aangezien deze p-waarde kleiner is dan 0{,}05, kan de nulhypothese worden verworpen. 
+Er is dus een statistisch significant verband tussen recente vorm en wedstrijdresultaat.
+
+\vspace{5pt}
+
+Ook de perceptie van experten werd onderzocht.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_recentevorm.png}
+    \caption{Verwachte invloed van recente vorm op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete_vorm}
+\end{figure}
+
+Uit de enquête blijkt dat 66{,}7\% van de respondenten score 3 geeft, wat wijst op een matige invloed van recente vorm. 
+Een kleiner deel van de respondenten (elk 16{,}7\%) geeft aan dat recente vorm weinig tot beperkte invloed heeft. 
+Hogere scores (4 en 5) worden niet gekozen.
+
+Wanneer dit wordt vergeleken met de data-analyse, is er een gelijkaardige tendens zichtbaar. 
+De data tonen aan dat recente vorm een meetbaar effect heeft op het resultaat, terwijl experten deze factor vooral als gematigd belangrijk inschatten.
+
+Hieruit kan worden besloten dat recente vorm een relevante, maar niet doorslaggevende factor is bij het voorspellen van wedstrijdresultaten. 
+De resultaten uit data en enquête wijzen in dezelfde richting, namelijk dat momentum een rol speelt, maar niet de enige bepalende factor is.
+
+
 
 \begin{figure}[H]
     \centering
@@ -96,19 +174,6 @@ Hier verwerk je enquête:
 - Verwachte kans thuis/gelijk/uit
 - Belangrijkheid van factoren (Likert schaal)
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_thuisvoordeel.png}
-    \caption{Verwachte invloed van thuisvoordeel op wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_recentevorm.png}
-    \caption{Verwachte invloed van recente vorm op wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
 
 \begin{figure}[H]
     \centering
