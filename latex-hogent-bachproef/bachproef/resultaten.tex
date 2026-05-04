@@ -1,26 +1,33 @@
-% ==========================================
-% THESIS TEMPLATE
-% Resultaten & Mens vs Model Vergelijking
-% ==========================================
-
 \chapter{Resultaten en vergelijking tussen data, modellen en expertkennis}
 \label{ch:resultaten}
 
-% -------------------------------------------------
-% INTRODUCTIE
-% -------------------------------------------------
-In dit hoofdstuk worden de inzichten uit drie werelden samengebracht:
+In dit hoofdstuk worden de inzichten uit drie perspectieven samengebracht:
 (1) de historische wedstrijddata,
 (2) de machine learning modellen,
-(3) en de inschattingen van experten uit de enquête.
+(3) en de inschattingen van experten op basis van de enquête.
 
-In plaats van een klassieke opsomming per variabele, wordt elke wedstrijdcomponent
-benaderd als een "voorspellingsdomein" waarin mens en machine elkaar ontmoeten.
+Door deze drie benaderingen naast elkaar te plaatsen, kan worden onderzocht in welke mate data, modellen en menselijke inschattingen overeenkomen of van elkaar verschillen.
 
-% =================================================
-\section{Het wedstrijdresultaat: wie wint echt?}
+De analyse van de resultaten is opgedeeld in de volgende hoofdonderdelen:
+
+\begin{itemize}
+    \item Wedstrijdresultaat
+    \item Aantal doelpunten
+    \item Aantal schoten
+    \item Aantal kaarten
+\end{itemize}
+
+\vspace{5pt}
+
+Bij de weergave van de enquête-resultaten wordt vaak gebruik gemaakt van een schaal van 1 tot 5, waarbij 1 staat voor geen invloed en 5 voor een zeer grote invloed. 
+Daarnaast wordt ook een Borda-score gebruikt om de relatieve belangrijkheid van verschillende factoren te rangschikken.
+Dit is een rangschikkingsmethode waarbij elke optie punten krijgt op basis van haar positie in de voorkeuren van respondenten. 
+Hoe hoger een factor gemiddeld wordt gerangschikt, hoe meer punten deze verzamelt. 
+Op die manier wordt niet enkel gekeken naar de meest gekozen optie, maar naar de volledige verdeling van voorkeuren, 
+wat een genuanceerder beeld geeft van de relatieve belangrijkheid van de verschillende factoren.
+
+\section{Analyse van het wedstrijdresultaat: wie wint echt?}
 \label{sec:resultaat}
-% =================================================
 
 Dit onderdeel bestudeert de impact van allerlei factoren op het uiteindelijke resultaat.
 De nadruk ligt vooral op onderstaande variabelen:
@@ -33,19 +40,17 @@ De nadruk ligt vooral op onderstaande variabelen:
     \item Psychologische factoren (3 opeenvolgende nederlagen)
 \end{itemize}
 
-% ------------------------------
 \subsection{Thuisvoordeel: een mythe of realiteit?}
-% ------------------------------
 
 Vaak spreekt men van een thuisvoordeel, maar is dit ook empirisch aantoonbaar? 
 Op basis van de geanalyseerde historische dataset blijkt dat thuisteams significant vaker winnen dan uitteams. 
-Concreet werd 43{,}28\% van de wedstrijden gewonnen door de thuisploeg, tegenover 32{,}37\% door de uitploeg en 24{,}35\% eindigde in een gelijkspel.
+Concreet werd 43{,}28\% van de wedstrijden gewonnen door de thuisploeg, tegenover 32{,}37\% door de uitploeg en 24{,}35\% eindigde in een gelijkspel (~\ref{fig:resultaat_data_thuisvoordeel}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{data_resultaat_verdeling_wedstrijdresultaten.png}
     \caption{Verdeling van wedstrijdresultaten}
-    \label{fig:resultaat_data}
+    \label{fig:resultaat_data_thuisvoordeel}
 \end{figure}
 
 Om te toetsen of dit verschil statistisch significant is, werd een chi-kwadraattoets uitgevoerd. 
@@ -56,7 +61,7 @@ Hieruit kan dus geconcludeerd worden dat er sprake is van een statistisch signif
 
 \vspace{5pt}
 
-Figuur~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag waarin experten werd gevraagd naar de verwachte invloed van het thuisvoordeel op het voorspellen van winst of verlies.
+Grafiek~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag waarin experten werd gevraagd naar de verwachte invloed van het thuisvoordeel op het voorspellen van winst of verlies.
 
 \begin{figure}[H]
     \centering
@@ -81,7 +86,7 @@ Naast het thuisvoordeel kan ook de recente vorm van een team een belangrijke rol
 In deze analyse werd de vorm van zowel het thuis- als uitteam bepaald op basis van de prestaties in de laatste vijf wedstrijden (zoals eerder beschreven in hoofdstuk~\ref{sec:feature_engineering}). 
 Deze waarden werden ingedeeld in drie categorieën: \textit{slecht} (lager dan 1), \textit{normaal} (tussen 1 en 1.7) en \textit{goed} (hoger dan 1.7).
 
-Figuur~\ref{fig:resultaat_vorm} geeft het percentage thuisoverwinningen weer voor elke combinatie van vormcategorieën.
+Grafiek~\ref{fig:resultaat_vorm} geeft het percentage thuisoverwinningen weer voor elke combinatie van vormcategorieën.
 
 \begin{figure}[H]
     \centering
@@ -104,7 +109,7 @@ Er is dus een statistisch significant verband tussen recente vorm en wedstrijdre
 
 \vspace{5pt}
 
-Ook de perceptie van experten werd onderzocht.
+Ook de perceptie van experten werd onderzocht (~\ref{fig:resultaat_enquete_vorm}).
 
 \begin{figure}[H]
     \centering
@@ -113,43 +118,186 @@ Ook de perceptie van experten werd onderzocht.
     \label{fig:resultaat_enquete_vorm}
 \end{figure}
 
-Uit de enquête blijkt dat 66{,}7\% van de respondenten score 3 geeft, wat wijst op een matige invloed van recente vorm. 
+Uit de enquête blijkt dat 66{,}7\% van de respondenten score 3 geeft, wat suggereert dat een matige invloed van recente vorm. 
 Een kleiner deel van de respondenten (elk 16{,}7\%) geeft aan dat recente vorm weinig tot beperkte invloed heeft. 
 Hogere scores (4 en 5) worden niet gekozen.
 
-Wanneer dit wordt vergeleken met de data-analyse, is er een gelijkaardige tendens zichtbaar. 
+Wanneer dit wordt vergeleken met de data-analyse, is er een gelijkaardig patroon zichtbaar. 
 De data tonen aan dat recente vorm een meetbaar effect heeft op het resultaat, terwijl experten deze factor vooral als gematigd belangrijk inschatten.
 
 Hieruit kan worden besloten dat recente vorm een relevante, maar niet doorslaggevende factor is bij het voorspellen van wedstrijdresultaten. 
 De resultaten uit data en enquête wijzen in dezelfde richting, namelijk dat momentum een rol speelt, maar niet de enige bepalende factor is.
 
+\vspace{5pt}
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{data_resultaat_uitkomstverdeling_h2h.png}
-    \caption{Historische uitkomstverdeling per H2H-sterkste}
-    \label{fig:resultaat_data}
-\end{figure}
+Naast de invloed van de recente vorm, werd de experts ook gevraagd naar de kans van een nederlaag als er al 3 nederlagen voorgingen.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{data_resultaat_verdeling_rangverschil_10.png}
-    \caption{Verdeling van wedstrijdresultaten bij rangverschil van 10}
-    \label{fig:resultaat_data}
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_3opeenvolgendeverliezen.png}
+    \caption{Verwachte invloed van 3 opeenvolgende nederlagen op volgende wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete_3opeenvolgendeverliezen}
 \end{figure}
+
+Zoals op grafiek~\ref{fig:resultaat_enquete_3opeenvolgendeverliezen} te zien is zijn de inschattingen van de respondenten nogal uiteenlopend.
+Hoewel sommige deelnemers een lage kans op een vierde nederlaag aangeven, ligt een groot deel van de antwoorden duidelijk hoger in het percentagebereik. 
+De violinvorm is breder in het midden en hogere segmenten, wat erop duidt dat meer concentratie van antwoorden rond middelhoge tot hoge kansen. 
+De individuele punten bevestigen deze spreiding: er zijn zowel voorzichtige als zeer hoge inschattingen, 
+maar de algemene schatting suggereert dat veel respondenten verwachten dat een vierde nederlaag waarschijnlijk is.
+
+\vspace{5pt}
+
+Wanneer dit geanalyseerd wordt met historische data, wordt het al snel duidelijk dat de meerderheid een zeer accurate schatting gedaan heeft.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{data_resultaat_3opeenvolgendeverliezen.png}
     \caption{Wat gebeurde er na 3 opeenvolgende verliezen?}
-    \label{fig:resultaat_data}
+    \label{fig:resultaat_data_3opeenvolgendeverliezen}
 \end{figure}
 
-Interpretatie:
-% -> schrijf hier verhaal, geen opsomming
+In violin plot~\ref{fig:resultaat_data_3opeenvolgendeverliezen} is duidelijk te zien dat 
+teams na drie opeenvolgende nederlagen in het merendeel van de gevallen effectief opnieuw verliezen. 
+Uit de historische data blijkt dat ongeveer 76{,}5\% van de teams een vierde nederlaag lijden, terwijl slechts 23{,}5\% erin slaagt de negatieve reeks te doorbreken. 
+Deze verhouding toont een sterk scheve verdeling, waarbij een vierde verlies aanzienlijk waarschijnlijker is dan een ommekeer. 
+De grafiek illustreert dit contrast helder: de balk voor een vierde nederlaag is ruim drie keer zo hoog als die voor geen vierde nederlaag, 
+wat suggereert dat verliesreeksen in de praktijk vaak worden voortgezet.
 
-% ------------------------------
+\subsection{Onderlinge confrontaties (Head-to-Head): herhaalt de geschiedenis zich?}
+
+Per seizoen spelen twee ploegen doorgaans twee keer tegen elkaar: eenmaal thuis en eenmaal uit. 
+De vraag is in welke mate eerdere onderlinge resultaten (Head-to-Head) een voorspellende waarde hebben voor het toekomstige wedstrijdresultaat.
+
+Volgens de enquête wordt deze factor over het algemeen als weinig belangrijk beschouwd. 
+Niemand gaf een score van 3, 4 of 5, wat betekent dat geen enkele deelnemer H2H-geschiedenis als matig tot sterk bepalend inschat. 
+De meerderheid (66{,}7\%) geeft score 2, wat wijst op een beperkte invloed (~\ref{fig:resultaat_enquete_h2h}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_h2h.png}
+    \caption{Verwachte invloed van eerdere confrontaties op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete_h2h}
+\end{figure}
+
+Hieruit kan worden afgeleid dat experten hun voorspellingen vooral baseren op andere factoren, zoals recente vorm, teamsterkte, blessures en wedstrijdcontext, terwijl historische onderlinge resultaten slechts een beperkte rol spelen.
+
+\vspace{5pt}
+
+Om te onderzoeken of dit beeld overeenkomt met de historische data, werd nagegaan in welke mate de ploeg met het beste H2H-verleden effectief de wedstrijd wint.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_uitkomstverdeling_h2h.png}
+    \caption{Historische uitkomstverdeling per H2H-sterkste}
+    \label{fig:resultaat_data_h2h}
+\end{figure}
+
+Uit de data blijkt dat de H2H-sterkste ploeg in slechts 38{,}30\% van de wedstrijden effectief als winnaar uit de bus komt (~\ref{fig:resultaat_data_h2h}). 
+Dit betekent dat in meer dan 60\% van de gevallen het resultaat niet overeenkomt met het historische onderlinge voordeel.
+
+De gedetailleerde verdeling toont bovendien dat dit effect beperkt is in alle categorieën. 
+Wanneer de thuisploeg historisch sterker is (H), wint deze in 52{,}5\% van de gevallen, terwijl de uitploeg in 25{,}4\% van de gevallen wint. 
+Bij een gelijke of minder uitgesproken H2H-voorsprong worden deze verhoudingen nog meer verdeeld over winst, verlies en gelijkspel.
+
+Deze resultaten wijzen erop dat eerdere onderlinge confrontaties slechts een beperkte voorspellende waarde hebben. 
+Hoewel er een lichte tendens zichtbaar is in de richting van de historisch sterkere ploeg, is dit effect niet sterk genoeg om als doorslaggevende factor te worden beschouwd.
+
+Wanneer dit wordt vergeleken met de enquête, is er een duidelijke overeenkomst. 
+Zowel experten als data geven aan dat H2H-geschiedenis een relatief kleine rol speelt in vergelijking met andere factoren zoals vorm of teamkwaliteit.
+
+Op basis hiervan kan dus vanuit gegaan worden dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
+Wat uit bovenstaande heatmap wel weer duidelijk wordt, is dat het thuisvoordeel weer aanwezig is.
+
+\subsection{Rangverschil: een indicator voor wedstrijduitkomst?}
+
+Gedurende het seizoen kunnen de ploegen punten verzamelen voor het klassement. 
+Hoe meer een ploeg wint, hoe meer punten in de rangschikking het zal behalen.
+
+\vspace{5pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{data_resultaat_thuiswinst_rangverschil.png}
+    \caption{Thuiswinstpercentage vs. rangverschil}
+    \label{fig:data_resultaat_thuiswinst_rangverschil}
+\end{figure}
+
+Volgens grafiek~\ref{fig:data_resultaat_thuiswinst_rangverschil} is er een duidelijk verband tussen rangverschil en winst. 
+Het thuiswinstpercentage daalt systematisch naarmate het rangverschil (thuisploeg minus uitploeg) groter wordt in het nadeel van de thuisploeg. 
+Wanneer de thuisploeg aanzienlijk hoger gerangschikt staat dan de uitploeg (negatief rangverschil), ligt het thuiswinstpercentage hoog. 
+In de categorieën met een groot negatief rangverschil (bijvoorbeeld $<-10$ en $-10$ tot $-5$) bedraagt het thuiswinstpercentage respectievelijk 84{,}21\% en 65{,}71\%. 
+Naarmate het rangverschil kleiner wordt of positief wordt, wat betekent dat de uitploeg hoger gerangschikt staat, daalt het thuiswinstpercentage geleidelijk. 
+In de categorieën waar de uitploeg duidelijk sterker staat (bijvoorbeeld $5$ tot $10$ en $>10$), zakt het thuiswinstpercentage tot respectievelijk 19{,}87\% en 6{,}04\%.
+
+Deze trend bevestigt dat rangverschil een sterke indicator is voor de uiteindelijke wedstrijduitkomst: hoe groter het kwaliteitsverschil in het voordeel van de thuisploeg, hoe groter de kans op een thuisoverwinning. 
+Omgekeerd geldt dat wanneer de uitploeg hoger gerangschikt staat, het thuisvoordeel niet volstaat om het kwaliteitsverschil te compenseren.
+
+\vspace{5pt}
+
+Om dit effect statistisch te toetsen werd een chi-kwadraattoets uitgevoerd op het verband tussen rangverschil en het wedstrijdresultaat. 
+Deze analyse resulteerde in een $\chi^2$-waarde van 477{,}49 met een p-waarde van $5{,}52 \times 10^{-99}$. 
+Aangezien deze p-waarde ruim onder de significantiedrempel ($\alpha = 0{,}05$) ligt, kan worden geconcludeerd dat rangverschil een statistisch significante invloed heeft op het wedstrijdresultaat.
+
+\vspace{5pt}
+
+Uit grafiek~\ref{fig:resultaat_enquete_rangverschil} blijkt echter dat experts het rangverschil slechts in beperkte mate meenemen in hun voorspellingen. 
+Hoewel de historische data een duidelijk en consistent verband tonen tussen rangverschil en thuiswinstpercentage, geven de respondenten aan dat dit criterium voor hen slechts een beperkte rol speelt. 
+De meerderheid (66{,}7\%) beoordeelt de invloed van rangverschil met een score van 2 op 5, wat duidt op een lichte maar niet doorslaggevende impact. 
+Daarnaast geeft 16{,}7\% aan dat rangverschil geen invloed heeft (score 1), terwijl 16{,}7\% een matige invloed (score 3) toekent. 
+Hogere scores (4 en 5) komen niet voor in de resultaten.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil.png}
+    \caption{Verwachte invloed van rangverschil op wedstrijdresultaat volgens experts}
+    \label{fig:resultaat_enquete_rangverschil}
+\end{figure}
+
+Deze resultaten suggereren dat experts het rangverschil wel erkennen als een relevante factor, maar het niet beschouwen als een dominante voorspeller. 
+Dit staat in contrast met de historische data, waar rangverschil een duidelijke en zeer significante indicator blijkt te zijn voor de uiteindelijke wedstrijduitkomst. 
+Het lijkt er dus op dat het belang van rangverschil door experts eerder wordt onderschat, mogelijk omdat andere factoren zwaarder worden gewogen in hun beoordeling.
+
+\vspace{5pt}
+
+Als extra case gaven de voetbalexperts ook nog hun schatting op de vraag: 
+"Als team A 10 plaatsen boven team B staat in het klassement: hoe groot is volgens u de kans op een overwinning van team A?". 
+Het antwoord was vrijwel unaniem.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil10.png}
+    \caption{Enquête: wedstrijdresultaten bij rangverschil van 10}
+    \label{fig:resultaat_enquete_rangverschil}
+\end{figure}
+
+Uit grafiek~\ref{fig:resultaat_enquete_rangverschil} blijkt dat de experts een zeer hoge kans toekennen aan een overwinning van het hoger gerangschikte team.
+De violin plot toont een sterk geconcentreerde verdeling waarbij vrijwel alle schattingen zich situeren tussen 70\% en 100\%.
+De individuele datapunten liggen dicht bij elkaar, wat wijst op een opvallend hoge mate van consensus onder de respondenten.
+Dit suggereert dat experts een rangverschil van tien plaatsen beschouwen als een bijzonder sterke indicator voor een overwinning van het hoger geplaatste team,
+wat op het eerste gezicht contrasteert met de eerdere resultaten in grafiek~\ref{fig:resultaat_enquete_rangverschil}, waar rangverschil in het algemeen slechts een beperkte invloed kreeg.
+
+Een mogelijke verklaring voor dit verschil is dat experts rangverschil niet lineair interpreteren.
+Kleine verschillen in het klassement worden door hen mogelijk gezien als weinig betekenisvol, omdat teams dicht bij elkaar staan in kwaliteit.
+Pas wanneer het verschil groot genoeg wordt, beschouwen zij dit als een duidelijke kwaliteitskloof die wel voorspellende waarde heeft.
+Met andere woorden: experts lijken vooral gevoelig voor grote rangverschillen, terwijl kleine tot middelgrote verschillen volgens hen onvoldoende informatief zijn om een wedstrijdresultaat te voorspellen.
+
+\vspace{5pt}
+
+Om dit effect verder te illustreren, wordt in Figuur~\ref{fig:data_resultaat_rangverschil_10} ingezoomd op wedstrijden met een rangverschil van 10.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{08d7ed46-41de-4214-bdcf-454235933fd6.png}
+    \caption{Verdeling van wedstrijdresultaten bij rangverschil van 10}
+    \label{fig:data_resultaat_rangverschil_10}
+\end{figure}
+
+Uit deze verdeling blijkt duidelijk dat het team met de hogere rang in 78{,}9\% van de gevallen de wedstrijd wint. 
+Slechts 9{,}2\% van de wedstrijden wordt gewonnen door het lager gerangschikte team, terwijl 11{,}9\% eindigt in een gelijkspel. 
+Dit versterkt de eerdere vaststelling dat een groot rangverschil een sterke indicatie vormt voor het wedstrijdresultaat, 
+waarbij het beter gerangschikte team duidelijk in het voordeel is.
+
+
 \subsection{Wat voorspelt het model?}
 % ------------------------------
 Hier focus je op ML:
@@ -164,37 +312,9 @@ Hier focus je op ML:
     \label{fig:resultaat_ml}
 \end{figure}
 
-Interpretatie:
-% -> welke variabelen domineren het model?
-
-% ------------------------------
-\subsection{Wat denken mensen? (expertinschattingen)}
-% ------------------------------
-Hier verwerk je enquête:
-- Verwachte kans thuis/gelijk/uit
-- Belangrijkheid van factoren (Likert schaal)
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil.png}
-    \caption{Verwachte invloed van rangverschil op wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_h2h.png}
-    \caption{Verwachte invloed van eerdere confrontaties op wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_3opeenvolgendeverliezen.png}
-    \caption{Verwachte invloed van 3 opeenvolgende nederlagen op volgende wedstrijdresultaat volgens experts}
-    \label{fig:resultaat_enquete}
-\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -210,12 +330,10 @@ Hier verwerk je enquête:
     \label{fig:resultaat_enquete}
 \end{figure}
 
-Interpretatie:
-% -> waar overschatten of onderschatten mensen?
 
-% ------------------------------
+
 \subsection{De confrontatie: mens vs model vs realiteit}
-% ------------------------------
+
 Hier gebeurt de echte analyse:
 - Waar zijn mens en model het eens?
 - Waar wijken ze af?
