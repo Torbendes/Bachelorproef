@@ -272,7 +272,7 @@ Het antwoord was vrijwel unaniem.
 
 Uit grafiek~\ref{fig:resultaat_enquete_rangverschil_10} blijkt dat de experts een zeer hoge kans toekennen aan een overwinning van het hoger gerangschikte team.
 De violin plot toont een sterk geconcentreerde verdeling waarbij vrijwel alle schattingen zich situeren tussen 70\% en 100\%.
-De individuele datapunten liggen dicht bij elkaar, wat wijst op een opvallend hoge mate van consensus onder de respondenten.
+De individuele datapunten liggen dicht bij elkaar, wat wijst op een opvallend hoge mate van overeenkomst onder de respondenten.
 Dit suggereert dat experts een rangverschil van tien plaatsen beschouwen als een bijzonder sterke indicator voor een overwinning van het hoger geplaatste team,
 wat op het eerste gezicht contrasteert met de eerdere resultaten in grafiek~\ref{fig:resultaat_enquete_rangverschil}, waar rangverschil in het algemeen slechts een beperkte invloed kreeg.
 
@@ -339,12 +339,12 @@ Gradient Boosting   & 0{,}5299 & 0{,}4779 & 0{,}4814 & 0{,}4927 \\
 Uit deze vergelijking blijkt dat \textit{Logistic Regression} de hoogste accuracy behaalt en tegelijk de laagste log loss (0{,}9352), wat wijst op stabielere en betrouwbaardere voorspellingen. 
 Hoewel andere modellen op bepaalde metrics licht beter scoren, is Logistic Regression het meest consistent over alle evaluatiemaatstaven.
 
-\vspace{6pt}
+\vspace{5pt}
 
 Op basis hiervan werd \textit{Logistic Regression} geselecteerd als het beste model. 
 De algemene prestaties blijven echter beperkt, wat aangeeft dat het voorspellen van voetbalwedstrijden intrinsiek moeilijk blijft en afhankelijk is van factoren die niet volledig in de data vervat zitten.
 
-\vspace{6pt}
+\vspace{5pt}
 
 De analyse van de feature importance toont aan dat vooral \textbf{form\_diff} (recente vormverschillen) en \textbf{rank\_diff} (rangverschil) de belangrijkste determinanten zijn. 
 Daarnaast spelen seizoenseffecten, speelstijlcombinaties en in mindere mate H2H-resultaten een rol. 
@@ -359,9 +359,20 @@ Figuur~\ref{fig:fi_best_model} toont de top 15 belangrijkste features van het be
 \label{fig:fi_best_model}
 \end{figure}
 
-\vspace{6pt}
+\vspace{5pt}
 
+Weliswaar sluiten deze resultaten helemaal aan met de inzichten van de respondenten van de enquête.
+Zoals te zien is in figuur~\ref{fig:enquete_factorbelang}, komt men tot een identiek besluit.
+Het thuisvoordeel speelt een duidelijke rol zoals eerder te zien was, de recente vorm en het rangverschil hebben ook relatief veel invloed en onderlinge resultaten en weersomstandigheden minder.
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{enquete_resultaat_factorbelang.png}
+\caption{Enquete: Rangschikking belangrijkste factoren wedstrijdresultaat.}
+\label{fig:enquete_factorbelang}
+\end{figure}
+
+Op basis hiervan kan dus geconcludeerd worden dat op het vlak van wedstrijdresultaat, de experts en de machine-learning vrijwel op dezelfde golflengte zitten.
 
 % =================================================
 \section{Aantal doelpunten: wanneer wordt er gescoord?}
