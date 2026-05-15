@@ -433,7 +433,72 @@ Daarnaast wordt ook bekeken in welke mate een machine-learningmodel in staat is 
 
 \subsection{Regen en zware neerslag: spelen weersomstandigheden echt een rol?}
 
+Wanneer er neerslag valt, wordt het veld gladder en het zicht op de bal mogelijks moeilijker, maar heeft dit dan ook invloed op het aantal doelpunten?
+Met visie op de historische data, kunnen we hier niet van uitgaan. Met een gemiddeld aantal doelpunten van \textbf{2.83} zonder regen, heeft het gemiddelde aantal maar \textbf{0.11} doelpunten meer wat vrijwel verwaarloosbaar is.
+Ook bleek uit de bijhorende t-test dat er geen significant effect van regen op het aantal doelpunten is.
+
+Idem bij zware neerslag, wat in dit geval \textbf{meer dan 2mm neerslag} bij aanvang van de wedstrijd is, waar het effect ook niet significant is met een gemiddeld aantal doelpunten van \textbf{3.04}.
+
+\vspace{5pt}
+
+Indien we dit vergelijken met de expertinschattingen, blijkt deze factor toch licht overschat tegenover wat schijnt uit de historische data. 
+Zoals te zien is op figuur~\ref{fig:enquete_doelpunten_regen} wordt er toch gedacht dat regen toch wel licht to enige invloed zou hebben op het aantal doelpunten.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{enquete_doelpunten_regen.png}
+\caption{Enquete: Invloed van regen op aantal doelpunten.}
+\label{fig:enquete_doelpunten_regen}
+\end{figure}
+
+\vspace{5pt}
+
+Echter werd bij een soortgelijke vraag met andere formulering, "\textit{Als het hard regent, zullen er ... doelpunten verwacht worden.}", unaniem "\textit{zelfe}" geantwoord.
+Dit komt dan weer wel volledig overeen met de analayse.
+Hierdoor kan dus gesteld worden dat experts geen tot lichte invloed beschouwen.
+
+Bij een latere sectie zal dit aspect nog verder vergeleken worden met de modelinterpretatie.
+
 \subsection{Aanvallend versus verdedigend: welke speelstijl levert meer doelpunten op?}
+
+Naast weersomstandigheden kan ook de tactische speelstijl van beide ploegen een invloed hebben op het aantal doelpunten in een wedstrijd. 
+Daarom werd onderzocht welke combinaties van speelstijlen gemiddeld het meeste doelpunten opleveren.
+
+Uit de historische data blijkt dat wedstrijden waarin het thuisteam een aanvallende speelstijl hanteert tegenover een verdedigend uitteam gemiddeld het hoogste aantal doelpunten bevatten. 
+In deze situatie vallen gemiddeld \textbf{3.19 doelpunten per wedstrijd}, tegenover een algemeen gemiddelde van \textbf{2.86 doelpunten}. 
+Dit betekent dat er in deze specifieke speelstijlcombinatie gemiddeld duidelijk meer gescoord wordt dan normaal.
+
+\vspace{5pt}
+
+Wanneer alle speelstijlcombinaties met elkaar worden vergeleken (~\ref{fig:data_doelpunten_speelstijl}), valt hetzelfde patroon op. 
+De combinatie \textit{Aanvallend vs Verdedigend} bevindt zich duidelijk bovenaan, terwijl wedstrijden tussen twee verdedigende ploegen gemiddeld het minst aantal doelpunten opleveren (\textbf{2.48 doelpunten}).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{data_doelpunten_speelstijl.png}
+\caption{Gemiddeld aantal doelpunten per speelstijl-combinatie}
+\label{fig:data_doelpunten_speelstijl}
+\end{figure}
+
+Om te onderzoeken of dit verschil statistisch significant is, werd een t-test uitgevoerd tussen wedstrijden met deze speelstijlcombinatie en alle andere wedstrijden. 
+De analyse resulteerde in een p-waarde van \textbf{0.01393}. 
+Aangezien deze kleiner is dan de significantiedrempel van $0.05$, kan worden geconcludeerd dat deze speelstijlcombinatie een statistisch significant effect heeft op het aantal doelpunten.
+
+\vspace{5pt}
+
+Ook de experts uit de enquête gingen grotendeels akkoord met deze vaststelling (~\ref{fig:enquete_doelpunten_speelstijl}). 
+De meerderheid van de respondenten gaf aan dat er in deze situatie gemiddeld meer doelpunten verwacht worden. 
+Een kleiner deel verwachtte geen verschil, terwijl slechts één respondent dacht dat er minder doelpunten zouden vallen.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{enquete_doelpunten_speelstijl.png}
+\caption{Enquête: Verwachte invloed van aanvallende versus verdedigende speelstijl op aantal doelpunten}
+\label{fig:enquete_doelpunten_speelstijl}
+\end{figure}
+
+Hieruit blijkt een duidelijke overeenkomst tussen historische data en expertkennis. 
+Zowel de statistische analyse als de menselijke inschattingen suggereren dat een aanvallende thuisploeg tegen een defensief uitteam vaker leidt tot open wedstrijden met meer scoringskansen en dus ook meer doelpunten.
 
 \subsection{Doelpunten voorspellen met machine learning: kan een algoritme voetbal lezen?}
 
