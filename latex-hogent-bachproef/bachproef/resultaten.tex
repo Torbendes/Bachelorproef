@@ -500,8 +500,112 @@ Een kleiner deel verwachtte geen verschil, terwijl slechts één respondent dach
 Hieruit blijkt een duidelijke overeenkomst tussen historische data en expertkennis. 
 Zowel de statistische analyse als de menselijke inschattingen suggereren dat een aanvallende thuisploeg tegen een defensief uitteam vaker leidt tot open wedstrijden met meer scoringskansen en dus ook meer doelpunten.
 
-\subsection{Doelpunten voorspellen met machine learning: kan een algoritme voetbal lezen?}
+\section{Modelinterpretatie: welke factoren voorspelt het model als belangrijkste?}
 
+Om een dieper inzicht te krijgen in welke factoren het machine-learningmodel het zwaarst laat doorwegen bij het voorspellen van het totaal aantal doelpunten, 
+werd zowel een feature importance-analyse als een SHAP-analyse uitgevoerd. 
+Deze worden vervolgens vergeleken met de inschattingen van de experten uit de enquête.
+
+\subsection{Feature importance en SHAP-analyse}
+
+Figuur~\ref{fig:fi_doelpunten} toont de tien belangrijkste features van het model voor het voorspellen van het totaal aantal doelpunten.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{fi_doelpunten.png}
+    \caption{Feature importance -- Totaal aantal doelpunten}
+    \label{fig:fi_doelpunten}
+\end{figure}
+
+Uit deze analyse blijkt dat \textbf{temperatuur\_gem\_c} (de gemiddelde temperatuur in graden Celsius) de meest bepalende feature is, 
+met een importantiescore van ongeveer \textbf{0{,}25}. 
+Dit is een opvallende bevinding, aangezien experten en de data-analyse temperatuur slechts als een marginale factor beschouwden. 
+Op de tweede plaats volgt \textbf{abs\_rank\_diff} (het absolute rangverschil tussen beide ploegen) met een score rond \textbf{0{,}19}, 
+gevolgd door \textbf{form\_diff} (het vormverschil) met circa \textbf{0{,}16}. 
+Daarna volgen \textbf{stadion\_capaciteit} en \textbf{speelstijl\_combo} als respectievelijk vierde en vijfde belangrijkste factor. 
+Neerslag, H2H-resultaat en tijdstip spelen een beduidend kleinere rol, terwijl degradatie- en titelwedstrijden vrijwel geen bijdrage leveren.
+
+\vspace{5pt}
+
+Om de richting en de grootte van de invloed van elke feature beter te begrijpen, werd ook een SHAP-analyse uitgevoerd (~\ref{fig:shap_doelpunten}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{shap_doelpunten.png}
+    \caption{SHAP-waarden -- Totaal aantal doelpunten}
+    \label{fig:shap_doelpunten}
+\end{figure}
+
+De SHAP-analyse bevestigt en verfijnt het beeld uit de feature importance. 
+\textbf{abs\_rank\_diff} staat hier bovenaan: hoge waarden (roze punten) zijn geassocieerd met een sterk positief SHAP-effect, 
+wat betekent dat een groot rangverschil leidt tot een hoger voorspeld aantal doelpunten. 
+Dit is intuïtief verklaarbaar: wanneer twee ploegen sterk van niveau verschillen, overheerst de sterkere ploeg doorgaans de wedstrijd, 
+wat resulteert in meer doelpunten.
+
+\textbf{thuis\_stadion\_capaciteit} toont eveneens een duidelijk positief effect bij hogere waarden, 
+wat suggereert dat wedstrijden in grotere stadions gemiddeld meer doelpunten opleveren, 
+mogelijk door de hogere kwaliteit van de betrokken ploegen.
+
+Bij \textbf{temperatuur\_gem\_c} is het patroon omgekeerd: lage temperaturen (blauwe punten) zijn gelinkt aan hogere SHAP-waarden, 
+wat erop wijst dat het model bij koud weer een hoger aantal doelpunten voorspelt. 
+Dit is een enigszins contra-intuïtieve bevinding die mogelijk verband houdt met seizoensgebonden effecten in de data, 
+zoals een actiever speelschema of specifieke competitiefasen in de wintermaanden.
+
+De speelstijlcombinatie \textbf{Verdedigend vs Verdedigend} heeft een negatief SHAP-effect, 
+wat strookt met de eerdere data-analyse waaruit bleek dat defensieve wedstrijden gemiddeld het minste aantal doelpunten opleveren.
+\textbf{form\_diff} toont een relatief symmetrisch patroon, waarbij een positief vormverschil (thuisteam beter in vorm) licht positief bijdraagt aan het totaal aantal doelpunten.
+
+\vspace{5pt}
+
+\subsection{Vergelijking met expertinschattingen}
+
+Wanneer de modelresultaten worden vergeleken met de inschattingen van de experten, valt een interessant verschil op. 
+Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren die experten als meest bepalend beschouwen voor het aantal doelpunten.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_doelpunten_borda.png}
+    \caption{Enquête: Borda-scores voor belangrijkste factoren bij het voorspellen van aantal doelpunten}
+    \label{fig:enquete_doelpunten_borda}
+\end{figure}
+
+Experten plaatsen \textbf{onderlinge resultaten (H2H)} en \textbf{rangverschil} bovenaan als meest bepalende factoren, 
+gevolgd door \textbf{stadioncapaciteit}. Neerslag, tijdstip en temperatuur worden als minder relevant beschouwd.
+
+Figuur~\ref{fig:enquete_doelpunten_plaats1} toont welke factor het vaakst op de eerste plaats werd gerangschikt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_doelpunten_plaats1.png}
+    \caption{Enquête: Meest frequent als belangrijkste factor aangeduid (aantal doelpunten)}
+    \label{fig:enquete_doelpunten_plaats1}
+\end{figure}
+
+Hieruit blijkt dat \textbf{66{,}7\%} van de respondenten \textbf{rangverschil} als de allerbelangrijkste factor beschouwt, 
+terwijl \textbf{onderlinge resultaten (H2H)} en \textbf{stadioncapaciteit} elk door \textbf{16{,}7\%} als eerste worden geplaatst.
+
+\vspace{5pt}
+
+Wanneer dit wordt vergeleken met het model, zijn er zowel overeenkomsten als verschillen. 
+Het rangverschil (\textbf{abs\_rank\_diff}) en de stadioncapaciteit worden door zowel experten als het model als belangrijke factoren erkend. 
+Op dit vlak is er dus een duidelijke afstemming tussen menselijke intuïtie en datagerichte modellering.
+
+Een opvallend verschil is echter de rol van \textbf{H2H-resultaten}: experten hechten hier relatief veel belang aan, 
+terwijl het model deze feature slechts een beperkt belang toekent. 
+Dit sluit aan bij de eerdere bevinding in de resultaatanalyse, waar H2H eveneens als zwakke voorspeller naar voren kwam.
+
+Omgekeerd wordt \textbf{temperatuur} door het model als meest bepalende feature aangeduid, 
+terwijl experten dit als een van de minst relevante factoren beschouwen. 
+Dit kan verklaard worden doordat temperatuur in de data samenvalt met bepaalde periodes in het seizoen, zoals de wintermaanden, waarin wedstrijden mogelijk anders verlopen. 
+Het model pikt dit patroon op, maar temperatuur op zich is waarschijnlijk niet de werkelijke oorzaak van meer of minder doelpunten.
+
+\vspace{5pt}
+
+Op basis van deze vergelijking kan worden geconcludeerd dat model en experten gedeeltelijk op dezelfde lijn zitten, 
+met name wat betreft het belang van rangverschil en stadioncapaciteit. 
+Tegelijk zijn er duidelijke discrepanties, voornamelijk rond de rol van temperatuur en H2H-resultaten, 
+die aantonen dat machine-learningmodellen niet altijd dezelfde logica volgen als menselijke experts. 
+Dit onderstreept het belang van een gecombineerde aanpak waarbij zowel modelresultaten als domeinkennis worden meegenomen bij het interpreteren van voorspellingen.
 
 
 % =================================================
