@@ -374,6 +374,57 @@ Het thuisvoordeel speelt een duidelijke rol zoals eerder te zien was, de recente
 
 Op basis hiervan kan dus geconcludeerd worden dat op het vlak van wedstrijdresultaat, de experts en de machine-learning vrijwel op dezelfde golflengte zitten.
 
+\subsection{Concrete voorspellingen: vergelijking tussen model, experts en realiteit}
+
+Om de praktische toepasbaarheid van het model te evalueren, werden twee wedstrijden voorafgaand aan 22 maart 2026 voorspeld: \textbf{Anderlecht -- Cercle Brugge} en \textbf{Sint-Truiden -- Union Saint-Gilloise}. 
+Voor beide wedstrijden werden voorspellingen gemaakt door het geselecteerde machine-learningmodel (Logistic Regression) én door de experts uit de enquête. 
+Nadien werden deze voorspellingen vergeleken met de werkelijke wedstrijdresultaten.
+
+\subsubsection*{Anderlecht -- Cercle Brugge}
+
+Het model voorspelde voor deze wedstrijd een duidelijke \textbf{thuisoverwinning} voor Anderlecht, met een geschatte kans van \textbf{66\%}. 
+De kans op een gelijkspel bedroeg \textbf{23\%}, terwijl de kans op een uitoverwinning slechts \textbf{11\%} was. 
+Daarnaast voorspelde het model een gemiddeld aantal doelpunten van \textbf{2.24} voor Anderlecht en \textbf{0.79} voor Cercle Brugge, wat neerkomt op een verwachte totaalscore van ongeveer \textbf{3.03 doelpunten}.
+
+De experts zaten opvallend dicht bij deze inschatting. Uit de verdelingsplots blijkt dat:
+\begin{itemize}
+    \item de meeste experts de thuiswinstkans inschatten tussen \textbf{55\% en 75\%};
+    \item de gelijkspelinschatting geconcentreerd lag rond \textbf{20--30\%};
+    \item de uitwinstkans door vrijwel alle respondenten laag werd ingeschat (meestal $< 20\%$).
+\end{itemize}
+
+Ook de doelpuntenverwachtingen van de experts lagen in dezelfde lijn: de histogrammen tonen een gemiddelde van \textbf{2.5 thuisdoelpunten} en \textbf{0.8 uitdoelpunten}, vrijwel identiek aan de modelvoorspelling.
+
+De werkelijke uitslag van de wedstrijd bleek echter verrassend: \textbf{RSC Anderlecht verloor met 2--3 van Cercle Brugge}. 
+Ondanks de sterke voorkeur van zowel het model als de experts voor een thuisoverwinning, slaagde Cercle Brugge erin om onverwacht de drie punten mee naar huis te nemen.
+
+\subsubsection*{Sint-Truiden -- Union Saint-Gilloise}
+
+Voor deze wedstrijd voorspelde het model een veel evenwichtiger verloop. De kansverdeling was:
+\begin{itemize}
+    \item \textbf{37\%} kans op thuiswinst voor STVV,
+    \item \textbf{29\%} kans op een gelijkspel,
+    \item \textbf{33\%} kans op een uitoverwinning voor Union.
+\end{itemize}
+
+De verwachte doelpunten lagen op \textbf{1.45} voor STVV en \textbf{1.26} voor Union, wat resulteert in een voorspeld totaal van \textbf{2.71 doelpunten}.
+
+Ook hier sloten de expertinschattingen nauw aan bij de modelresultaten:
+\begin{itemize}
+    \item de meeste experts schatten de thuiswinstkans rond \textbf{30--40\%};
+    \item de gelijkspelinschatting lag eveneens rond \textbf{20--35\%};
+    \item de uitwinstkans werd door de meerderheid ingeschat tussen \textbf{30--40\%}, met enkele uitschieters.
+\end{itemize}
+
+De doelpuntenverwachtingen van de experts lagen gemiddeld op \textbf{1.5 thuisdoelpunten} en \textbf{1.7 uitdoelpunten}, wat opnieuw zeer dicht bij de modelvoorspelling ligt.
+
+De effectieve uitslag werd uiteindelijk \textbf{1--3 voor Union Saint-Gilloise}. 
+Hoewel het model hier een meer gebalanceerde wedstrijd voorspelde, bevestigde het uiteindelijke resultaat toch de mogelijkheid van een uitoverwinning.
+
+Deze case-study toont aan dat het machine-learningmodel niet alleen in lijn ligt met de algemene inzichten van de experts, maar ook vergelijkbare voorspellingen maakt wanneer het op concrete wedstrijden aankomt. 
+Tegelijk illustreren de uiteindelijke wedstrijdresultaten dat voetbal inherent onvoorspelbaar blijft. Zelfs wanneer zowel experts als modellen sterk in dezelfde richting denken, kunnen onverwachte factoren zoals efficiëntie in afwerking, individuele fouten, rode kaarten of momentum tijdens de wedstrijd leiden tot een totaal andere uitkomst. 
+Net daardoor vormt voetbal een bijzonder uitdagend domein voor predictieve modellen: waarschijnlijkheden kunnen goed worden ingeschat, maar absolute zekerheid bestaat nooit.
+
 % =================================================
 \section{Aantal doelpunten: wanneer wordt er gescoord?}
 % =================================================
