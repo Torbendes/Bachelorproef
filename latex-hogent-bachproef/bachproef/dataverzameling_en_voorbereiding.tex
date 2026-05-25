@@ -33,10 +33,10 @@ Ook deze gegevens waren van belang omdat ze mogelijk een invloed konden hebben o
 
 \vspace{5pt}
 
-Aanvullend werden de coördinaten van de verschillende stadions opgezocht. Deze waren enerzijds vereist als parameters voor het ophalen van de weerdata,
-maar konden anderzijds ook gebruikt worden om de afstand tussen de thuisploeg en de uitploeg te berekenen.
-Naast de ligging van het stadion werd ook de capaciteit ervan toegevoegd als feature.
-Zo kon ook onderzocht worden of er een correlatie bestond tussen het aantal toeschouwers en de wedstrijdstatistieken.
+Aanvullend werden de coördinaten van de verschillende stadions opgezocht. Deze waren vereist als parameters voor het ophalen van de weerdata.
+Naast de ligging van het stadion werd ook de stadioncapaciteit opgenomen als feature. 
+Hoewel deze variabele geen exacte maat vormt voor het effectieve aantal aanwezige toeschouwers, kan ze wel dienen als een benadering van de schaal van het thuispubliek en de infrastructuur van de club. 
+Zo kon onderzocht worden of stadiongrootte samenhangt met bepaalde wedstrijdstatistieken.
 
 \subsection{Dataopslag}
 
@@ -53,8 +53,10 @@ Figuur \ref{fig:databank-schema} toont de structuur van de databank met de versc
 
 \vspace{5pt}
 
-Hierin werd alle data van de wedstrijdstatistieken in de tabel \texttt{WedstrijdStatistiek} opgeslagen.
-Deze tabel verwees naar de tabel \texttt{Wedstrijd}, waarin de details van elke wedstrijd werden bijgehouden, zoals datum, tijd en teams.
-Daarnaast was er nog een tabel \texttt{Team}, die de locatie en capaciteit van elk stadion bevatte.
-Overigens waren er nog twee tabellen voor de weerdata. De ene tabel, \texttt{WedstrijdWeer}, sloeg de weerdata op op het moment van de wedstrijd,
-terwijl de andere, \texttt{WedstrijdWeerVooraf}, weerdata bevatte van de voorbije 48 uur voor de wedstrijd.
+Hierin werd alle data van de wedstrijdstatistieken in de tabel \textit{WedstrijdStatistiek} opgeslagen.
+Deze tabel verwees naar de tabel \textit{Wedstrijd}, waarin de details van elke wedstrijd werden bijgehouden, zoals datum, tijd en teams.
+Daarnaast was er nog een tabel \textit{Team}, die de locatie en capaciteit van elk stadion bevatte.
+Overigens waren er nog twee tabellen voor de weerdata. De tabel \textit{WedstrijdWeer} bevatte de weersomstandigheden op het moment van de aftrap. 
+Omdat de API weergegevens per uur aanleverde, werd het uur van de wedstrijd als referentiepunt genomen. 
+Daarnaast werden ook gemiddelden berekend binnen een tijdsvenster van één uur rond de aftrap om de weersomstandigheden tijdens de wedstrijd beter te benaderen.
+De tabel \textit{WedstrijdWeerVooraf} bevatte weergegevens van de 48 uur voorafgaand aan de wedstrijd. Het gemiddelde voor de temperatuur, de som van de hoeveelheid neerslag en de maximale windsnelheid.

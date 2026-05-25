@@ -6,17 +6,17 @@
 \label{ch:inleiding}
 
 Voetbal is een van de bekendste sporten ter wereld. Jaarlijks worden er miljoenen wedstrijden gespeeld, zowel op professioneel als amateurniveau.
-Op hoger niveau wordt er steeds meer gebruikgemaakt van data-analyses voor optimale voorbereidingen en prestaties.
-Ook binnen het Belgische voetbal, de \textit{Jupiler Pro League}, is de interesse in dergelijke technologieën aan het opkomen.
+Op hoger niveau wordt er steeds meer gebruikgemaakt van computergestuurde analyses voor optimale voorbereidingen en prestaties.
+Ook binnen de Belgische voetbalcompetitie, de \textit{Jupiler Pro League}, is de interesse in dergelijke technologieën aan het opkomen.
 Bettingbedrijven, clubs, en analisten maken steeds meer gebruik van statistieken om prestaties te verklaren en om voorspellingen te doen.
 
 \vspace{5pt}
 
-Tegelijkertijd blijft menselijke expertise een centrale rol spelen.
-Trainers, analisten en voetbalexperts kijken bij hun voorspellingen niet alleen naar cijfers, 
-maar ook naar ervaring, tactisch inzicht en de context, zoals vorm, motivatie en wedstrijdomstandigheden.
-De huidige trend rond AI en machine-learningmodellen roept dan ook een relevante vraag op:
-In welke mate komen voorspellingen en het inschatten van het belang van bepaalde factoren overeen tussen menselijke experts en data-gedreven modellen?
+Tegelijkertijd blijft menselijke expertise een centrale rol spelen. 
+Trainers, analisten en voetbalexperts baseren hun voorspellingen niet alleen op statistische gegevens, maar ook op ervaring, tactisch inzicht en contextuele factoren 
+zoals vorm, motivatie en wedstrijdomstandigheden. Ook machine-learningmodellen maken gebruik van dergelijke factoren om voorspellingen te genereren. 
+De huidige opkomst van AI en data-gedreven analyses roept daarom een relevante vraag op: 
+in welke mate verschillen modellen en menselijke experts in hun inschatting van het belang van deze factoren en in de verklaringen die zij aan voorspellingen geven?
 
 \vspace{5pt}
 
@@ -27,24 +27,28 @@ en vergelijkt deze met de inschattingen van voetbalexperts.
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Weliswaar kunnen bestaande moddellen behoorlijk accuraat voetbalwedstrijden voorspellen, 
-echter is het vaak onduidelijk welke variabelen nu precies deze voorspellingen sturen.
+Hoewel bestaande modellen behoorlijk accuraat kunnen zijn in het voorspellen van voetbalwedstrijden, 
+met gerapporteerde accuraatheid van 63.18\% in de Engelse competitie \autocite{beal2021football}, 
+blijft het vaak onduidelijk welke variabelen deze voorspellingen precies sturen. 
+Veel modellen functioneren immers als een zogenaamde 'black box', 
+waardoor gebruikers weinig inzicht krijgen in de bijdrage en het relatieve belang van individuele factoren \autocite{guidotti2018survey}.
 Omdat deze modellen deze informatie niet bevatten, hebben ze een beperkte bruikbaarheid voor gebruikers die behalve de uitkomst ook de onderliggende verklaringen willen weten.
 Verder is er in de literatuur weinig aandacht voor de vergelijking van de verklaringen die uit een model gehaald worden met de gedachtegang van voetbalexperts.
 
 \vspace{5pt}
 
-De uitkomsten van deze studie zijn dus interessant voor uiteenlopende stakeholders in het voetbal.
+De uitkomsten van deze studie zijn interessant voor uiteenlopende stakeholders in het voetbal.
 Met deze informatie in handen kunnen clubs en analisten identificeren welke factoren echt invloed hebben op de statistieken tijdens een wedstrijd.
-Bovendien is deze studie van nut bij studies rond machine learning en sportanalytics
+Bovendien is dit onderzoek relevant voor studies rond machine learning en sportanalytics
 waarbij naast de zuivere voorspelfunctie, ook het kunnen verklaren van de voorspelling van belang is.
 Onder "\textit{interpreteerbaarheid}" verstaan we dat we niet enkel de voorspelling willen
 maar ook weten welke factoren daarbij een rol spelen en hoe zwaar zij mee tellen.
 
 \vspace{5pt}
 
-Ook wordt er te weinig focus gelegd op zaken zoals het totaal aantal doelpunten, schoten, kaarten of andere wedstrijdstatistieken die ook relevant zijn voor het begrijpen van een wedstrijd.
-Deze factoren worden op hun beurt beïnvloed door uiteenlopende variabelen.
+Daarnaast ligt de focus in veel bestaande studies voornamelijk op wedstrijdresultaten, terwijl andere wedstrijdstatistieken zoals 
+het aantal doelpunten, schoten en kaarten minder uitgebreid worden onderzocht, 
+hoewel deze eveneens waardevolle informatie kunnen bieden voor het begrijpen van het wedstrijdverloop.
 
 \vspace{5pt}
 
@@ -91,7 +95,7 @@ Deze onderzoeksvraag wordt opgesplitst in volgende deelvragen:
 \label{sec:onderzoeksdoelstelling}
 
 Het doel van deze bachelorproef is om te komen tot interpreteerbare voorspellingsmodellen van wedstrijduitkomsten in de Jupiler Pro League. 
-Het publiek van dergelijke modellen krijgt daarbij ook een indicatie van welke factoren het meest bepalend zijn voor de gemaakte voorspellingen. 
+De gebruiker van dergelijke modellen krijgt daarbij ook een indicatie van welke factoren het meest bepalend zijn voor de gemaakte voorspellingen. 
 
 Vervolgens wordt een vergelijking gemaakt tussen de factoren die deze modellen als bepalend beschouwen en de percepties van menselijke experts.
 
