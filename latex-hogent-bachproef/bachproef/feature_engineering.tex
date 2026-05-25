@@ -10,7 +10,8 @@ Bovendien zullen deze variabelen ook later van belang zijn bij de data-analyse e
 
 \subsection{Dynamische rangschikking}
 
-Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen.
+Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen, 
+wat overeenkomt met de stand in het klassement op het moment van die wedstrijd.
 Deze volgde de standaard berekening: teams kregen 3 punten voor een overwinning, 1 punt voor een gelijkspel en 0 punten voor een nederlaag. 
 Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten, waar op gebasseerd wordt indien ploegen hetzelfde aantal punten hadden.
 
@@ -28,15 +29,6 @@ Deze aanpak simuleert de evolutie van de competitietabel doorheen het seizoen.
 
 De vorm van een team werd gedefinieerd als het gemiddelde aantal behaalde punten over de laatste vijf gespeelde wedstrijden vóór de betreffende wedstrijd. 
 Elke wedstrijdresultaat werd omgezet naar een numerieke score (3 voor winst, 1 voor gelijkspel, 0 voor verlies). 
-
-Formeel:
-
-\[
-\text{Form}_{t} = \frac{1}{5} \sum_{i=t-5}^{t-1} P_i
-\]
-
-waarbij $P_i$ het aantal behaalde punten in wedstrijd $i$ is.
-
 Deze variabele geeft een indicatie van de recente prestaties van een team en vangt tijdelijke veranderingen in vorm op.
 
 \vspace{5pt}
@@ -51,7 +43,7 @@ Hierbij werd gekeken naar de laatste drie onderlinge wedstrijden vóór het huid
     \item aantal overwinningen van het uitteam
 \end{itemize}
 
-Op basis hiervan werd een binaire classificatie afgeleid die aangeeft welk team historisch voordeel heeft in de onderlinge duels.
+Op basis hiervan werd een classificatie afgeleid die aangeeft welk team historisch voordeel heeft in de onderlinge duels.
 
 \vspace{5pt}
 
@@ -95,6 +87,8 @@ Standard & RSC Anderlecht \\
 
 \subsection{Speelstijl van teams}
 
+Aangezien er geen eenduidige standaardmaat bestaat voor speelstijl binnen publieke wedstrijddatasets, 
+werd een experimentele samengestelde feature ontwikkeld die offensieve en defensieve indicatoren combineert.
 Voor ieder team werd een speelstijlscore berekend aan de hand van de meest recente vijf duels, met oog voor het aantal doelpunten en schoten.
 
 De stijlscore werd gedefinieerd als:
