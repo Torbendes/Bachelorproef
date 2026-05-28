@@ -8,8 +8,8 @@ In dit hoofdstuk worden de inzichten uit drie perspectieven samengebracht:
 
 Door deze drie benaderingen naast elkaar te plaatsen, kan worden onderzocht in welke mate data, modellen en menselijke inschattingen overeenkomen of van elkaar verschillen.
 
-De analyse vertrekt vanuit de meest granulaire eenheid van het spel en werkt stapsgewijs toe naar het eindresultaat.
-Eerst wordt onderzocht welke factoren het aantal schoten beïnvloeden, vervolgens in welke mate die schoten tot doelpunten leiden, en ten slotte hoe dit zich vertaalt naar het uiteindelijke wedstrijdresultaat.
+Eerst wordt onderzocht welke factoren het aantal schoten beïnvloeden, vervolgens in welke mate die schoten tot doelpunten leiden,
+daarna hoe dit zich vertaalt naar het uiteindelijke wedstrijdresultaat en ten slotte twee concrete voorspellingen op echte wedstrijden.
 Het aantal kaarten wordt afzonderlijk besproken als indicator van spelintensiteit.
 
 De analyse van de resultaten is opgedeeld in de volgende hoofdonderdelen:
@@ -18,60 +18,206 @@ De analyse van de resultaten is opgedeeld in de volgende hoofdonderdelen:
     \item Aantal schoten
     \item Aantal doelpunten
     \item Wedstrijdresultaat
+    \item Concrete voorspelling
     \item Aantal kaarten
 \end{itemize}
 
 \vspace{5pt}
 
-Voor de enquête werden mails verstuurd naar verscheidene voetbalclubs uit de hogere reeksen en naar verschillende sportredacties. 
-Uiteindelijk namen \textbf{6 experten} deel aan de bevraging. 
-Onder de respondenten bevond zich onder meer de sportredactie van DPG Media. 
+Voor de enquête werden mails verstuurd naar verscheidene voetbalclubs uit de hogere reeksen en naar verschillende sportredacties.
+Uiteindelijk namen \textbf{6 experten} deel aan de bevraging.
+Onder de respondenten bevond zich onder meer de sportredactie van DPG Media.
 De overige deelnemers zijn anoniem, maar hebben een professionele achtergrond binnen het Belgische voetbal.
 
-Omwille van dit beperkte aantal respondenten worden de enquêteresultaten in dit hoofdstuk uitgedrukt in absolute aantallen (bijvoorbeeld ``3 van de 6 respondenten'') in plaats van percentages. 
+Omwille van dit beperkte aantal respondenten worden de enquêteresultaten in dit hoofdstuk uitgedrukt in absolute aantallen (bijvoorbeeld ``3 van de 6 respondenten'') in plaats van percentages.
 Percentages zouden immers een mate van veralgemening suggereren die bij zes deelnemers niet verantwoord is.
 De enquêteresultaten dienen dan ook gelezen te worden als kwalitatieve indicaties vanuit de praktijk, eerder dan als statistisch representatieve uitspraken.
 
-Bij de weergave van de enquête-resultaten wordt ook een Borda-score gebruikt om de relatieve belangrijkheid van verschillende factoren te rangschikken.
-Dit is een rangschikkingsmethode waarbij elke optie punten krijgt op basis van haar positie in de voorkeuren van respondenten. 
-Hoe hoger een factor gemiddeld wordt gerangschikt, hoe meer punten deze verzamelt. 
-Op die manier wordt niet enkel gekeken naar de meest gekozen optie, maar naar de volledige verdeling van voorkeuren, 
-wat een genuanceerder beeld geeft van de relatieve belangrijkheid van de verschillende factoren.
+Bij de weergave van de enquêteresultaten wordt ook een Borda-score gebruikt om de relatieve belangrijkheid van verschillende factoren te rangschikken.
+Dit is een rangschikkingsmethode waarbij elke optie punten krijgt op basis van haar positie in de voorkeuren van respondenten.
+Hoe hoger een factor gemiddeld wordt gerangschikt, hoe meer punten deze verzamelt.
+Op die manier wordt niet enkel gekeken naar de meest gekozen optie, maar naar de volledige verdeling van voorkeuren,
+wat een genuanceerder beeld geeft van het relatieve belang van de verschillende factoren.
 
 
 % =================================================
 \section{Aantal schoten: druk en aanvalskracht}
 % =================================================
 
-\subsection{Data-analyse}
+In deze sectie wordt onderzocht welke factoren een invloed kunnen hebben op het totaal aantal schoten in voetbalwedstrijden.
+Het aantal schoten geldt als een maatstaf voor de aanvalskracht en de druk die een ploeg uitoefent gedurende een wedstrijd.
 
-\subsection{Modelanalyse}
+\subsection{Stadioncapaciteit: meer publiek, meer druk?}
 
-\subsection{Expertinschattingen}
+Een eerste vraag is of de grootte van het stadion samenhangt met het aantal schoten in een wedstrijd.
+Uit de historische data blijkt dat het gemiddeld aantal schoten per categorie van stadioncapaciteit weinig verschilt:
+wedstrijden in kleine stadions leveren gemiddeld 24,70 schoten op, in middelgrote stadions 24,66 en in grote stadions 25,06.
+De Pearson correlatie tussen de numerieke stadioncapaciteit en het totaal aantal schoten bedraagt slechts 0,031, met een bijhorende p-waarde van 0,1703.
+Er is dus geen statistisch significant verband tussen stadioncapaciteit en het aantal schoten per wedstrijd.
 
-\subsection{Vergelijking: data vs model vs expert}
+\vspace{5pt}
+
+Uit de enquête gaven de experten een gemengd beeld.
+Zoals te zien is op figuur~\ref{fig:enquete_schoten_capaciteit}, varieerden de scores sterk, met antwoorden gespreid over de volledige schaal.
+Dit wijst erop dat de meningen verdeeld zijn, en dat een deel van de experten de stadioncapaciteit als een relevantere factor beschouwt dan de data rechtvaardigen.
+Desondanks geeft toch de helft van de respondenten aan dat de stadioncapaciteit geen tot weinig invloed heeft op het aantal schoten, wat overeenkomt met de data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_schoten_capaciteit.png}
+    \caption{Verwachte invloed van stadioncapaciteit op het aantal schoten volgens experts (n = 6)}
+    \label{fig:enquete_schoten_capaciteit}
+\end{figure}
+
+\subsection{Warm weer: leidt hitte tot minder schoten?}
+
+Bij warm weer (temperaturen boven 23°C) liggen de gemiddelden nagenoeg gelijk: 24,70 schoten bij warm weer tegenover 24,80 schoten in het algemeen.
+De t-test resulteerde in een p-waarde van 0,8716, wat aangeeft dat warm weer geen significant effect heeft op het aantal schoten.
+
+\vspace{5pt}
+
+Wanneer de experts gevraagd werd of warm weer zou leiden tot meer, evenveel of minder schoten (~\ref{fig:enquete_schoten_warm}),
+gaf de ene helft aan dat het aantal schoten \textit{hetzelfde} zou blijven en de andere helft dat het \textit{minder} zou zijn.
+Opnieuw komt de helft van de experts hier overeen met wat de historische data aangeeft.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_schoten_warm.png}
+    \caption{Verwachte invloed van hitte op het aantal schoten volgens experts (n = 6)}
+    \label{fig:enquete_schoten_warm}
+\end{figure}
+
+\subsection{Derby's en rivaliteitswedstrijden: meer intensiteit, meer schoten?}
+
+Bij derby- of rivaliteitswedstrijden zou men kunnen verwachten dat de intensiteit van de wedstrijd leidt tot meer pogingen op doel.
+Dit dachten ook de helft van de voetbalexperts, zoals te zien is op figuur~\ref{fig:enquete_schoten_derby}.
+Alhoewel de meningen verdeeld zijn, is er toch een neiging naar \textit{meer}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_schoten_derby.png}
+    \caption{Verwachte invloed van derby's en rivaliteitswedstrijden op het aantal schoten volgens experts (n = 6)}
+    \label{fig:enquete_schoten_derby}
+\end{figure}
+
+\vspace{5pt}
+
+Uit de data blijkt echter het tegendeel: het gemiddeld aantal schoten bij derby's bedraagt 24,77, wat vrijwel gelijk is aan het algemeen gemiddelde van 24,80.
+De bijbehorende t-test gaf een p-waarde van 0,9869, wat duidelijk aangeeft dat er geen significant verschil is.
+
+\subsection{Titelwedstrijden: verhoogde inzet leidt tot meer schoten?}
+
+Wedstrijden waarbij de titel op het spel staat, leveren gemiddeld 26,00 schoten op tegenover het algemeen gemiddelde van 24,80.
+Toch is dit verschil statistisch niet significant, met een p-waarde van 0,6935.
+Het kleine aantal titelwedstrijden in de dataset beperkt vermoedelijk de statistische power van deze analyse.
+
+\vspace{5pt}
+
+Uit de enquête bleek dat de meningen van de experten sterk uiteenliepen over de invloed van titelwedstrijden op het aantal schoten (~\ref{fig:enquete_schoten_titel}).
+Een deel van de respondenten beschouwt dit als een relevante factor, terwijl anderen er weinig gewicht aan toekennen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_schoten_titel.png}
+    \caption{Verwachte invloed van titelwedstrijden op het aantal schoten volgens experts (n = 6)}
+    \label{fig:enquete_schoten_titel}
+\end{figure}
+
+\subsection{Samenhang tussen schoten en corners}
+
+Een verwante vraag is of meer schoten ook samengaan met meer corners.
+Uit de Pearson correlatiemeting blijkt een zwakke tot matige positieve samenhang van 0,29 tussen het totaal aantal schoten en het totaal aantal corners, met een p-waarde van $6{,}64 \times 10^{-40}$.
+Dit wil dus zeggen dat bij meer schoten er wel degelijk ook meer corners uit zullen komen.
+
+\vspace{5pt}
+
+Als we dit vergelijken met de inzichten van de experts, is te zien op figuur~\ref{fig:enquete_schoten_corners} dat de meningen zeer verdeeld zijn.
+Hoewel de helft ervan overtuigd is dat er geen tot weinig samenhang is, komt de andere helft toch overeen met wat blijkt uit de data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_schoten_corners.png}
+    \caption{Samenhang tussen schoten en corners volgens experts (n = 6)}
+    \label{fig:enquete_schoten_corners}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{data_schoten_corners.png}
+    \caption{Samenhang tussen schoten en corners volgens historische data}
+    \label{fig:data_schoten_corners}
+\end{figure}
+
+\subsection{Modelinterpretatie: welke factoren zijn bepalend voor het aantal schoten?}
+
+Na enkele variabelen individueel geanalyseerd te hebben,
+wordt nu globaal gekeken naar de verschillende factoren die een mogelijke invloed hebben op het aantal schoten.
+Voor het voorspellen van het totaal aantal schoten werd een XGBoost-regressiemodel getraind.
+Het model behaalde een MAE van 4,96 en een R² van $-$0,09, wat aangeeft dat het model slechts beperkt in staat is het aantal schoten te voorspellen op basis van de beschikbare features.
+
+\vspace{5pt}
+
+Figuur~\ref{fig:fi_schoten} toont de gegroepeerde feature importance van het model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{fi_schoten.png}
+    \caption{Feature importance -- Totaal aantal schoten}
+    \label{fig:fi_schoten}
+\end{figure}
+
+De speelstijlcombinatie domineert als verreweg de belangrijkste groep van features, met een gecombineerde importantiescore van ongeveer 0,42.
+Op de tweede plaats volgt het H2H-resultaat met 0,18, gevolgd door tijdstip (weekend/avond) met 0,12.
+Temperatuur, stadioncapaciteit en neerslag dragen elk in beperktere mate bij, terwijl degradatie- en titelwedstrijden vrijwel geen bijdrage leveren.
+
+\vspace{5pt}
+
+Ten slotte geeft figuur~\ref{fig:shap_schoten} inzicht in de SHAP-waarden in verband met het aantal schoten,
+en maakt duidelijk welke factoren eerder een positieve of negatieve invloed hebben.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{shap_schoten.png}
+    \caption{SHAP-waarden -- Totaal aantal schoten}
+    \label{fig:shap_schoten}
+\end{figure}
+
+Wat opvalt is dat kleinere stadions gepaard gaan met een hoger verwacht aantal schoten volgens het model.
+Ondanks dat stadioncapaciteit maar een lichte invloed heeft, is nu wel geweten dat het een omgekeerd evenredig verband betreft.
+
+Bovendien verwacht het model meer schoten bij een hogere temperatuur.
+Hoewel bij de enquête op figuur~\ref{fig:enquete_schoten_warm} naar een expliciete temperatuur van minstens 23 graden gevraagd werd,
+is dit toch in enige tegenstrijd met wat het model aangeeft.
+
+Daarnaast blijkt dat avondwedstrijden gepaard gaan met een lagere verwachting van het aantal schoten,
+wat vermoedelijk samenhangt met een vermoeidere fysieke toestand van de spelers.
+
+\vspace{5pt}
+
+Samengevat blijkt het aantal schoten een moeilijk te modelleren grootheid: geen enkele factor springt er duidelijk uit als bepalend, en ook het model slaagt er niet in een betrouwbare voorspelling te maken. Dit onderstreept dat het spelverloop in voetbal sterk situationeel bepaald wordt en zich moeilijk laat vatten in vooraf gekende contextfactoren.
 
 
 % =================================================
 \section{Aantal doelpunten: wanneer wordt er gescoord?}
 % =================================================
 
-In deze sectie wordt onderzocht welke factoren een invloed kunnen hebben op het aantal doelpunten in voetbalwedstrijden. 
-Aan de hand van statistische analyses wordt nagegaan welke omstandigheden samenhangen met een hoger of lager aantal doelpunten. 
+In deze sectie wordt onderzocht welke factoren een invloed kunnen hebben op het aantal doelpunten in voetbalwedstrijden.
+Aan de hand van statistische analyses wordt nagegaan welke omstandigheden samenhangen met een hoger of lager aantal doelpunten.
 Daarnaast wordt ook bekeken in welke mate een machine-learningmodel in staat is om het aantal doelpunten te voorspellen op basis van deze factoren.
+Uiteraard zal ook hier telkens vergeleken worden met de inschattingen van de voetbalexperts.
 
 \subsection{Regen en zware neerslag: spelen weersomstandigheden echt een rol?}
 
-Wanneer er neerslag valt, wordt het veld gladder en het zicht op de bal mogelijks moeilijker, maar heeft dit dan ook invloed op het aantal doelpunten?
-Met visie op de historische data, kunnen we hier niet van uitgaan. Met een gemiddeld aantal doelpunten van \textbf{2.83} zonder regen, heeft het gemiddelde aantal maar \textbf{0.11} doelpunten meer wat vrijwel verwaarloosbaar is.
+Wanneer er neerslag valt, wordt het veld gladder en het zicht op de bal mogelijk moeilijker, maar heeft dit dan ook invloed op het aantal doelpunten?
+Met visie op de historische data kan hier niet van uitgegaan worden. Met een gemiddeld aantal doelpunten van 2,83 zonder regen, heeft het gemiddelde aantal maar 0,11 doelpunten meer, wat vrijwel verwaarloosbaar is.
 Ook bleek uit de bijhorende t-test dat er geen significant effect van regen op het aantal doelpunten is.
 
-Idem bij zware neerslag, wat in dit geval meer dan 2mm neerslag bij aanvang van de wedstrijd is, waar het effect ook niet significant is met een gemiddeld aantal doelpunten van \textbf{3.04}.
+Hetzelfde geldt bij zware neerslag, wat in dit geval meer dan 2mm neerslag bij aanvang van de wedstrijd is, waar het effect ook niet significant is met een gemiddeld aantal doelpunten van 3,04.
 
 \vspace{5pt}
 
-Indien we dit vergelijken met de expertinschattingen, blijkt deze factor toch licht overschat tegenover wat schijnt uit de historische data. 
-Zoals te zien is op figuur~\ref{fig:enquete_doelpunten_regen} wordt er toch gedacht dat regen toch wel licht tot enige invloed zou hebben op het aantal doelpunten.
+Indien we dit vergelijken met de expertinschattingen, blijkt deze factor toch licht overschat tegenover wat blijkt uit de historische data.
+Zoals te zien is op figuur~\ref{fig:enquete_doelpunten_regen} wordt er toch gedacht dat regen enige invloed zou hebben op het aantal doelpunten.
 
 \begin{figure}[h!]
 \centering
@@ -82,41 +228,41 @@ Zoals te zien is op figuur~\ref{fig:enquete_doelpunten_regen} wordt er toch geda
 
 \vspace{5pt}
 
-Echter werd bij een soortgelijke vraag met andere formulering, ``\textit{Als het hard regent, zullen er ... doelpunten verwacht worden.}'', unaniem ``\textit{evenveel}'' geantwoord.
-Dit komt dan weer wel volledig overeen met de analyse.
-Hierdoor kan dus gesteld worden dat experts geen tot lichte invloed beschouwen.
+Echter werd bij een soortgelijke vraag met andere formulering, ``\textit{Als het hard regent, zullen er ... doelpunten verwacht worden.}'', unaniem \textit{evenveel} geantwoord.
+Dit komt volledig overeen met de analyse.
+Hierdoor kan gesteld worden dat experts geen tot lichte invloed beschouwen.
 
 Bij een latere sectie zal dit aspect nog verder vergeleken worden met de modelinterpretatie.
 
 \subsection{Aanvallend versus verdedigend: welke speelstijl levert meer doelpunten op?}
 
-Naast weersomstandigheden kan ook de tactische speelstijl van beide ploegen een invloed hebben op het aantal doelpunten in een wedstrijd. 
+Naast weersomstandigheden kan ook de tactische speelstijl van beide ploegen een invloed hebben op het aantal doelpunten in een wedstrijd.
 Daarom werd onderzocht welke combinaties van speelstijlen gemiddeld het meeste doelpunten opleveren.
 
-Uit de historische data blijkt dat wedstrijden waarin het thuisteam een aanvallende speelstijl hanteert tegenover een verdedigend uitteam gemiddeld het hoogste aantal doelpunten bevatten. 
-In deze situatie vallen gemiddeld \textbf{3.19 doelpunten per wedstrijd}, tegenover een algemeen gemiddelde van \textbf{2.86 doelpunten}. 
+Uit de historische data blijkt dat wedstrijden waarin het thuisteam een aanvallende speelstijl hanteert tegenover een verdedigend uitteam gemiddeld het hoogste aantal doelpunten bevatten.
+In deze situatie vallen gemiddeld 3,19 doelpunten per wedstrijd, tegenover een algemeen gemiddelde van 2,86 doelpunten.
 Dit betekent dat er in deze specifieke speelstijlcombinatie gemiddeld duidelijk meer gescoord wordt dan normaal.
 
 \vspace{5pt}
 
-Wanneer alle speelstijlcombinaties met elkaar worden vergeleken (~\ref{fig:data_doelpunten_speelstijl}), valt hetzelfde patroon op. 
-De combinatie \textit{Aanvallend vs Verdedigend} bevindt zich duidelijk bovenaan, terwijl wedstrijden tussen twee verdedigende ploegen gemiddeld het minst aantal doelpunten opleveren (\textbf{2.48 doelpunten}).
+Wanneer alle speelstijlcombinaties met elkaar worden vergeleken (~\ref{fig:data_doelpunten_speelstijl}), valt hetzelfde patroon op.
+De combinatie \textit{Aanvallend vs Verdedigend} bevindt zich duidelijk bovenaan, terwijl wedstrijden tussen twee verdedigende ploegen gemiddeld het minst aantal doelpunten opleveren (2,48 doelpunten).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{data_doelpunten_speelstijl.png}
-\caption{Gemiddeld aantal doelpunten per speelstijl-combinatie}
+\caption{Gemiddeld aantal doelpunten per speelstijlcombinatie}
 \label{fig:data_doelpunten_speelstijl}
 \end{figure}
 
-Om te onderzoeken of dit verschil statistisch significant is, werd een t-test uitgevoerd tussen wedstrijden met deze speelstijlcombinatie en alle andere wedstrijden. 
-De analyse resulteerde in een p-waarde van \textbf{0.01393}. 
-Aangezien deze kleiner is dan de significantiedrempel van $0.05$, kan worden geconcludeerd dat deze speelstijlcombinatie een statistisch significant effect heeft op het aantal doelpunten.
+Om te onderzoeken of dit verschil statistisch significant is, werd een t-test uitgevoerd tussen wedstrijden met deze speelstijlcombinatie en alle andere wedstrijden.
+De analyse resulteerde in een p-waarde van 0,01393.
+Aangezien deze kleiner is dan de significantiedrempel van 0,05, kan worden geconcludeerd dat deze speelstijlcombinatie een statistisch significant effect heeft op het aantal doelpunten.
 
 \vspace{5pt}
 
-Ook de experts uit de enquête gingen grotendeels akkoord met deze vaststelling (~\ref{fig:enquete_doelpunten_speelstijl}). 
-De meerderheid van de respondenten gaf aan dat er in deze situatie gemiddeld meer doelpunten verwacht worden. 
+Ook de experts uit de enquête gingen grotendeels akkoord met deze vaststelling (~\ref{fig:enquete_doelpunten_speelstijl}).
+De meerderheid van de respondenten gaf aan dat er in deze situatie gemiddeld meer doelpunten verwacht worden.
 Een kleiner deel verwachtte geen verschil, terwijl slechts 1 respondent dacht dat er minder doelpunten zouden vallen.
 
 \begin{figure}[h!]
@@ -126,13 +272,13 @@ Een kleiner deel verwachtte geen verschil, terwijl slechts 1 respondent dacht da
 \label{fig:enquete_doelpunten_speelstijl}
 \end{figure}
 
-Hieruit blijkt een duidelijke overeenkomst tussen historische data en expertkennis. 
+Hieruit blijkt een duidelijke overeenkomst tussen historische data en expertkennis.
 Zowel de statistische analyse als de menselijke inschattingen suggereren dat een aanvallende thuisploeg tegen een defensief uitteam vaker leidt tot open wedstrijden met meer scoringskansen en dus ook meer doelpunten.
 
 \subsection{Modelinterpretatie: welke factoren voorspelt het model als belangrijkste?}
 
-Om een dieper inzicht te krijgen in welke factoren het machine-learningmodel het zwaarst laat doorwegen bij het voorspellen van het totaal aantal doelpunten, 
-werd zowel een feature importance-analyse als een SHAP-analyse uitgevoerd. 
+Om een dieper inzicht te krijgen in welke factoren het machine-learningmodel het zwaarst laat doorwegen bij het voorspellen van het totaal aantal doelpunten,
+werd zowel een feature importance-analyse als een SHAP-analyse uitgevoerd.
 Deze worden vervolgens vergeleken met de inschattingen van de experten uit de enquête.
 
 \subsubsection{Feature importance en SHAP-analyse}
@@ -146,12 +292,12 @@ Figuur~\ref{fig:fi_doelpunten} toont de tien belangrijkste features van het mode
     \label{fig:fi_doelpunten}
 \end{figure}
 
-Uit deze analyse blijkt dat temperatuur\_gem\_c (de gemiddelde temperatuur in graden Celsius) de meest bepalende feature is, 
-met een importantiescore van ongeveer \textbf{0{,}25}. 
-Dit is een opvallende bevinding, aangezien experten en de data-analyse temperatuur slechts als een marginale factor beschouwden. 
-Op de tweede plaats volgt abs\_rank\_diff (het absolute rangverschil tussen beide ploegen) met een score rond \textbf{0{,}19}, 
-gevolgd door form\_diff (het vormverschil) met circa \textbf{0{,}16}. 
-Daarna volgen stadion\_capaciteit en speelstijl\_combo als respectievelijk vierde en vijfde belangrijkste factor. 
+Uit deze analyse blijkt dat temperatuur\_gem\_c (de gemiddelde temperatuur in graden Celsius) de meest bepalende feature is,
+met een importantiescore van ongeveer 0,25.
+Dit is een opvallende bevinding, aangezien experten en de data-analyse temperatuur slechts als een marginale factor beschouwden.
+Op de tweede plaats volgt abs\_rank\_diff (het absolute rangverschil tussen beide ploegen) met een score rond 0,19,
+gevolgd door form\_diff (het vormverschil) met circa 0,16.
+Daarna volgen stadion\_capaciteit en speelstijl\_combo als respectievelijk vierde en vijfde belangrijkste factor.
 Neerslag, H2H-resultaat en tijdstip spelen een beduidend kleinere rol, terwijl degradatie- en titelwedstrijden vrijwel geen bijdrage leveren.
 
 \vspace{5pt}
@@ -165,30 +311,28 @@ Om de richting en de grootte van de invloed van elke feature beter te begrijpen,
     \label{fig:shap_doelpunten}
 \end{figure}
 
-De SHAP-analyse bevestigt en verfijnt het beeld uit de feature importance. 
-abs\_rank\_diff staat hier bovenaan: hoge waarden (roze punten) zijn geassocieerd met een sterk positief SHAP-effect, 
-wat betekent dat een groot rangverschil leidt tot een hoger voorspeld aantal doelpunten. 
-Dit is intuïtief verklaarbaar: wanneer twee ploegen sterk van niveau verschillen, overheerst de sterkere ploeg doorgaans de wedstrijd, 
+De SHAP-analyse bevestigt en verfijnt het beeld uit de feature importance.
+abs\_rank\_diff staat hier bovenaan: hoge waarden zijn geassocieerd met een sterk positief SHAP-effect,
+wat betekent dat een groot rangverschil leidt tot een hoger voorspeld aantal doelpunten.
+Dit is intuïtief verklaarbaar: wanneer twee ploegen sterk van niveau verschillen, overheerst de sterkere ploeg doorgaans de wedstrijd,
 wat resulteert in meer doelpunten.
+Ook bij een groter vormverschil doet zich een gelijkaardig effect voor.
 
-thuis\_stadion\_capaciteit toont eveneens een duidelijk positief effect bij hogere waarden, 
-wat suggereert dat wedstrijden in grotere stadions gemiddeld meer doelpunten opleveren, 
-mogelijk door de hogere kwaliteit van de betrokken ploegen.
+Daarnaast worden thuis\_stadion\_capaciteit en temperatuur\_gem\_c ook door dit model verklaard zoals in eerdere figuur~\ref{fig:shap_schoten}.
+Hierbij is stadioncapaciteit recht evenredig met het aantal doelpunten en de temperatuur omgekeerd evenredig.
+Deze bevestiging is enigszins logisch, aangezien er een grotere kans is dat er een doelpunt valt bij meer schoten.
 
-Bij temperatuur\_gem\_c is het patroon omgekeerd: lage temperaturen (blauwe punten) zijn gelinkt aan hogere SHAP-waarden, 
-wat erop wijst dat het model bij koud weer een hoger aantal doelpunten voorspelt. 
-Dit is een enigszins contra-intuïtieve bevinding. Dit kan verklaard worden doordat temperatuur in de data samenvalt met bepaalde periodes in het seizoen, zoals de wintermaanden, waarin wedstrijden mogelijk anders verlopen. 
-Het model pikt dit patroon op, maar temperatuur op zich is waarschijnlijk niet de werkelijke oorzaak van meer of minder doelpunten.
+Ondanks dat eerder, via de data, werd geduid op een verwaarloosbare invloed van neerslag, blijkt hier toch enig gelijk voor de respondenten te bestaan.
+Neerslag heeft namelijk een lichte positieve invloed op het aantal doelpunten, althans voor het model.
 
-De speelstijlcombinatie Verdedigend vs Verdedigend heeft een negatief SHAP-effect, 
-wat strookt met de eerdere data-analyse waaruit bleek dat defensieve wedstrijden gemiddeld het minste aantal doelpunten opleveren.
-form\_diff toont een relatief symmetrisch patroon, waarbij een positief vormverschil (thuisteam beter in vorm) licht positief bijdraagt aan het totaal aantal doelpunten.
+Bij een speelstijlcombinatie van verdedigend tegen verdedigend zal het model minder doelpunten verwachten, wat logisch is als beide ploegen eerder terughoudend zijn.
+De combinatie aanvallend tegen verdedigend daarentegen wijst op een lichte positieve invloed op het aantal doelpunten.
 
 \vspace{5pt}
 
 \subsubsection{Vergelijking met expertinschattingen}
 
-Wanneer de modelresultaten worden vergeleken met de inschattingen van de experten, valt een interessant verschil op. 
+Wanneer de modelresultaten worden vergeleken met de inschattingen van de experten, valt een interessant verschil op.
 Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren die experten als meest bepalend beschouwen voor het aantal doelpunten.
 
 \begin{figure}[H]
@@ -198,10 +342,10 @@ Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren 
     \label{fig:enquete_doelpunten_borda}
 \end{figure}
 
-Experten plaatsen onderlinge resultaten (H2H) en rangverschil bovenaan als meest bepalende factoren, 
+Experten plaatsen onderlinge resultaten (H2H) en rangverschil bovenaan als meest bepalende factoren,
 gevolgd door stadioncapaciteit. Neerslag, tijdstip en temperatuur worden als minder relevant beschouwd.
 
-Figuur~\ref{fig:enquete_doelpunten_plaats1} toont welke factor het vaakst op de eerste plaats werd gerangschikt.
+Nochtans toont figuur~\ref{fig:enquete_doelpunten_plaats1} dat deze Borda-score een enigszins vertekend beeld kan geven.
 
 \begin{figure}[H]
     \centering
@@ -210,30 +354,30 @@ Figuur~\ref{fig:enquete_doelpunten_plaats1} toont welke factor het vaakst op de 
     \label{fig:enquete_doelpunten_plaats1}
 \end{figure}
 
-Hieruit blijkt dat 4 van de 6 respondenten rangverschil als de allerbelangrijkste factor beschouwt, 
+Hieruit blijkt dat 4 van de 6 respondenten rangverschil als de allerbelangrijkste factor beschouwt,
 terwijl onderlinge resultaten (H2H) en stadioncapaciteit elk door 1 respondent als eerste worden geplaatst.
 
 \vspace{5pt}
 
-Wanneer dit wordt vergeleken met het model, zijn er zowel overeenkomsten als verschillen. 
-Het rangverschil (abs\_rank\_diff) en de stadioncapaciteit worden door zowel experten als het model als belangrijke factoren erkend. 
+Wanneer dit wordt vergeleken met het model, zijn er zowel overeenkomsten als verschillen.
+Het rangverschil (abs\_rank\_diff) en de stadioncapaciteit worden door zowel experten als het model als belangrijke factoren erkend.
 Op dit vlak is er dus een duidelijke afstemming tussen menselijke intuïtie en datagerichte modellering.
 
-Een opvallend verschil is echter de rol van H2H-resultaten: experten hechten hier relatief veel belang aan, 
-terwijl het model deze feature slechts een beperkt belang toekent. 
+Een opvallend verschil is echter de rol van H2H-resultaten: experten hechten hier relatief veel belang aan,
+terwijl het model deze feature slechts een beperkt belang toekent.
 Dit sluit aan bij de eerdere bevinding in de resultaatanalyse, waar H2H eveneens als zwakke voorspeller naar voren kwam.
 
-Omgekeerd wordt temperatuur door het model als meest bepalende feature aangeduid, 
-terwijl experten dit als een van de minst relevante factoren beschouwen. 
-Dit kan verklaard worden doordat temperatuur in de data samenvalt met bepaalde periodes in het seizoen, zoals de wintermaanden, waarin wedstrijden mogelijk anders verlopen. 
+Omgekeerd wordt temperatuur door het model als meest bepalende feature aangeduid,
+terwijl experten dit als een van de minst relevante factoren beschouwen.
+Dit kan verklaard worden doordat temperatuur in de data samenvalt met bepaalde periodes in het seizoen, zoals de wintermaanden, waarin wedstrijden mogelijk anders verlopen.
 Het model pikt dit patroon op, maar temperatuur op zich is waarschijnlijk niet de werkelijke oorzaak van meer of minder doelpunten.
 
 \vspace{5pt}
 
-Op basis van deze vergelijking kan worden geconcludeerd dat model en experten gedeeltelijk op dezelfde lijn zitten, 
-met name wat betreft het belang van rangverschil en stadioncapaciteit. 
-Tegelijk zijn er duidelijke discrepanties, voornamelijk rond de rol van temperatuur en H2H-resultaten, 
-die aantonen dat machine-learningmodellen niet altijd dezelfde logica volgen als menselijke experts. 
+Op basis van deze vergelijking kan worden geconcludeerd dat model en experten gedeeltelijk op dezelfde lijn zitten,
+met name wat betreft het belang van rangverschil en stadioncapaciteit.
+Tegelijk zijn er duidelijke discrepanties, voornamelijk rond de rol van temperatuur en H2H-resultaten,
+die aantonen dat machine-learningmodellen niet altijd dezelfde logica volgen als menselijke experts.
 Dit onderstreept het belang van een gecombineerde aanpak waarbij zowel modelresultaten als domeinkennis worden meegenomen bij het interpreteren van voorspellingen.
 
 
@@ -255,9 +399,9 @@ De nadruk ligt vooral op onderstaande variabelen:
 
 \subsection{Thuisvoordeel: een mythe of realiteit?}
 
-Vaak spreekt men van een thuisvoordeel, maar is dit ook empirisch aantoonbaar? 
-Op basis van de geanalyseerde historische dataset blijkt dat thuisteams significant vaker winnen dan uitteams. 
-Concreet werd 43{,}28\% van de wedstrijden gewonnen door de thuisploeg, tegenover 32{,}37\% door de uitploeg en 24{,}35\% eindigde in een gelijkspel (~\ref{fig:resultaat_data_thuisvoordeel}).
+Vaak spreekt men van een thuisvoordeel, maar is dit ook empirisch aantoonbaar?
+Op basis van de geanalyseerde historische dataset blijkt dat thuisteams significant vaker winnen dan uitteams.
+Concreet werd 43,28\% van de wedstrijden gewonnen door de thuisploeg, tegenover 32,37\% door de uitploeg en 24,35\% eindigde in een gelijkspel (~\ref{fig:resultaat_data_thuisvoordeel}).
 
 \begin{figure}[H]
     \centering
@@ -266,7 +410,7 @@ Concreet werd 43{,}28\% van de wedstrijden gewonnen door de thuisploeg, tegenove
     \label{fig:resultaat_data_thuisvoordeel}
 \end{figure}
 
-Hieruit kan dus geconcludeerd worden dat er sprake is van een statistisch significant thuisvoordeel binnen de onderzochte dataset.
+Hieruit kan geconcludeerd worden dat er sprake is van een statistisch significant thuisvoordeel binnen de onderzochte dataset.
 
 \vspace{5pt}
 
@@ -279,28 +423,28 @@ Grafiek~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag wa
     \label{fig:resultaat_enquete}
 \end{figure}
 
-Uit de resultaten blijkt dat 3 van de 6 respondenten score 3 kozen. 
-Dit suggereert dat de meerderheid het thuisvoordeel als een matig belangrijke factor beschouwt. 
+Uit de resultaten blijkt dat 3 van de 6 respondenten score 3 kozen.
+Dit suggereert dat de meerderheid het thuisvoordeel als een matig belangrijke factor beschouwt.
 Scores 1, 2 en 4 werden elk door 1 respondent aangeduid, wat wijst op een spreiding in perceptie van weinig tot vrij belangrijke invloed.
 
-Wanneer deze percepties worden vergeleken met de resultaten uit de historische data-analyse, is er een duidelijke overeenkomst in de algemene tendens. 
-De data tonen aan dat thuisvoordeel een significante invloed heeft op wedstrijdresultaten, maar de grootte van dit effect blijft relatief beperkt (ongeveer 43\% thuisoverwinningen tegenover 32\% uitoverwinningen). 
+Wanneer deze percepties worden vergeleken met de resultaten uit de historische data-analyse, is er een duidelijke overeenkomst in de algemene tendens.
+De data tonen aan dat thuisvoordeel een significante invloed heeft op wedstrijdresultaten, maar de grootte van dit effect blijft relatief beperkt (ongeveer 43\% thuisoverwinningen tegenover 32\% uitoverwinningen).
 Dit sluit aan bij de inschatting van experten, die het thuisvoordeel als een relevante factor lijken te beschouwen, maar niet als doorslaggevend --- al kan niet uitgesloten worden dat een deel van de respondenten bij twijfel voor de middelste optie koos.
 
 Hieruit kan worden afgeleid dat het thuisvoordeel zowel statistisch aantoonbaar is als erkend wordt in de praktijk, zij het als een factor met een gematigde invloed binnen een breder geheel van bepalende variabelen.
 
 \subsection{Recente vorm: hoe belangrijk is momentum?}
 
-Naast het thuisvoordeel kan ook de recente vorm van een team een belangrijke rol spelen bij het voorspellen van wedstrijdresultaten. 
-In deze analyse werd de vorm van zowel het thuis- als uitteam bepaald op basis van de prestaties in de laatste vijf wedstrijden (zoals eerder beschreven in hoofdstuk~\ref{sec:feature_engineering}). 
+Naast het thuisvoordeel kan ook de recente vorm van een team een belangrijke rol spelen bij het voorspellen van wedstrijdresultaten.
+In deze analyse werd de vorm van zowel het thuis- als uitteam bepaald op basis van de prestaties in de laatste vijf wedstrijden (zoals eerder beschreven in hoofdstuk~\ref{ch:feature-engineering}).
 Deze waarden werden ingedeeld in drie categorieën: \textit{slecht} (lager dan 1), \textit{normaal} (tussen 1 en 1.7) en \textit{goed} (hoger dan 1.7).
-Deze drempels zijn gebaseerd op het gemiddeld aantal behaalde punten over de laatste vijf wedstrijden. 
-Een score rond 1 komt bijvoorbeeld overeen met een beperkte reeks resultaten, zoals één overwinning en twee gelijke spelen, 
-of vijf gelijke spelen. Om een score hoger dan 1.7 te behalen, moet een ploeg duidelijk beter presteren, 
+Deze drempels zijn gebaseerd op het gemiddeld aantal behaalde punten over de laatste vijf wedstrijden.
+Een score rond 1 komt bijvoorbeeld overeen met een beperkte reeks resultaten, zoals één overwinning en twee gelijke spelen,
+of vijf gelijke spelen. Om een score hoger dan 1.7 te behalen, moet een ploeg duidelijk beter presteren,
 bijvoorbeeld door minstens drie wedstrijden te winnen of door twee overwinningen te combineren met drie gelijke spelen.
 
 Grafiek~\ref{fig:resultaat_vorm} geeft het percentage thuisoverwinningen weer voor elke combinatie van vormcategorieën.
-Bij een thuisvorm van X en een uitvorm van Y zal het percentage weergeven hoeveel procent van de wedstrijden in het verleden, met deze combinatie, de thuisploeg gewonnen heeft.
+Bij een thuisvorm van X en een uitvorm van Y geeft het percentage weer hoeveel procent van de wedstrijden in het verleden, met deze combinatie, de thuisploeg gewonnen heeft.
 
 \begin{figure}[H]
     \centering
@@ -309,16 +453,16 @@ Bij een thuisvorm van X en een uitvorm van Y zal het percentage weergeven hoevee
     \label{fig:resultaat_vorm}
 \end{figure}
 
-Uit de resultaten blijkt dat de recente vorm duidelijk samenhangt met het wedstrijdresultaat. 
-Wanneer het thuisteam in goede vorm is en het uitteam in slechte vorm, bedraagt het aandeel thuisoverwinningen 57\%. 
-Wanneer de situatie omgekeerd is, daalt dit tot 31\%. 
+Uit de resultaten blijkt dat de recente vorm duidelijk samenhangt met het wedstrijdresultaat.
+Wanneer het thuisteam in goede vorm is en het uitteam in slechte vorm, bedraagt het aandeel thuisoverwinningen 57\%.
+Wanneer de situatie omgekeerd is, daalt dit tot 31\%.
 
-Daarnaast tonen de resultaten aan dat het verschil in vorm tussen beide teams belangrijk is. 
-Bijvoorbeeld, wanneer beide teams in goede vorm zijn, bedraagt het percentage thuisoverwinningen 47\%, terwijl dit stijgt tot 53\% wanneer het thuisteam in goede vorm is en het uitteam in normale vorm verkeert.
+Daarnaast tonen de resultaten aan dat het verschil in vorm tussen beide teams belangrijk is.
+Wanneer beide teams in goede vorm zijn, bedraagt het percentage thuisoverwinningen 47\%, terwijl dit stijgt tot 53\% wanneer het thuisteam in goede vorm is en het uitteam in normale vorm verkeert.
 
-Om na te gaan of deze verschillen statistisch significant zijn, werd een chi-kwadraattoets uitgevoerd. 
-Dit resulteerde in een $\chi^2$-waarde van 66{,}92 met een p-waarde van $2{,}01 \times 10^{-11}$. 
-Aangezien deze p-waarde kleiner is dan 0{,}05, kan de nulhypothese worden verworpen. 
+Om na te gaan of deze verschillen statistisch significant zijn, werd een chi-kwadraattoets uitgevoerd.
+Dit resulteerde in een $\chi^2$-waarde van 66,92 met een p-waarde van $2{,}01 \times 10^{-11}$.
+Aangezien deze p-waarde kleiner is dan 0,05, kan de nulhypothese worden verworpen.
 Er is dus een statistisch significant verband tussen recente vorm en wedstrijdresultaat.
 
 \vspace{5pt}
@@ -332,33 +476,33 @@ Ook de perceptie van experten werd onderzocht (~\ref{fig:resultaat_enquete_vorm}
     \label{fig:resultaat_enquete_vorm}
 \end{figure}
 
-Uit de enquête blijkt dat 4 van de 6 respondenten score 3 geven, wat wijst op een matige invloed van recente vorm. 
-Een kleiner deel (elk 1 respondent) geeft aan dat recente vorm weinig tot beperkte invloed heeft. 
+Uit de enquête blijkt dat 4 van de 6 respondenten score 3 geven, wat wijst op een matige invloed van recente vorm.
+Een kleiner deel (elk 1 respondent) geeft aan dat recente vorm weinig tot beperkte invloed heeft.
 Hogere scores (4 en 5) worden niet gekozen.
 
-Op basis van zowel de historische data als de enquête-resultaten kan worden geconcludeerd dat recente vorm een meetbaar verband vertoont met het wedstrijdresultaat. 
+Op basis van zowel de historische data als de enquêteresultaten kan worden geconcludeerd dat recente vorm een meetbaar verband vertoont met het wedstrijdresultaat.
 Hoewel deze invloed statistisch significant is, wordt ze door experten eerder als matig ingeschat en dus niet als doorslaggevend beschouwd.
 
 \vspace{5pt}
 
-Naast de invloed van de recente vorm, werd de experts ook gevraagd naar de kans van een nederlaag als er al 3 nederlagen voorgingen.
+Naast de invloed van de recente vorm, werd de experts ook gevraagd naar de kans op een nederlaag als er al 3 nederlagen voorgingen.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_3opeenvolgendeverliezen.png}
+    \includegraphics[width=1.2\textwidth]{enquete_resultaat_3opeenvolgendeverliezen.png}
     \caption{Verwachte invloed van 3 opeenvolgende nederlagen op volgend wedstrijdresultaat volgens experts (n = 6)}
     \label{fig:resultaat_enquete_3opeenvolgendeverliezen}
 \end{figure}
 
-Zoals op grafiek~\ref{fig:resultaat_enquete_3opeenvolgendeverliezen} te zien is, zijn de inschattingen van de respondenten eerder uiteenlopend. 
-Hoewel sommige deelnemers een lage kans op een vierde nederlaag aangeven, liggen de meeste antwoorden in het middelhoge tot hogere percentagebereik. 
+Zoals op grafiek~\ref{fig:resultaat_enquete_3opeenvolgendeverliezen} te zien is, zijn de inschattingen van de respondenten eerder uiteenlopend.
+Hoewel sommige deelnemers een lage kans op een vierde nederlaag aangeven, liggen de meeste antwoorden in het middelhoge tot hogere percentagebereik.
 De verdeling is daarbij vooral geconcentreerd in het midden en hoger segment, wat wijst op een relatief brede spreiding, maar met een duidelijke tendens richting hogere inschattingen.
-De individuele punten bevestigen deze spreiding: er zijn zowel voorzichtige als zeer hoge inschattingen, 
+De individuele punten bevestigen deze spreiding: er zijn zowel voorzichtige als zeer hoge inschattingen,
 maar de algemene schatting suggereert dat veel respondenten verwachten dat een vierde nederlaag waarschijnlijk is.
 
 \vspace{5pt}
 
-Wanneer dit geanalyseerd wordt met historische data, wordt het al snel duidelijk dat de meerderheid een zeer accurate schatting gedaan heeft.
+Wanneer dit geanalyseerd wordt met historische data, wordt snel duidelijk dat de meerderheid een zeer accurate schatting heeft gemaakt.
 
 \begin{figure}[H]
     \centering
@@ -367,19 +511,19 @@ Wanneer dit geanalyseerd wordt met historische data, wordt het al snel duidelijk
     \label{fig:resultaat_data_3opeenvolgendeverliezen}
 \end{figure}
 
-In verdeling~\ref{fig:resultaat_data_3opeenvolgendeverliezen} is duidelijk te zien dat 
-teams na drie opeenvolgende nederlagen in het merendeel van de gevallen effectief opnieuw verliezen. 
-Uit de historische data blijkt dat ongeveer 76{,}5\% van de teams een vierde nederlaag lijden, terwijl slechts 23{,}5\% erin slaagt de negatieve reeks te doorbreken. 
-Deze verhouding toont een sterk scheve verdeling, waarbij een vierde verlies aanzienlijk waarschijnlijker is dan een ommekeer. 
-De grafiek illustreert dit contrast helder: de balk voor een vierde nederlaag is ruim drie keer zo hoog als die voor geen vierde nederlaag, 
+In verdeling~\ref{fig:resultaat_data_3opeenvolgendeverliezen} is duidelijk te zien dat
+teams na drie opeenvolgende nederlagen in het merendeel van de gevallen effectief opnieuw verliezen.
+Uit de historische data blijkt dat ongeveer 76,5\% van de teams een vierde nederlaag lijdt, terwijl slechts 23,5\% erin slaagt de negatieve reeks te doorbreken.
+Deze verhouding toont een sterk scheve verdeling, waarbij een vierde verlies aanzienlijk waarschijnlijker is dan een ommekeer.
+De grafiek illustreert dit contrast helder: de balk voor een vierde nederlaag is ruim drie keer zo hoog als die voor geen vierde nederlaag,
 wat suggereert dat verliesreeksen in de praktijk vaak worden voortgezet.
 
 \subsection{Onderlinge confrontaties (Head-to-Head): herhaalt de geschiedenis zich?}
 
 Binnen deze analyse wordt ook nagegaan in welke mate eerdere onderlinge confrontaties tussen twee ploegen een rol spelen bij het voorspellen van het wedstrijdresultaat.
-De vraag is in welke mate eerdere onderlinge resultaten (Head-to-Head) een voorspellende waarde hebben voor het toekomstige wedstrijdresultaat.
+De vraag is in welke mate eerdere onderlinge resultaten (H2H) een voorspellende waarde hebben voor het toekomstige wedstrijdresultaat.
 
-Niemand gaf een hogere score dan 2, wat betekent dat geen enkele deelnemer H2H-geschiedenis als matig tot sterk bepalend inschat. 
+Niemand gaf een hogere score dan 2, wat betekent dat geen enkele deelnemer H2H-geschiedenis als matig tot sterk bepalend inschat.
 4 van de 6 respondenten geven score 2, wat wijst op een beperkte invloed (~\ref{fig:resultaat_enquete_h2h}).
 
 \begin{figure}[H]
@@ -394,8 +538,7 @@ Hieruit kan worden afgeleid dat experten Head-to-Head-resultaten over het algeme
 \vspace{5pt}
 
 Om te onderzoeken of dit beeld overeenkomt met de historische data, werd nagegaan in welke mate de ploeg met het beste H2H-verleden effectief de wedstrijd wint.
-Dit wordt weergegeven in figuur~\ref{fig:resultaat_data_h2h}, die je als volgt moet interpreteren: de waarden H (hometeam), D (draw) en A (awayteam) links van de
-figuur staat voor welke ploeg vorige 3 confrontaties het meeste won. De waarden onderaan staat voor welke ploeg de eerstvolgende wedstrijd won.
+Dit wordt weergegeven in figuur~\ref{fig:resultaat_data_h2h}. De waarden H (thuisteam), D (gelijkspel) en A (uitteam) links van de figuur staan voor welke ploeg de vorige 3 confrontaties het meeste won. De waarden onderaan staan voor welke ploeg de eerstvolgende wedstrijd won.
 
 \begin{figure}[H]
     \centering
@@ -404,30 +547,30 @@ figuur staat voor welke ploeg vorige 3 confrontaties het meeste won. De waarden 
     \label{fig:resultaat_data_h2h}
 \end{figure}
 
-De historische analyse toont dat het H2H-resultaat slechts in een beperkt aantal gevallen overeenkomt met de effectieve wedstrijduitkomst. 
+De historische analyse toont dat het H2H-resultaat slechts in een beperkt aantal gevallen overeenkomt met de effectieve wedstrijduitkomst.
 De accuracy van de H2H-sterkste bedraagt 38,29\%, wat betekent dat in minder dan vier op tien wedstrijden de ploeg met het historische voordeel effectief wint.
 
-De verdeling van de resultaten laat zien dat wanneer de thuisploeg historisch sterker is (H), deze in 52,60\% van de gevallen wint, terwijl de uitploeg in 25,32\% van de gevallen wint en een gelijkspel in 22,08\% van de wedstrijden voorkomt. 
-Bij een historisch voordeel voor de uitploeg (A) ligt de verdeling meer gespreid, met 40,59\% uitoverwinningen, 31,92\% thuisoverwinningen en 27,48\% gelijke spelen. 
+De verdeling van de resultaten laat zien dat wanneer de thuisploeg historisch sterker is (H), deze in 52,60\% van de gevallen wint, terwijl de uitploeg in 25,32\% van de gevallen wint en een gelijkspel in 22,08\% van de wedstrijden voorkomt.
+Bij een historisch voordeel voor de uitploeg (A) ligt de verdeling meer gespreid, met 40,59\% uitoverwinningen, 31,92\% thuisoverwinningen en 27,48\% gelijke spelen.
 Bij een evenwichtige historische situatie (D) blijft de verdeling eveneens verdeeld, met 41,85\% thuiswinst.
 
-Het aantal wedstrijden per categorie bevestigt deze verdeling (A: 473 wedstrijden, D: 822 wedstrijden, H: 711 wedstrijden), 
+Het aantal wedstrijden per categorie bevestigt deze verdeling (A: 473 wedstrijden, D: 822 wedstrijden, H: 711 wedstrijden),
 waarbij de dataset redelijk verdeeld is over de verschillende H2H-situaties.
 
-Om te onderzoeken of deze verschillen statistisch significant zijn, werd een chi-kwadraattoets uitgevoerd. 
-Dit resulteerde in een $\chi^2$-waarde van 53,37 met een p-waarde van $7{,}13 \times 10^{-11}$. Aangezien deze p-waarde kleiner is dan 0,05, 
+Om te onderzoeken of deze verschillen statistisch significant zijn, werd een chi-kwadraattoets uitgevoerd.
+Dit resulteerde in een $\chi^2$-waarde van 53,37 met een p-waarde van $7{,}13 \times 10^{-11}$. Aangezien deze p-waarde kleiner is dan 0,05,
 is er sprake van een statistisch significante associatie tussen H2H-resultaat en de uiteindelijke wedstrijduitkomst.
 
-Wanneer dit wordt vergeleken met de enquête, is er een duidelijke overeenkomst. 
+Wanneer dit wordt vergeleken met de enquête, is er een duidelijke overeenkomst.
 Zowel experten als data geven aan dat H2H-geschiedenis een relatief kleine rol speelt in vergelijking met andere factoren zoals vorm of teamkwaliteit.
 
-Op basis hiervan kan dus van uitgegaan worden dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
-Wat uit bovenstaande heatmap wel weer duidelijk wordt, is dat het thuisvoordeel weer aanwezig is.
+Op basis hiervan kan worden geconcludeerd dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
+Wat uit bovenstaande heatmap wel duidelijk wordt, is dat het thuisvoordeel opnieuw aanwezig is.
 
 \subsection{Rangverschil: een indicator voor wedstrijduitkomst?}
 
-Gedurende het seizoen kunnen de ploegen punten verzamelen voor het klassement. 
-Hoe meer een ploeg wint, hoe meer punten in de rangschikking het zal behalen.
+Gedurende het seizoen kunnen ploegen punten verzamelen voor het klassement.
+Hoe meer een ploeg wint, hoe meer punten zij in de rangschikking behaalt.
 
 \vspace{5pt}
 
@@ -438,28 +581,28 @@ Hoe meer een ploeg wint, hoe meer punten in de rangschikking het zal behalen.
     \label{fig:data_resultaat_thuiswinst_rangverschil}
 \end{figure}
 
-Volgens grafiek~\ref{fig:data_resultaat_thuiswinst_rangverschil} is er een duidelijk verband tussen rangverschil en winst. 
-Het thuiswinstpercentage daalt systematisch naarmate het rangverschil (thuisploeg minus uitploeg) groter wordt in het nadeel van de thuisploeg. 
-Wanneer de thuisploeg aanzienlijk hoger gerangschikt staat dan de uitploeg (negatief rangverschil), ligt het thuiswinstpercentage hoog. 
-In de categorieën met een groot negatief rangverschil (bijvoorbeeld $<-10$ en $-10$ tot $-5$) bedraagt het thuiswinstpercentage respectievelijk 84{,}21\% en 65{,}71\%. 
-Naarmate het rangverschil kleiner wordt of positief wordt, wat betekent dat de uitploeg hoger gerangschikt staat, daalt het thuiswinstpercentage geleidelijk. 
-In de categorieën waar de uitploeg duidelijk sterker staat (bijvoorbeeld $5$ tot $10$ en $>10$), zakt het thuiswinstpercentage tot respectievelijk 19{,}87\% en 6{,}04\%.
+Volgens grafiek~\ref{fig:data_resultaat_thuiswinst_rangverschil} is er een duidelijk verband tussen rangverschil en winst.
+Het thuiswinstpercentage daalt systematisch naarmate het rangverschil (thuisploeg minus uitploeg) groter wordt in het nadeel van de thuisploeg.
+Wanneer de thuisploeg aanzienlijk hoger gerangschikt staat dan de uitploeg (negatief rangverschil), ligt het thuiswinstpercentage hoog.
+In de categorieën met een groot negatief rangverschil (bijvoorbeeld $<-10$ en $-10$ tot $-5$) bedraagt het thuiswinstpercentage respectievelijk 84,21\% en 65,71\%.
+Naarmate het rangverschil kleiner wordt of positief wordt, wat betekent dat de uitploeg hoger gerangschikt staat, daalt het thuiswinstpercentage geleidelijk.
+In de categorieën waar de uitploeg duidelijk sterker staat (bijvoorbeeld $5$ tot $10$ en $>10$), zakt het thuiswinstpercentage tot respectievelijk 19,87\% en 6,04\%.
 
-Deze trend bevestigt dat rangverschil een sterke indicator is voor de uiteindelijke wedstrijduitkomst: hoe groter het kwaliteitsverschil in het voordeel van de thuisploeg, hoe groter de kans op een thuisoverwinning. 
+Deze trend bevestigt dat rangverschil een sterke indicator is voor de uiteindelijke wedstrijduitkomst: hoe groter het kwaliteitsverschil in het voordeel van de thuisploeg, hoe groter de kans op een thuisoverwinning.
 Omgekeerd geldt dat wanneer de uitploeg hoger gerangschikt staat, het thuisvoordeel niet volstaat om het kwaliteitsverschil te compenseren.
 
 \vspace{5pt}
 
-Om dit effect statistisch te toetsen werd een chi-kwadraattoets uitgevoerd op het verband tussen rangverschil en het wedstrijdresultaat. 
-Deze analyse resulteerde in een $\chi^2$-waarde van 477{,}49 met een p-waarde van $5{,}52 \times 10^{-99}$. 
+Om dit effect statistisch te toetsen werd een chi-kwadraattoets uitgevoerd op het verband tussen rangverschil en het wedstrijdresultaat.
+Deze analyse resulteerde in een $\chi^2$-waarde van 477,49 met een p-waarde van $5{,}52 \times 10^{-99}$.
 Aangezien deze p-waarde ruim onder de significantiedrempel ($\alpha = 0{,}05$) ligt, kan worden geconcludeerd dat rangverschil een statistisch significante invloed heeft op het wedstrijdresultaat.
 
 \vspace{5pt}
 
-Uit grafiek~\ref{fig:resultaat_enquete_rangverschil} blijkt echter dat experts het rangverschil slechts in beperkte mate meenemen in hun voorspellingen. 
-Hoewel de historische data een duidelijk en consistent verband tonen tussen rangverschil en thuiswinstpercentage, geven de respondenten aan dat dit criterium voor hen slechts een beperkte rol speelt. 
-4 van de 6 respondenten beoordeelt de invloed van rangverschil met een score van 2 op 5, wat duidt op een lichte maar niet doorslaggevende impact. 
-1 respondent geeft aan dat rangverschil geen invloed heeft (score 1), terwijl 1 respondent een matige invloed (score 3) toekent. 
+Uit grafiek~\ref{fig:resultaat_enquete_rangverschil} blijkt echter dat experts het rangverschil slechts in beperkte mate meenemen in hun voorspellingen.
+Hoewel de historische data een duidelijk en consistent verband tonen tussen rangverschil en thuiswinstpercentage, geven de respondenten aan dat dit criterium voor hen slechts een beperkte rol speelt.
+4 van de 6 respondenten beoordeelt de invloed van rangverschil met een score van 2 op 5, wat duidt op een lichte maar niet doorslaggevende impact.
+1 respondent geeft aan dat rangverschil geen invloed heeft (score 1), terwijl 1 respondent een matige invloed (score 3) toekent.
 Hogere scores (4 en 5) komen niet voor in de resultaten.
 
 \begin{figure}[H]
@@ -469,18 +612,18 @@ Hogere scores (4 en 5) komen niet voor in de resultaten.
     \label{fig:resultaat_enquete_rangverschil}
 \end{figure}
 
-Deze resultaten suggereren dat experts het rangverschil wel erkennen als een relevante factor, maar het niet beschouwen als een dominante voorspeller. 
-Dit staat in contrast met de historische data, waar rangverschil een duidelijke en zeer significante indicator blijkt te zijn voor de uiteindelijke wedstrijduitkomst. 
+Deze resultaten suggereren dat experts het rangverschil wel erkennen als een relevante factor, maar het niet beschouwen als een dominante voorspeller.
+Dit staat in contrast met de historische data, waar rangverschil een duidelijke en zeer significante indicator blijkt te zijn voor de uiteindelijke wedstrijduitkomst.
 Het lijkt er dus op dat het belang van rangverschil door experts eerder wordt onderschat, mogelijk omdat andere factoren zwaarder worden gewogen in hun beoordeling.
 
 \vspace{5pt}
 
-Als extra case gaven de voetbalexperts ook nog hun schatting op de vraag: 
+Als extra case gaven de voetbalexperts ook nog hun schatting op de vraag:
 ``Als team A 10 plaatsen boven team B staat in het klassement: hoe groot is volgens u de kans op een overwinning van team A?''.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{enquete_resultaat_rangverschil10.png}
+    \includegraphics[width=1.2\textwidth]{enquete_resultaat_rangverschil10.png}
     \caption{Enquête: geschatte winstkans bij rangverschil van 10 (n = 6)}
     \label{fig:resultaat_enquete_rangverschil_10}
 \end{figure}
@@ -498,7 +641,7 @@ Met andere woorden: experts lijken vooral gevoelig voor grote rangverschillen, t
 
 \vspace{5pt}
 
-Om dit effect verder te illustreren, wordt in Figuur~\ref{fig:data_resultaat_rangverschil_10} ingezoomd op wedstrijden met een rangverschil van 10.
+Om dit effect verder te illustreren, wordt in figuur~\ref{fig:data_resultaat_rangverschil_10} ingezoomd op wedstrijden met een rangverschil van 10.
 
 \begin{figure}[H]
     \centering
@@ -507,34 +650,34 @@ Om dit effect verder te illustreren, wordt in Figuur~\ref{fig:data_resultaat_ran
     \label{fig:data_resultaat_rangverschil_10}
 \end{figure}
 
-Uit deze verdeling blijkt duidelijk dat het team met de hogere rang in 78{,}9\% van de gevallen de wedstrijd wint. 
-Slechts 9{,}2\% van de wedstrijden wordt gewonnen door het lager gerangschikte team, terwijl 11{,}9\% eindigt in een gelijkspel. 
-Dit versterkt de eerdere vaststelling dat een groot rangverschil een sterke indicatie vormt voor het wedstrijdresultaat, 
+Uit deze verdeling blijkt duidelijk dat het team met de hogere rang in 78,9\% van de gevallen de wedstrijd wint.
+Slechts 9,2\% van de wedstrijden wordt gewonnen door het lager gerangschikte team, terwijl 11,9\% eindigt in een gelijkspel.
+Dit versterkt de eerdere vaststelling dat een groot rangverschil een sterke indicatie vormt voor het wedstrijdresultaat,
 waarbij het beter gerangschikte team duidelijk in het voordeel is.
 
 \vspace{5pt}
 
 \subsection{Factor rangschikking met machine-learning: prestaties en vergelijking met expertinschattingen}
 
-Waar we eerst hebben gefocust op individuele factoren, kijken we nu naar hoe de factoren samen spelen.
-Om de voorspellende kracht van de ontwikkelde modellen te beoordelen, werden vier interpreteerbare classificatiemodellen geëvalueerd: \textit{Logistic Regression}, \textit{Random Forest}, \textit{Gradient Boosting} en \textit{XGBoost}. 
+Waar eerst gefocust werd op individuele factoren, wordt nu gekeken naar hoe de factoren samen spelen.
+Om de voorspellende kracht van de ontwikkelde modellen te beoordelen, werden vier interpreteerbare classificatiemodellen geëvalueerd: \textit{Logistic Regression}, \textit{Random Forest}, \textit{Gradient Boosting} en \textit{XGBoost}.
 Elk model werd getraind op dezelfde feature space en getest op een identieke hold-out set van 402 wedstrijden.
 
-Een belangrijke kanttekening is dat thuisvoordeel niet als feature kon worden opgenomen. 
-Door de manier waarop de dataset werd opgebouwd (met genormaliseerde en relatieve variabelen), zou een expliciete thuisvariabele sterk correleren met bestaande kenmerken. 
+Een belangrijke kanttekening is dat thuisvoordeel niet als feature kon worden opgenomen.
+Door de manier waarop de dataset werd opgebouwd (met genormaliseerde en relatieve variabelen), zou een expliciete thuisvariabele sterk correleren met bestaande kenmerken.
 Hierdoor ontbreekt een factor die zowel in de data-analyse als in de enquête naar voren kwam als belangrijk.
 
 \vspace{6pt}
 
-De classificatieresultaten tonen een duidelijk en consistent patroon over alle modellen heen. 
-Thuisoverwinningen (H) worden relatief goed voorspeld, met hoge recallwaarden (tot 0{,}89 bij \textit{Logistic Regression}). 
-Uitoverwinningen (A) worden matig voorspeld, met f1-scores rond 0{,}52--0{,}57. 
-Gelijkspelen (D) blijken het moeilijkst te modelleren, met zeer lage recallwaarden (tussen 0{,}03 en 0{,}19). 
+De classificatieresultaten tonen een duidelijk en consistent patroon over alle modellen heen.
+Thuisoverwinningen worden relatief goed voorspeld, met hoge recallwaarden (tot 0,89 bij \textit{Logistic Regression}).
+Uitoverwinningen worden matig voorspeld, met f1-scores rond 0,52--0,57.
+Gelijkspelen blijken het moeilijkst te modelleren, met zeer lage recallwaarden (tussen 0,03 en 0,19).
 Dit bevestigt dat gelijke spelen minder duidelijke patronen vertonen en moeilijk voorspelbaar zijn.
 
 \vspace{6pt}
 
-De globale prestaties van de modellen zijn samengevat in Tabel~\ref{tab:modelvergelijking}.
+De globale prestaties van de modellen zijn samengevat in tabel~\ref{tab:modelvergelijking}.
 
 \begin{table}[h!]
 \centering
@@ -552,19 +695,21 @@ Gradient Boosting   & 0{,}5299 & 0{,}4779 & 0{,}4814 & 0{,}4927 \\
 \label{tab:modelvergelijking}
 \end{table}
 
-Uit deze vergelijking blijkt dat \textit{Logistic Regression} de hoogste accuracy behaalt en tegelijk de laagste log loss (0{,}9352), wat wijst op stabielere en betrouwbaardere voorspellingen. 
+Uit deze vergelijking blijkt dat \textit{Logistic Regression} de hoogste accuracy behaalt en tegelijk de laagste log loss (0,9352), wat wijst op stabielere en betrouwbaardere voorspellingen.
 Hoewel andere modellen op bepaalde metrics licht beter scoren, is \textit{Logistic Regression} het meest consistent over alle evaluatiemaatstaven.
 
 \vspace{5pt}
 
-Op basis hiervan werd \textit{Logistic Regression} geselecteerd als het beste model. 
+Op basis hiervan werd \textit{Logistic Regression} geselecteerd als het beste model.
 De algemene prestaties blijven echter beperkt, wat aangeeft dat het voorspellen van voetbalwedstrijden intrinsiek moeilijk blijft en afhankelijk is van factoren die niet volledig in de data vervat zitten.
 
 \vspace{5pt}
 
-De analyse van de feature importance toont aan dat vooral form\_diff (recente vormverschillen) en rank\_diff (rangverschil) de belangrijkste determinanten zijn. 
-Daarnaast spelen seizoenseffecten, speelstijlcombinaties en in mindere mate H2H-resultaten een rol. 
+De analyse van de feature importance toont aan dat vooral form\_diff (recente vormverschillen) en rank\_diff (rangverschil) de belangrijkste determinanten zijn.
+Daarnaast spelen seizoenseffecten, speelstijlcombinaties en in mindere mate H2H-resultaten een rol.
 Omgevingsfactoren zoals temperatuur, bewolking en wind blijken slechts een minimale invloed te hebben.
+Overigens is er ook enkele keren het seizoen te zien. Dit geeft aan hoeveel het eindresultaat afhangt van de data van de ploegen in dit specifieke seizoen.
+In dit geval is het dus logisch dat het huidige seizoen de beste indicatie zal geven voor komende wedstrijden.
 
 Figuur~\ref{fig:fi_best_model} toont de top 15 belangrijkste features van het beste model.
 
@@ -575,11 +720,9 @@ Figuur~\ref{fig:fi_best_model} toont de top 15 belangrijkste features van het be
 \label{fig:fi_best_model}
 \end{figure}
 
-\vspace{5pt}
-
-Weliswaar sluiten deze resultaten helemaal aan met de inzichten van de respondenten van de enquête.
-Zoals te zien is in figuur~\ref{fig:enquete_factorbelang}, komt men tot een identiek besluit.
-Het thuisvoordeel speelt een duidelijke rol zoals eerder te zien was, de recente vorm en het rangverschil hebben ook relatief veel invloed en onderlinge resultaten en weersomstandigheden minder.
+Deze resultaten sluiten aan bij de inzichten van de respondenten van de enquête.
+Zoals te zien is in figuur~\ref{fig:enquete_factorbelang}, komt men tot een gelijkaardig besluit.
+Het thuisvoordeel speelt een duidelijke rol zoals eerder te zien was, de recente vorm en het rangverschil hebben ook relatief veel invloed, en onderlinge resultaten en weersomstandigheden minder.
 
 \begin{figure}[h!]
 \centering
@@ -588,57 +731,63 @@ Het thuisvoordeel speelt een duidelijke rol zoals eerder te zien was, de recente
 \label{fig:enquete_factorbelang}
 \end{figure}
 
-Op basis hiervan kan dus geconcludeerd worden dat op het vlak van wedstrijdresultaat, de experts en de machine-learning vrijwel op dezelfde golflengte zitten.
+Op basis hiervan kan geconcludeerd worden dat op het vlak van wedstrijdresultaat, de experts en de machine-learning vrijwel op dezelfde golflengte zitten.
 
-\subsection{Concrete voorspellingen: vergelijking tussen model, experts en realiteit}
+\vspace{20pt}
 
-Om de praktische toepasbaarheid van het model te evalueren, werden twee wedstrijden voorafgaand aan 22 maart 2026 voorspeld: \textbf{Anderlecht -- Cercle Brugge} en \textbf{Sint-Truiden -- Union Saint-Gilloise}. 
-Voor beide wedstrijden werden voorspellingen gemaakt door het geselecteerde machine-learningmodel (\textit{Logistic Regression}) én door de experts uit de enquête. 
+% =================================================
+\section{Concrete voorspellingen: vergelijking tussen model, experts en realiteit}
+% =================================================
+
+Ondertussen zijn zowel schoten, doelpunten als eindresultaat onder de loep genomen.
+Het is echter ook interessant om deze toe te passen op een concreet voorbeeld uit de realiteit.
+Om de praktische toepasbaarheid van het model te evalueren, werden twee wedstrijden voorafgaand aan 22 maart 2026 voorspeld: \textbf{Anderlecht -- Cercle Brugge} en \textbf{Sint-Truiden -- Union Saint-Gilloise}.
+Voor beide wedstrijden werden voorspellingen gemaakt door het geselecteerde machine-learningmodel (\textit{Logistic Regression}) én door de experts uit de enquête.
 Nadien werden deze voorspellingen vergeleken met de werkelijke wedstrijdresultaten.
 
-\subsubsection*{Anderlecht -- Cercle Brugge}
+\subsubsection{Anderlecht -- Cercle Brugge}
 
-Het model voorspelde voor deze wedstrijd een duidelijke thuisoverwinning voor Anderlecht, met een geschatte kans van \textbf{66\%}. 
-De kans op een gelijkspel bedroeg \textbf{23\%}, terwijl de kans op een uitoverwinning slechts \textbf{11\%} was. 
-Daarnaast voorspelde het model een gemiddeld aantal doelpunten van \textbf{2.24} voor Anderlecht en \textbf{0.79} voor Cercle Brugge, wat neerkomt op een verwachte totaalscore van ongeveer \textbf{3.03 doelpunten}.
+Het model voorspelde voor deze wedstrijd een duidelijke thuisoverwinning voor Anderlecht, met een geschatte kans van 66\%.
+De kans op een gelijkspel bedroeg 23\%, terwijl de kans op een uitoverwinning slechts 11\% was.
+Daarnaast voorspelde het model een gemiddeld aantal doelpunten van 2,24 voor Anderlecht en 0,79 voor Cercle Brugge, wat neerkomt op een verwachte totaalscore van ongeveer 3,03 doelpunten.
 
 De experts zaten opvallend dicht bij deze inschatting. Uit de verdelingsplots blijkt dat:
 \begin{itemize}
-    \item de meeste experts de thuiswinstkans inschatten tussen \textbf{55\% en 75\%};
-    \item de gelijkspelinschatting geconcentreerd lag rond \textbf{20--30\%};
+    \item de meeste experts de thuiswinstkans inschatten tussen 55\% en 75\%;
+    \item de gelijkspelinschatting geconcentreerd lag rond 20--30\%;
     \item de uitwinstkans door vrijwel alle respondenten laag werd ingeschat (meestal $< 20\%$).
 \end{itemize}
 
-Ook de doelpuntenverwachtingen van de experts lagen in dezelfde lijn: de histogrammen tonen een gemiddelde van \textbf{2.5 thuisdoelpunten} en \textbf{0.8 uitdoelpunten}, vrijwel identiek aan de modelvoorspelling.
+Ook de doelpuntenverwachtingen van de experts lagen in dezelfde lijn: de histogrammen tonen een gemiddelde van 2,5 thuisdoelpunten en 0,8 uitdoelpunten, vrijwel identiek aan de modelvoorspelling.
 
-De werkelijke uitslag van de wedstrijd bleek echter verrassend: \textbf{RSC Anderlecht verloor met 2--3 van Cercle Brugge}. 
+De werkelijke uitslag van de wedstrijd bleek echter verrassend: \textbf{RSC Anderlecht verloor met 2--3 van Cercle Brugge}.
 Ondanks de sterke voorkeur van zowel het model als de experts voor een thuisoverwinning, slaagde Cercle Brugge erin om onverwacht de drie punten mee naar huis te nemen.
 
-\subsubsection*{Sint-Truiden -- Union Saint-Gilloise}
+\subsubsection{Sint-Truiden -- Union Saint-Gilloise}
 
 Voor deze wedstrijd voorspelde het model een veel evenwichtiger verloop. De kansverdeling was:
 \begin{itemize}
-    \item \textbf{37\%} kans op thuiswinst voor STVV,
-    \item \textbf{29\%} kans op een gelijkspel,
-    \item \textbf{33\%} kans op een uitoverwinning voor Union.
+    \item 37\% kans op thuiswinst voor STVV,
+    \item 29\% kans op een gelijkspel,
+    \item 33\% kans op een uitoverwinning voor Union.
 \end{itemize}
 
-De verwachte doelpunten lagen op \textbf{1.45} voor STVV en \textbf{1.26} voor Union, wat resulteert in een voorspeld totaal van \textbf{2.71 doelpunten}.
+De verwachte doelpunten lagen op 1,45 voor STVV en 1,26 voor Union, wat resulteert in een voorspeld totaal van 2,71 doelpunten.
 
 Ook hier sloten de expertinschattingen nauw aan bij de modelresultaten:
 \begin{itemize}
-    \item de meeste experts schatten de thuiswinstkans rond \textbf{30--40\%};
-    \item de gelijkspelinschatting lag eveneens rond \textbf{20--35\%};
-    \item de uitwinstkans werd door de meerderheid ingeschat tussen \textbf{30--40\%}, met enkele uitschieters.
+    \item de meeste experts schatten de thuiswinstkans rond 30--40\%;
+    \item de gelijkspelinschatting lag eveneens rond 20--35\%;
+    \item de uitwinstkans werd door de meerderheid ingeschat tussen 30--40\%, met enkele uitschieters.
 \end{itemize}
 
-De doelpuntenverwachtingen van de experts lagen gemiddeld op \textbf{1.5 thuisdoelpunten} en \textbf{1.7 uitdoelpunten}, wat opnieuw zeer dicht bij de modelvoorspelling ligt.
+De doelpuntenverwachtingen van de experts lagen gemiddeld op 1,5 thuisdoelpunten en 1,7 uitdoelpunten, wat opnieuw zeer dicht bij de modelvoorspelling ligt.
 
-De effectieve uitslag werd uiteindelijk \textbf{1--3 voor Union Saint-Gilloise}. 
+De effectieve uitslag werd uiteindelijk \textbf{1--3 voor Union Saint-Gilloise}.
 Hoewel het model hier een meer gebalanceerde wedstrijd voorspelde, bevestigde het uiteindelijke resultaat toch de mogelijkheid van een uitoverwinning.
 
-Deze case-study toont aan dat het machine-learningmodel niet alleen in lijn ligt met de algemene inzichten van de experts, maar ook vergelijkbare voorspellingen maakt wanneer het op concrete wedstrijden aankomt. 
-Tegelijk illustreren de uiteindelijke wedstrijdresultaten dat voetbal inherent onvoorspelbaar blijft. Zelfs wanneer zowel experts als modellen sterk in dezelfde richting denken, kunnen onverwachte factoren zoals efficiëntie in afwerking, individuele fouten, rode kaarten of momentum tijdens de wedstrijd leiden tot een totaal andere uitkomst. 
+Deze case-study toont aan dat het machine-learningmodel niet alleen in lijn ligt met de algemene inzichten van de experts, maar ook vergelijkbare voorspellingen maakt wanneer het op concrete wedstrijden aankomt.
+Tegelijk illustreren de uiteindelijke wedstrijdresultaten dat voetbal inherent onvoorspelbaar blijft. Zelfs wanneer zowel experts als modellen sterk in dezelfde richting denken, kunnen onverwachte factoren zoals efficiëntie in afwerking, individuele fouten, rode kaarten of momentum tijdens de wedstrijd leiden tot een totaal andere uitkomst.
 Net daardoor vormt voetbal een bijzonder uitdagend domein voor predictieve modellen: waarschijnlijkheden kunnen goed worden ingeschat, maar absolute zekerheid bestaat nooit.
 
 
@@ -646,10 +795,168 @@ Net daardoor vormt voetbal een bijzonder uitdagend domein voor predictieve model
 \section{Aantal kaarten: intensiteit en emoties}
 % =================================================
 
-\subsection{Data-analyse}
+In deze sectie wordt onderzocht welke factoren samenhangen met het aantal kaarten in voetbalwedstrijden.
+Kaarten worden beschouwd als een indicator van spelintensiteit, frustratie en de emotionele lading van een wedstrijd.
 
-\subsection{Modelanalyse}
+\subsection{Regen: beïnvloeden natte omstandigheden de spelintensiteit?}
 
-\subsection{Expertinschattingen}
+Bij gewone regenval is het gemiddeld aantal kaarten 4,23 tegenover 4,10 zonder regen.
+Dit verschil is verwaarloosbaar klein en de bijbehorende t-test geeft een p-waarde van 0,2660, wat aangeeft dat er geen significant effect is.
 
-\subsection{Vergelijking: data vs model vs expert}
+\vspace{5pt}
+
+Ook bij harde neerslag (meer dan 2mm bij aanvang) is het effect niet significant.
+Het gemiddeld aantal kaarten bij harde regen bedraagt 4,38 tegenover een algemeen gemiddelde van 4,13, met een p-waarde van 0,6088.
+
+\vspace{5pt}
+
+Wanneer de experts gevraagd werd of er bij harde regen meer, evenveel of minder kaarten zouden verwacht worden, gaf de meerderheid aan dat het aantal kaarten \textit{evenveel} zou zijn.
+Dit stemt overeen met wat de data tonen.
+
+\subsection{Derby's en rivaliteitswedstrijden: hogere emoties, meer kaarten?}
+
+Bij derby- of rivaliteitswedstrijden wordt doorgaans een hogere emotionele intensiteit verwacht, wat zich mogelijk vertaalt in meer kaarten.
+Uit de data blijkt dat het gemiddeld aantal kaarten bij derby's 4,32 bedraagt, tegenover 4,13 in het algemeen.
+Dit verschil is echter statistisch niet significant, met een p-waarde van 0,7177.
+
+\vspace{5pt}
+
+De experten gaven uiteenlopende scores voor de invloed van derby's op het aantal kaarten.
+Figuur~\ref{fig:enquete_kaarten_derby} toont dat de antwoorden verspreid lagen over de schaal, zonder duidelijke consensus.
+Dit strookt met de data, waarbij er geen statistisch verband kon worden vastgesteld.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_kaarten_derby.png}
+    \caption{Verwachte invloed van derby's op het aantal kaarten volgens experts (n = 6)}
+    \label{fig:enquete_kaarten_derby}
+\end{figure}
+
+\subsection{Degradatiewedstrijden: verhoogde inzet leidt tot meer kaarten}
+
+Degradatiewedstrijden vormen een uitzondering op het patroon van niet-significante resultaten.
+Zoals te zien is op figuur~\ref{fig:data_kaarten_degradatie}, bedraagt het gemiddeld aantal kaarten bij degradatiewedstrijden 5,12, tegenover een algemeen gemiddelde van 4,13.
+Dit verschil is statistisch significant, met een p-waarde van 0,0399.
+
+\vspace{5pt}
+
+Dit is een opvallende bevinding die aangeeft dat wanneer er op het spel staat of een ploeg degradeert, de intensiteit en spanning aantoonbaar hoger liggen, wat zich vertaalt in meer kaarten.
+
+\vspace{5pt}
+
+Uit de enquête (~\ref{fig:enquete_kaarten_degradatie}) blijkt dat de inschatting voor het effect van een degradatiewedstrijd op het aantal kaarten verdeeld is.
+Wel gaf toch de helft van de respondenten aan dat dit soort confrontatie minstens matige invloed zal hebben, zoals de data weergeven.
+Mogelijk baseerden de andere experts zich op wedstrijden die niet in de data zaten, waar dit minder het geval is.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_kaarten_degradatie.png}
+    \caption{Verwachte invloed van degradatiewedstrijden op het aantal kaarten volgens experts (n = 6)}
+    \label{fig:enquete_kaarten_degradatie}
+\end{figure}
+
+\subsection{Modelinterpretatie: welke factoren voorspelt het model als bepalend?}
+
+Voor het voorspellen van het totaal aantal kaarten werd een XGBoost-regressiemodel getraind.
+Het model behaalde een MAE van 1,87 en een R² van 0,007, wat aangeeft dat het model het aantal kaarten nauwelijks kan voorspellen op basis van de beschikbare features.
+Een van de grootste redenen hiervoor is hoogstwaarschijnlijk het gebrek aan data over de scheidsrechters.
+Toch werd het model met enige voorzichtigheid geanalyseerd en vergeleken.
+
+\vspace{5pt}
+
+Een bijkomende factor die eerder nog niet aan bod kwam, is de invloed van stadioncapaciteit op het aantal overtredingen van het uitteam.
+Uit de historische data blijkt dat grotere stadions gepaard gaan met iets meer overtredingen van het uitteam: gemiddeld 12,20 bij kleine stadions, 11,69 bij middelgrote en 12,98 bij grote stadions (~\ref{fig:data_overtredingen_capaciteit}).
+De Pearson correlatie bedraagt 0,079 met een p-waarde van $3{,}66 \times 10^{-4}$, wat statistisch significant is, zij het met een zwak effect.
+Dit kan verklaard worden door de hogere druk die het publiek in een groot stadion uitoefent op de bezoekers, wat tot meer overtredingen kan leiden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{data_overtredingen_capaciteit.png}
+    \caption{Aantal overtredingen uitteam per stadioncapaciteit-categorie}
+    \label{fig:data_overtredingen_capaciteit}
+\end{figure}
+
+Ook de expertinschatting over dit verband was verdeeld (~\ref{fig:enquete_overtredingen_capaciteit}).
+Twee respondenten gaven score 1 (geen invloed), terwijl twee anderen score 3 kozen en één respondent score 4.
+De meningen lopen dus uiteen, maar een kleine meerderheid erkent toch enige invloed, wat aansluit bij het zwakke maar significante verband in de data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_overtredingen_capaciteit.png}
+    \caption{Verwachte invloed van stadioncapaciteit op het aantal overtredingen van het uitteam volgens experts (n = 6)}
+    \label{fig:enquete_overtredingen_capaciteit}
+\end{figure}
+
+\vspace{5pt}
+
+Figuur~\ref{fig:fi_kaarten} toont de gegroepeerde feature importance van het model en figuur~\ref{fig:shap_kaarten} de bijbehorende SHAP-analyse.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{fi_kaarten.png}
+    \caption{Feature importance -- Totaal aantal kaarten}
+    \label{fig:fi_kaarten}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{shap_kaarten.png}
+    \caption{SHAP-waarden -- Totaal aantal kaarten}
+    \label{fig:shap_kaarten}
+\end{figure}
+
+De speelstijlcombinatie domineert ook hier als meest bepalende factor, met een gecombineerde importantiescore van 0,31.
+Tijdstip (weekend/avond) volgt op de tweede plaats met 0,10, gevolgd door H2H-resultaat met 0,08.
+Stadioncapaciteit, rangverschil en vormverschil dragen elk in mindere mate bij.
+Neerslag, degradatie en titelwedstrijden scoren lager, hoewel degradatiewedstrijden in de data-analyse als significant naar voren kwamen.
+
+\vspace{5pt}
+
+De SHAP-analyse verfijnt dit beeld en toont de richting van elk effect.
+Temperatuur staat bovenaan: lage temperaturen bevinden zich links van nul, wat betekent dat koud weer
+gepaard gaat met minder kaarten, terwijl hogere temperaturen juist naar meer kaarten neigen.
+Dit is een patroon dat waarschijnlijk samenhangt met bepaalde periodes in het seizoen: in warmere maanden,
+zoals de start en het einde van het seizoen, kan de intensiteit van de competitiestrijd hoger liggen,
+wat zich vertaalt in meer overtredingen en kaarten.
+Bij stadioncapaciteit tonen hoge waarden eveneens een licht positief effect,
+wat aansluit bij het eerder vastgestelde significante verband tussen een groter stadion en meer overtredingen van het uitteam.
+Het absolute rangverschil en het vormverschil tonen een relatief symmetrisch patroon rond nul, met beperkte voorspellende bijdrage.
+De speelstijlcombinatie \textit{Verdedigend vs Verdedigend} vertoont een negatief SHAP-effect,
+wat betekent dat het model bij defensief ingestelde ploegen minder kaarten voorspelt.
+Degradatiewedstrijden bevinden zich laag in de rangschikking, maar de uitschieters naar rechts bevestigen dat
+individuele degradatieconfrontaties wel degelijk meer kaarten kunnen genereren, al is het effect te variabel
+om consistent door het model te worden opgepikt.
+
+\vspace{5pt}
+
+Figuur~\ref{fig:enquete_kaarten_borda} toont de Borda-scores van de factoren die experten als meest bepalend beschouwen voor het aantal kaarten.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{enquete_kaarten_borda.png}
+    \caption{Borda-scores voor belangrijkste factoren bij het voorspellen van aantal kaarten (n = 6)}
+    \label{fig:enquete_kaarten_borda}
+\end{figure}
+
+Experten plaatsen de speelstijl en derby/rivaliteit bovenaan als meest bepalende factoren, gevolgd door stadioncapaciteit en recente vorm.
+Neerslag en tijdstip worden als minder relevant beschouwd.
+
+\vspace{5pt}
+
+De vergelijking tussen model en experten toont deels een overeenkomst: beiden beschouwen de speelstijlcombinatie als de meest bepalende factor.
+Een verschil is dat experten derby's als relevante factor aanduiden, terwijl het model en de data-analyse hier geen significant effect vinden.
+Omgekeerd identificeert de data-analyse degradatiewedstrijden als de enige factor met een statistisch significant effect op het aantal kaarten, maar zowel het model als de experten kennen hieraan een relatief beperkt gewicht toe.
+De SHAP-analyse nuanceert dit verder: hoewel degradatiewedstrijden gemiddeld laag scoren in feature importance, tonen de uitschieters aan dat het effect reëel is maar sterk wedstrijdafhankelijk.
+
+\vspace{5pt}
+
+Kortom bevestigen de drie perspectieven samen dat het kaartverloop in voetbal grotendeals onvoorspelbaar blijft met de beschikbare data.
+De lage R²-waarde van het model bevestigt dit.
+Enkel degradatiewedstrijden tonen een aantoonbaar effect in de data, wat erop wijst dat extreme motivationele omstandigheden een zichtbare invloed hebben op de spelintensiteit.
+Voor de overige factoren is het verband zwak en statistisch niet onderbouwd.
+Een belangrijke ontbrekende variabele is de scheidsrechter, wiens persoonlijke stijl en strengheid een aanzienlijke invloed kunnen hebben op het aantal kaarten.
+Toekomstig onderzoek dat scheidsrechtersdata incorporeert, zou de voorspellende kracht op dit vlak wellicht aanzienlijk kunnen verbeteren.
+
+\vspace{5pt}
+
+Mits dit hoofdstuk nogal deel per deel was, zullen in het volgende hoofdstuk de belangrijkste inzichten en een globaal beeld weergegeven worden.
