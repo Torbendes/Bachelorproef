@@ -5,14 +5,141 @@
 \chapter{Conclusie}%
 \label{ch:conclusie}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
-% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
-% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
-% niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
+In deze bachelorproef werd onderzocht welke factoren bepalend zijn voor wedstrijdstatistieken in de Jupiler Pro League,
+en in welke mate data-gedreven machine-learningmodellen en menselijke voetbalexperts overeenstemmen in hun voorspellingen en verklaringen.
+In dit afsluitende hoofdstuk worden de onderzoeksvragen beantwoord op basis van de gevonden resultaten,
+wordt de wetenschappelijke bijdrage van het werk toegelicht, en worden enkele aanbevelingen voor toekomstig onderzoek geformuleerd.
 
-\lipsum[76-80]
+\section{Antwoord op de onderzoeksvragen}
 
+\subsection*{Deelvraag 1: Welke team- en wedstrijdgerelateerde factoren zijn geassocieerd met het wedstrijdresultaat?}
+
+Uit de historische data-analyse blijkt dat recente vorm en rangverschil de sterkste statistisch significante
+associaties vertonen met het wedstrijdresultaat. Het thuisvoordeel is eveneens duidelijk aanwezig: 43,28\% van
+de wedstrijden wordt gewonnen door de thuisploeg, tegenover 32,37\% door de bezoeker. Bij een rangverschil
+van tien plaatsen of meer wint de hoger gerangschikte ploeg in 78,9\% van de gevallen. Onderlinge confrontaties (H2H)
+tonen wel een statistisch significante associatie, maar de praktische voorspellende waarde blijft beperkt (38,29\% accuraatheid als enkel criterium).
+
+\subsection*{Deelvraag 2: Welke factoren beïnvloeden het verloop van wedstrijdstatistieken zoals doelpunten, schoten en kaarten?}
+
+Voor het aantal doelpunten is de speelstijlcombinatie aanvallend versus verdedigend de enige factor
+met een statistisch significant effect (p = 0,0139). Wedstrijden in deze configuratie leveren gemiddeld 3,19 doelpunten op,
+tegenover een algemeen gemiddelde van 2,86. Het model voor doelpunten bevestigt dit en voegt rangverschil
+en vormverschil toe als bijkomende verklarende features.
+
+\vspace{5pt}
+
+Voor het aantal schoten kon geen enkele individueel getoetste factor een statistisch significante invloed aantonen.
+Het model slaagt er evenmin in schoten betrouwbaar te voorspellen (R² = $-$0,09), wat aangeeft dat het spelverloop
+op dit vlak sterk afhankelijk is van de wedstrijdcontext.
+
+\vspace{5pt}
+
+Voor het aantal kaarten bleek enkel het type wedstrijd als degradatieduel een statistisch significant effect te hebben (p = 0,0399),
+met gemiddeld 5,12 kaarten tegenover 4,13 in het algemeen. Dit wijst erop dat extreme motivationele omstandigheden
+een meetbare invloed hebben op de spelintensiteit.
+
+\subsection*{Deelvraag 3: Spelen externe contextuele factoren zoals weersomstandigheden, stadioncapaciteit en tijdstip een rol?}
+
+De externe contextuele factoren hebben over het algemeen een beperkte invloed op de wedstrijdstatistieken.
+Noch temperatuur, noch neerslag toont een statistisch significant effect op het aantal schoten, doelpunten of kaarten
+in de uitgevoerde t-tests. Stadioncapaciteit vertoont een zwak maar statistisch significant verband
+met het aantal overtredingen van het uitteam (r = 0,079, p < 0,001), wat mogelijk te verklaren is
+door de hogere druk van een groot thuispubliek. Het tijdstip van de wedstrijd (avond versus dag, weekend versus weekdag)
+en weervariabelen spelen een beperkte rol in de modellen, maar zijn geen bepalende voorspellers.
+
+\subsection*{Deelvraag 4: Hoe kunnen de belangrijkste voorspellende factoren geïdentificeerd en geïnterpreteerd worden?}
+
+Via feature importance-analyses en SHAP-waarden konden de meest bepalende variabelen per doelstatistiek
+worden geïdentificeerd. Voor het wedstrijdresultaat zijn dit form\_diff en rank\_diff. Voor doelpunten
+domineren abs\_rank\_diff en temperatuur (als seizoensgebonden confounder). Voor schoten is de speelstijlcombinatie
+de belangrijkste groep features. Voor kaarten neemt eveneens de speelstijlcombinatie de eerste plaats in.
+De SHAP-analyse toont daarnaast de richting van deze effecten: zo gaat een groter rangverschil gepaard
+met een hoger voorspeld aantal doelpunten, terwijl kleinere stadions samenhangen met meer voorspelde schoten.
+
+\subsection*{Deelvraag 5: In welke mate kunnen interpreteerbare technieken zoals feature importance inzicht bieden?}
+
+Feature importance en SHAP-waarden bleken bruikbaar om modelverklaringen te vergelijken met menselijke redeneringen.
+De combinatie van beide technieken geeft zowel het relatieve belang van variabelen (feature importance)
+als de richting en grootte van hun effect (SHAP) inzichtelijk weer.
+Dit maakt het mogelijk om te beoordelen of een model plausibele verklaringen geeft, of dat het vooral schijnverbanden oppikt,
+zoals bij temperatuur als voor seizoenseffecten.
+
+\subsection*{Deelvraag 6: In welke mate komen data-gedreven verklaringen overeen met menselijke expertinschattingen?}
+
+Er is een gedeeltelijke maar geen volledige overeenstemming. Op het vlak van het wedstrijdresultaat
+zijn model en experts grotendeels eens: recente vorm en rangverschil worden door beide als belangrijkste
+determinanten gezien. Ook de speelstijlcombinatie wordt zowel door het model als door experts als relevante
+factor erkend voor doelpunten en kaarten.
+
+\vspace{5pt}
+
+Tegelijk zijn er duidelijke verschillen. Experts overschatten de voorspellende waarde van H2H-resultaten,
+een bias die vermoedelijk samenhangt met de cognitieve beschikbaarheidsheuristiek bij opvallende matchen.
+Omgekeerd leunt het model sterk op temperatuur als verklarende variabele, terwijl dit voor experts weinig relevant is
+--- een gevolg van schijnbare correlatie door seizoensgebonden effecten.
+Bij schoten en kaarten overschatten experts ook de invloed van derby's en rivaliteitswedstrijden,
+iets wat de data niet ondersteunen. Degradatiewedstrijden zijn als enige factor statistisch aantoonbaar
+voor kaarten, maar worden noch door experts noch door het model als dominant beschouwd.
+
+\section{Algemene conclusie}
+
+Het centrale antwoord op de onderzoeksvraag luidt als volgt: \textit{recente vorm, rangverschil en speelstijl zijn de meest bepalende factoren voor wedstrijdstatistieken in de Jupiler Pro League. Data-gedreven modellen en menselijke experts komen op grote lijnen overeen, vooral voor het voorspellen van wedstrijdresultaten, maar verschillen duidelijk van elkaar bij factoren zoals H2H, temperatuur en derby’s.}
+
+\vspace{5pt}
+
+De intrinsieke onvoorspelbaarheid van voetbal blijft een fundamentele uitdaging.
+De beste accuraatheid die bereikt werd op het wedstrijdresultaat bedraagt 55,97\%, wat in lijn ligt
+met wat gerapporteerd wordt in de internationale literatuur en aangeeft dat het voorspelbaar
+plafond in voetbal samenvalt met zijn onzekere, menselijke aard.
+
+\vspace{5pt}
+
+De bijdrage van dit onderzoek ligt in de expliciete vergelijking van drie analyseperspectieven
+op eenzelfde dataset van de Jupiler Pro League. Door data, modellen en expertkennis naast elkaar te plaatsen,
+wordt niet alleen de beperkte maar reële voorspellende kracht van interpreteerbare modellen gedemonstreerd,
+maar worden ook verschillen tussen menselijke inschattingen en historische data zichtbaar gemaakt.
+Dit heeft praktische relevantie voor clubs, analisten en journalisten die data-gedreven inzichten willen integreren
+in hun besluitvorming, zonder de beperkingen ervan uit het oog te verliezen.
+
+\section{Aanbevelingen voor toekomstig onderzoek}
+
+Op basis van de bevindingen en beperkingen van dit onderzoek kunnen een aantal richtingen voor toekomstig onderzoek worden geformuleerd.
+
+\vspace{5pt}
+
+\textbf{Opname van scheidsrechtersdata.} Het ontbreken van informatie over de leidende scheidsrechter
+is vermoedelijk de meest bepalende lacune in het kaartenmodel. Toekomstig onderzoek dat de persoonlijke
+stijl en strengheid van scheidsrechters als variabele opneemt, zou de verklaringskracht op dit vlak
+aanzienlijk kunnen verbeteren.
+
+\vspace{5pt}
+
+\textbf{Spelersniveau en teamsamenstelling.} Het toevoegen van individuele spelersdata, blessures, transfers
+en opstellingen zou de modellen aanzienlijk kunnen verrijken. Deze data zijn weliswaar kostbaar of moeilijk
+automatisch te verzamelen, maar zijn beschikbaar via commerciële databronnen.
+
+\vspace{5pt}
+
+\textbf{Grotere expertsteekproef.} Met slechts zes experts zijn de enquêteresultaten indicatief maar niet representatief.
+Een toekomstige studie met een grotere en meer gediversifieerde groep, inclusief scouts, coaches en data-analisten
+bij Belgische profclubs, zou een robuuster beeld geven van hoe menselijke expertise zich verhoudt tot algoritmische verklaringen.
+
+\vspace{5pt}
+
+\textbf{Andere competities en transferleerbaarheid.} Het is interessant om na te gaan in hoeverre de gevonden
+verbanden en modelprestaties overdraagbaar zijn naar andere competities met een ander competitieniveau,
+zoals de Challenger Pro League of Europese topcompetities.
+
+\vspace{5pt}
+
+\textbf{Complexere modelarchitecturen.} Terwijl dit onderzoek bewust koos voor interpreteerbare modellen,
+zou het gebruik van ensemble-stacking of gespecialiseerde neurale netwerken kunnen nagaan
+of hogere complexiteit ook tot betere voorspellingen leidt, en hoe die resultaten via post-hoc methoden
+zoals SHAP inzichtelijk gemaakt kunnen worden.
+
+\vspace{5pt}
+
+\textbf{Tijdsreeksmodellering.} Het expliciete modelleren van temporele afhankelijkheden, zoals het
+verloop van de competitie doorheen het seizoen of de invloed van de speeldag, via tijdsreeksmodellen
+kan seizoensgebonden invloeden beter aanpakken dan statische features zoals temperatuur.
