@@ -1,63 +1,148 @@
-%%=============================================================================
-%% Discussie
-%%=============================================================================
-
 \chapter{\IfLanguageName{dutch}{Discussie}{Discussion}}%
 \label{ch:discussie}
 
-In dit hoofdstuk worden de resultaten geïnterpreteerd in het licht van de onderzoeksvragen. Waar in het vorige hoofdstuk de nadruk lag op objectieve rapportering, staat hier de duiding en kritische reflectie centraal.
+In dit hoofdstuk worden de voornaamste bevindingen uit het vorige hoofdstuk overkoepelend geïnterpreteerd.
+De drie analysepijlers, historische data, machine-learningmodellen en expertinschattingen,
+worden naast elkaar geplaatst om vast te stellen in welke mate ze met elkaar overeenstemmen en waar en waarom ze van elkaar afwijken.
+Tot slot worden de methodologische beperkingen van dit onderzoek besproken.
 
-\section{Interpretatie van modelprestaties}
+\section{Overeenstemming tussen data, modellen en experts}
 
-Eerst wordt besproken in welke mate de ontwikkelde modellen erin slagen om wedstrijdstatistieken accuraat te voorspellen. Hierbij wordt nagegaan:
-\begin{itemize}
-    \item of de behaalde prestaties praktisch relevant zijn,
-    \item welke doelvariabelen beter voorspelbaar blijken dan andere,
-    \item welke beperkingen zichtbaar worden in termen van generaliseerbaarheid.
-\end{itemize}
+Uit de resultaten blijkt dat er voor het wedstrijdresultaat een opmerkelijke mate van convergentie bestaat
+tussen de drie benaderingen. Zowel de historische data, de machine-learningmodellen als de voetbalexperts
+wijzen in dezelfde richting: recente vorm en rangverschil zijn de meest bepalende factoren, en het thuisvoordeel
+is aantoonbaar aanwezig maar niet doorslaggevend. De feature importance van het beste model (Logistic Regression)
+plaatst vormverschil en rangverschil bovenaan, en ook de Borda-score uit de enquête kent aan deze factoren het hoogste gewicht toe.
+Dit is een bemoedigend resultaat, omdat het suggereert dat zowel data-gedreven als intuïtief redeneren over voetbal
+tot op zekere hoogte hetzelfde onderliggende patroon oppikken.
 
-Daarnaast wordt gereflecteerd op de keuze van de modellen en de impact van feature-engineering op de uiteindelijke prestaties.
+\vspace{5pt}
 
-\section{Analyse van bepalende factoren}
+Bij het aantal doelpunten is er eveneens gedeeltelijke afstemming. Het statistisch significante effect
+van de speelstijlcombinatie aanvallend versus verdedigend wordt door zowel de data als de meeste experts erkend.
+Ook het belang van rangverschil wordt zowel door het model als door een meerderheid
+van de respondenten als relevant aangeduid. 
+Hier versterken data, model en experts elkaars conclusies.
 
-Vervolgens wordt dieper ingegaan op de factoren die door de modellen als belangrijk werden geïdentificeerd. Er wordt besproken:
-\begin{itemize}
-    \item welke variabelen consistent een sterke invloed vertonen,
-    \item of deze overeenkomen met theoretische verwachtingen,
-    \item in welke mate contextuele factoren (zoals locatie of vorm) een significante rol spelen.
-\end{itemize}
+\section{Verschillen en hun mogelijke verklaringen}
 
-Hier wordt ook gereflecteerd op mogelijke verklaringen voor onverwachte of contra-intuïtieve bevindingen.
+Naast de overeenkomsten zijn er ook duidelijke divergenties, die inhoudelijk interessant zijn.
 
-\section{Vergelijking tussen modellen en menselijke expertise}
+\subsection{De overschatting van onderlinge confrontaties (H2H)}
 
-Een centraal onderdeel van deze bachelorproef is de vergelijking tussen modelverklaringen en menselijke redeneringen. In deze sectie wordt geanalyseerd:
-\begin{itemize}
-    \item in welke mate experts en modellen dezelfde factoren prioritair achten,
-    \item waar significante verschillen optreden,
-    \item welke implicaties deze verschillen hebben voor besluitvorming binnen professionele voetbalcontexten.
-\end{itemize}
+Een van de meest uitgesproken verschillen betreft de rol van H2H-resultaten.
+Experten, met name in het kader van doelpunten, hechten hier relatief veel belang aan,
+terwijl de data aantonen dat H2H slechts een zwakke voorspellende indicator vormt (38,29\% accuraatheid als enkel criterium).
+Het model kent H2H evenmin een beslissende rol toe.
 
-Er wordt nagegaan of modellen bepaalde patronen detecteren die minder expliciet aanwezig zijn in menselijke inschattingen, dan wel of experts contextuele nuances meenemen die moeilijk kwantificeerbaar zijn.
+\vspace{5pt}
 
-\section{Beperkingen van het onderzoek}
+Een mogelijke verklaring voor dit verschil is de inschattingsfout door opvallende voorbeelden:
+mensen onthouden opvallende onderlinge wedstrijden, zoals spectaculaire overwinningen of strafschoppen op het nippertje,
+en overschatten daardoor de herhalende kracht van zulke patronen~\autocite{Dietvorst2015}.
+De data maken echter duidelijk dat een historisch voordeel in de onderlinge duels in de meeste gevallen
+niet doorslaggevend is, omdat andere factoren zoals kwaliteitsverschil en huidige vorm sterker doorwegen.
 
-Dit onderzoek kent enkele beperkingen, zoals:
-\begin{itemize}
-    \item de omvang en kwaliteit van de beschikbare data,
-    \item mogelijke vertekeningen in expertselectie,
-    \item beperkingen inherent aan de gekozen modellen.
-\end{itemize}
+\subsection{Temperatuur als schijnbaar bepalende feature}
 
-Deze beperkingen worden expliciet benoemd om de geldigheid en toepasbaarheid van de conclusies correct te kaderen.
+Een opvallende bevinding in de modellen voor zowel doelpunten als kaarten is de hoge feature importance van temperatuur,
+terwijl experts dit als een van de minst relevante factoren beschouwen.
+Deze paradox is mogelijks het gevolg van een een vertekend beeld, mits de temperatuur correleert met het seizoensmoment.
+In de zomermaanden wordt de competitie gestart en afgerond, periodes die samenvallen
+met een hogere inzet en anders verlopende wedstrijden dan in de wintermaanden.
+Het model pikt dit seizoensgerelateerde patroon op via de temperatuurvariabele,
+maar de temperatuur zelf is wellicht niet de werkelijke oorzaak.
+Dit toont een bekend probleem in machine learning. Correlatie betekent niet dat er echt een oorzakelijk verband is. 
+Daardoor kunnen modellen omgevingsvariabelen kiezen als indirecte aanwijzing voor onderliggende factoren die niet rechtstreeks in de data aanwezig zijn.
 
-\section{Implicaties en aanbevelingen}
+\subsection{Het derby-effect: verwachte intensiteit versus statistische werkelijkheid}
 
-Tot slot worden de implicaties van de bevindingen besproken voor:
-\begin{itemize}
-    \item professionele voetbalclubs,
-    \item data-analisten binnen sportorganisaties,
-    \item toekomstig onderzoek binnen sportvoorspellingen en interpreteerbare machine learning.
-\end{itemize}
+Zowel bij schoten als bij kaarten verwachten experts dat derby's en rivaliteitswedstrijden leiden
+tot een hogere intensiteit en dus meer schoten of kaarten.
+De historische data ondersteunen dit beeld echter niet: er werden geen statistisch significante effecten vastgesteld.
+Dit hoeft niet te betekenen dat de verwachting van de experts volledig ongegrond is.
+Het is mogelijk dat de verhoogde emotionele intensiteit bij derby's niet rechtstreeks wordt weerspiegeld
+in de globale wedstrijdstatistieken, maar eerder in meer subtiele patronen
+zoals momenten van escalatie of specifieke fases van de wedstrijd, die met de beschikbare geaggregeerde variabelen niet volledig worden opgepikt.
+De dataset is bovendien relatief beperkt in het aantal derby's, wat de statistische power van de t-tests verlaagt.
 
-Hier worden concrete aanbevelingen geformuleerd op basis van de verkregen inzichten.
+\subsection{Rangverschil: niet-lineaire perceptie bij experts}
+
+Bij kleine rangverschillen kennen experts hier weinig voorspellende waarde aan toe.
+Maar wanneer het verschil groot is, bijvoorbeeld tien plaatsen of meer, stijgen hun kansschattingen sterk.
+Dit suggereert dat experts rangverschil niet lineair interpreteren, maar eerder als een drempeleffect:
+pas bij een voldoende groot kwaliteitsverschil wordt dit als duidelijke informatie beschouwd.
+De historische data bevestigen dit beeld: bij een rangverschil van tien of meer wint de hoger gerangschikte ploeg
+in 78,9\% van de gevallen. Hier is de perceptie van experts dus in lijn met de statistische realiteit,
+maar vooral bij grote rangverschillen.
+
+\section{Modelprestaties en de onvermijdelijke onvoorspelbaarheid}
+
+De accuraatheid van het beste classificatiemodel (Logistic Regression, 55,97\%) ligt in lijn met wat in de literatuur
+gerapporteerd wordt voor voetbalvoorspellingen~\autocite{beal2021football}.
+Dit plafond in voorspelbaarheid komt niet enkel door de keuze van het model of de gebruikte features. 
+Het wijst op een fundamenteel toevalselement in voetbal. Factoren zoals individuele fouten, efficiëntie in afwerking, 
+rode kaarten en tactische ingrepen tijdens de wedstrijd kunnen de uitkomst sterk beïnvloeden, maar zijn vooraf nooit volledig te modelleren.
+
+\vspace{5pt}
+
+De modellen voor schoten (R² = $-$0,09) en kaarten (R² = 0,007) presteren bijzonder zwak,
+wat aangeeft dat deze grootheden nog moeilijker te modelleren zijn dan het wedstrijdresultaat.
+Dit bevestigt dat het spelverloop in voetbal sterk situationeel en contextueel bepaald wordt,
+en dat het met de beschikbare geaggregeerde data moeilijk is om nauwkeurige voorspellingen te maken voor statistieken als schoten of kaarten.
+Het model voor doelpunten bevindt zich in een tussenpositie: de speelstijlcombinatie en het rangverschil leveren enige verklarende kracht,
+maar de totale verklaarde variantie blijft beperkt.
+
+\vspace{5pt}
+
+Gelijkspelen vormen in de classificatietaak een bijzondere uitdaging. Alle vier de modellen slagen er nauwelijks in
+gelijke spelen te identificeren, met recallwaarden tussen 0,03 en 0,19.
+Dit is consistent met de literatuur en logisch verklaarbaar omdat een gelijkspel ontstaat wanneer
+de krachten van beide ploegen min of meer in evenwicht zijn. Dit is een situatie die het minst bepaald wordt
+door vooraf beschikbare contextfactoren.
+
+\section{Methodologische beperkingen}
+
+Ondanks de inzichten die dit onderzoek biedt, zijn er een aantal methodologische beperkingen die in acht genomen moeten worden bij de interpretatie van de resultaten.
+
+\vspace{5pt}
+
+Ten eerste is de steekproef van voetbalexperts beperkt tot zes respondenten.
+Hoewel zij een professionele achtergrond hebben binnen het Belgische voetbal en de sportjournalistiek,
+is deze steekproef te klein om statistisch representatieve uitspraken te doen.
+De enquêteresultaten moeten dan ook gelezen worden als kwalitatieve indicaties, niet als generaliseerbare conclusies
+over de perceptie van voetbalexperts in het algemeen.
+
+\vspace{5pt}
+
+Ten tweede ontbreken in de dataset een aantal variabelen die vermoedelijk een sterke invloed hebben
+op de wedstrijdstatistieken. Scheidsrechtersinformatie is wellicht de meest impactvolle ontbrekende variabele voor het voorspellen van kaarten, maar ook blessures, teamopstellingen,
+transfers en spelersmoeheid ontbreken.
+Sommige van deze gegevens zijn enkel beschikbaar via betalende bronnen, wat een praktische beperking vormt
+voor onderzoek binnen een bachelorproef.
+
+\vspace{5pt}
+
+Ten derde dekt de dataset enkel seizoenen van de Jupiler Pro League vanaf 2019-2020.
+Hoewel dit zes volledige seizoenen omvat en neerkomt op 2006 wedstrijden, is het denkbaar
+dat structurele veranderingen in de competitie of in het spelniveau over langere termijn
+de modellen zouden kunnen verrijken.
+Bovendien werden wedstrijden uit het play-offformaat niet altijd opgenomen, wat een vertekend beeld kan geven van de seizoensdynamiek en presataties onder hogere druk.
+
+\vspace{5pt}
+
+Tot slot is de keuze voor interpreteerbare modellen, zoals Logistic Regression, Random Forest, Gradient Boosting en XGBoost,
+bewust gemaakt vanuit het oogpunt van transparantie, maar dit gaat mogelijk ten koste van predictieve kracht.
+Complexere architecturen zoals deep learning of ensemble-stacking kunnen hogere accuraatheden bereiken,
+maar bieden minder directe inzichten in de bijdrage van individuele variabelen.
+
+\section{Samenvatting van de discussie}
+
+Samenvattend laten de bevindingen zien dat data-gedreven modellen en menselijke experts voor een deel dezelfde factoren
+als bepalend identificeren, voornamelijk rangverschil, recente vorm en speelstijlcombinatie.
+Er zijn echter ook systematische verschillen zichtbaar.
+Experts overschatten de voorspellende waarde van H2H-resultaten en derby-effecten,
+terwijl modellen gevoelig zijn voor seizoensgerelateerde confounders zoals temperatuur.
+Beide benaderingen kennen bovendien hun grenzen bij de inherent onvoorspelbare componenten van voetbal.
+Dit onderstreept dat een gecombineerde aanpak, waarbij zowel statistische modelinzichten als domeinkennis worden meegenomen,
+de meest evenwichtige basis vormt voor voetbalanalyse.

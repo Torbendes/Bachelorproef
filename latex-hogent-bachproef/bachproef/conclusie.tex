@@ -51,9 +51,9 @@ en weervariabelen spelen een beperkte rol in de modellen, maar zijn geen bepalen
 \subsection*{Deelvraag 4: Hoe kunnen de belangrijkste voorspellende factoren geïdentificeerd en geïnterpreteerd worden?}
 
 Via feature importance-analyses en SHAP-waarden konden de meest bepalende variabelen per doelstatistiek
-worden geïdentificeerd. Voor het wedstrijdresultaat zijn dit form\_diff en rank\_diff. Voor doelpunten
-domineren abs\_rank\_diff en temperatuur (als seizoensgebonden confounder). Voor schoten is de speelstijlcombinatie
-de belangrijkste groep features. Voor kaarten neemt eveneens de speelstijlcombinatie de eerste plaats in.
+worden geïdentificeerd. Voor het wedstrijdresultaat zijn dit vorm- en rangverschil. Voor doelpunten
+domineren opnieuw rangverschil, maar ook temperatuur (mogelijks met nog andere achterliggende factoren die hier gepaard mee gaan). 
+Voor schoten is de speelstijlcombinatie de belangrijkste groep features. Voor kaarten neemt eveneens de speelstijlcombinatie de eerste plaats in.
 De SHAP-analyse toont daarnaast de richting van deze effecten: zo gaat een groter rangverschil gepaard
 met een hoger voorspeld aantal doelpunten, terwijl kleinere stadions samenhangen met meer voorspelde schoten.
 
@@ -76,8 +76,7 @@ factor erkend voor doelpunten en kaarten.
 
 Tegelijk zijn er duidelijke verschillen. Experts overschatten de voorspellende waarde van H2H-resultaten,
 een bias die vermoedelijk samenhangt met de cognitieve beschikbaarheidsheuristiek bij opvallende matchen.
-Omgekeerd leunt het model sterk op temperatuur als verklarende variabele, terwijl dit voor experts weinig relevant is
---- een gevolg van schijnbare correlatie door seizoensgebonden effecten.
+Omgekeerd leunt het model sterk op temperatuur als verklarende variabele, terwijl dit voor experts weinig relevant is.
 Bij schoten en kaarten overschatten experts ook de invloed van derby's en rivaliteitswedstrijden,
 iets wat de data niet ondersteunen. Degradatiewedstrijden zijn als enige factor statistisch aantoonbaar
 voor kaarten, maar worden noch door experts noch door het model als dominant beschouwd.
@@ -88,7 +87,7 @@ Het centrale antwoord op de onderzoeksvraag luidt als volgt: \textit{recente vor
 
 \vspace{5pt}
 
-De intrinsieke onvoorspelbaarheid van voetbal blijft een fundamentele uitdaging.
+De onvoorspelbaarheid van voetbal blijft een fundamentele uitdaging.
 De beste accuraatheid die bereikt werd op het wedstrijdresultaat bedraagt 55,97\%, wat in lijn ligt
 met wat gerapporteerd wordt in de internationale literatuur en aangeeft dat het voorspelbaar
 plafond in voetbal samenvalt met zijn onzekere, menselijke aard.
@@ -108,8 +107,8 @@ Op basis van de bevindingen en beperkingen van dit onderzoek kunnen een aantal r
 
 \vspace{5pt}
 
-\textbf{Opname van scheidsrechtersdata.} Het ontbreken van informatie over de leidende scheidsrechter
-is vermoedelijk de meest bepalende lacune in het kaartenmodel. Toekomstig onderzoek dat de persoonlijke
+\textbf{Opname van scheidsrechtersdata.} Het ontbreken van informatie over de aanwezige scheidsrechter
+is vermoedelijk het grootste gebrek in het kaartenmodel. Toekomstig onderzoek dat de persoonlijke
 stijl en strengheid van scheidsrechters als variabele opneemt, zou de verklaringskracht op dit vlak
 aanzienlijk kunnen verbeteren.
 
@@ -122,14 +121,14 @@ automatisch te verzamelen, maar zijn beschikbaar via commerciële databronnen.
 \vspace{5pt}
 
 \textbf{Grotere expertsteekproef.} Met slechts zes experts zijn de enquêteresultaten indicatief maar niet representatief.
-Een toekomstige studie met een grotere en meer gediversifieerde groep, inclusief scouts, coaches en data-analisten
+Een toekomstige studie met een grotere en meer diverse groep, inclusief scouts, coaches en data-analisten
 bij Belgische profclubs, zou een robuuster beeld geven van hoe menselijke expertise zich verhoudt tot algoritmische verklaringen.
 
 \vspace{5pt}
 
 \textbf{Andere competities en transferleerbaarheid.} Het is interessant om na te gaan in hoeverre de gevonden
-verbanden en modelprestaties overdraagbaar zijn naar andere competities met een ander competitieniveau,
-zoals de Challenger Pro League of Europese topcompetities.
+verbanden en modelprestaties overdraagbaar zijn naar andere competities met een ander competitieniveau of Europese topcompetities.
+Ook werd in dit onderzoek geen rekening gehouden met eventuele bijkomende nationale en internationale wedstrijden, die de druk en vermoeidheid beïnvloeden.
 
 \vspace{5pt}
 
@@ -137,9 +136,3 @@ zoals de Challenger Pro League of Europese topcompetities.
 zou het gebruik van ensemble-stacking of gespecialiseerde neurale netwerken kunnen nagaan
 of hogere complexiteit ook tot betere voorspellingen leidt, en hoe die resultaten via post-hoc methoden
 zoals SHAP inzichtelijk gemaakt kunnen worden.
-
-\vspace{5pt}
-
-\textbf{Tijdsreeksmodellering.} Het expliciete modelleren van temporele afhankelijkheden, zoals het
-verloop van de competitie doorheen het seizoen of de invloed van de speeldag, via tijdsreeksmodellen
-kan seizoensgebonden invloeden beter aanpakken dan statische features zoals temperatuur.

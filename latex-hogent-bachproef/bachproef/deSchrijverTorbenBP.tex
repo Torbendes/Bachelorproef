@@ -11,7 +11,7 @@
 % - If you write your thesis in English (remark: only possible after getting
 %   explicit approval!), remove the option "dutch," or replace with "english".
 
-\usepackage{lipsum} % For blind text, can be removed after adding actual content
+\usepackage{pdfpages}
 
 %% Pictures to include in the text can be put in the graphics/ folder
 \graphicspath{{../graphics/}}
@@ -146,18 +146,14 @@
 
 Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat vooraf werd beoordeeld door de promotor. Dat voorstel is opgenomen in deze bijlage.
 
-%% TODO: 
-%\section*{Samenvatting}
-
-% Kopieer en plak hier de samenvatting (abstract) van je onderzoeksvoorstel.
-
-% Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
 \input{../voorstel/voorstel-inhoud}
 
-%%---------- Andere bijlagen --------------------------------------------------
-% TODO: Voeg hier eventuele andere bijlagen toe. Bv. als je deze BP voor de
-% tweede keer indient, een overzicht van de verbeteringen t.o.v. het origineel.
-%\input{...}
+\chapter{Enquêteresultaten}
+
+In deze bijlage wordt de volledige enquête weergegeven zoals die werd afgenomen via Google Forms. Daarnaast worden de ruwe, geanonimiseerde antwoorden van de respondenten toegevoegd ter transparantie van de analyse.
+
+\clearpage
+\includepdf[pages=-,pagecommand={}]{../../code/data/enquete_resultaten.pdf}
 
 %%---------- Backmatter, referentielijst ---------------------------------------
 
