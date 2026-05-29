@@ -4,7 +4,7 @@
 In dit hoofdstuk worden de inzichten uit drie perspectieven samengebracht:
 (1) de historische wedstrijddata (2006 wedstrijden),
 (2) de machine learning modellen,
-(3) en de inschattingen van experten op basis van de enquête.
+(3) en de inschattingen van experts op basis van de enquête.
 
 Door deze drie benaderingen naast elkaar te plaatsen, kan worden onderzocht in welke mate data, modellen en menselijke inschattingen overeenkomen of van elkaar verschillen.
 
@@ -25,7 +25,7 @@ De analyse van de resultaten is opgedeeld in de volgende hoofdonderdelen:
 \vspace{5pt}
 
 Voor de enquête werden mails verstuurd naar verscheidene voetbalclubs uit de hogere reeksen en naar verschillende sportredacties.
-Uiteindelijk namen \textbf{6 experten} deel aan de bevraging.
+Uiteindelijk namen \textbf{6 experts} deel aan de bevraging.
 Onder de respondenten bevond zich onder meer de sportredactie van DPG Media.
 De overige deelnemers zijn anoniem, maar hebben een professionele achtergrond binnen het Belgische voetbal.
 
@@ -47,7 +47,7 @@ waardoor ze geen meerwaarde boden en potentieel zelfs een negatief effect hadden
 \section{Aantal schoten: druk en aanvalskracht}
 % =================================================
 
-In deze sectie wordt onderzocht welke factoren een invloed kunnen hebben op het totaal aantal schoten in voetbalwedstrijden.
+In deze sectie wordt onderzocht welke factoren invloed kunnen hebben op het totaal aantal schoten in voetbalwedstrijden.
 Het aantal schoten geldt als een maatstaf voor de aanvalskracht en de druk die een ploeg uitoefent gedurende een wedstrijd.
 
 \subsection{Stadioncapaciteit: meer publiek, meer druk?}
@@ -60,9 +60,9 @@ Er is dus geen statistisch significant verband tussen stadioncapaciteit en het a
 
 \vspace{5pt}
 
-Uit de enquête gaven de experten een gemengd beeld.
+Uit de enquête gaven de experts een gemengd beeld.
 Zoals te zien is op figuur~\ref{fig:enquete_schoten_capaciteit}, varieerden de scores sterk, met antwoorden gespreid over de volledige schaal.
-Dit wijst erop dat de meningen verdeeld zijn, en dat een deel van de experten de stadioncapaciteit als een relevantere factor beschouwt dan de data rechtvaardigen.
+Dit wijst erop dat de meningen verdeeld zijn, en dat een deel van de experts de stadioncapaciteit als een relevantere factor beschouwt dan de data rechtvaardigen.
 Desondanks geeft toch de helft van de respondenten aan dat de stadioncapaciteit geen tot weinig invloed heeft op het aantal schoten, wat overeenkomt met de data.
 
 \begin{figure}[H]
@@ -116,7 +116,7 @@ Het kleine aantal titelwedstrijden in de dataset beperkt vermoedelijk de statist
 
 \vspace{5pt}
 
-Uit de enquête bleek dat de meningen van de experten sterk uiteenliepen over de invloed van titelwedstrijden op het aantal schoten (~\ref{fig:enquete_schoten_titel}).
+Uit de enquête bleek dat de meningen van de experts sterk uiteenliepen over de invloed van titelwedstrijden op het aantal schoten (~\ref{fig:enquete_schoten_titel}).
 Een deel van de respondenten beschouwt dit als een relevante factor, terwijl anderen er weinig gewicht aan toekennen.
 
 \begin{figure}[H]
@@ -190,7 +190,7 @@ Ondanks dat stadioncapaciteit maar een lichte invloed heeft, is nu wel geweten d
 
 Bovendien verwacht het model meer schoten bij een hogere temperatuur.
 Hoewel bij de enquête op figuur~\ref{fig:enquete_schoten_warm} naar een expliciete temperatuur van minstens 23 graden gevraagd werd,
-is dit toch in enige tegenstrijd met wat het model aangeeft.
+is dit toch enigszins in tegenspraak met wat het model aangeeft.
 
 Daarnaast blijkt dat avondwedstrijden gepaard gaan met een lagere verwachting van het aantal schoten,
 wat vermoedelijk samenhangt met een vermoeidere fysieke toestand van de spelers.
@@ -204,7 +204,7 @@ Samengevat blijkt het aantal schoten een moeilijk te modelleren grootheid: geen 
 \section{Aantal doelpunten: wanneer wordt er gescoord?}
 % =================================================
 
-In deze sectie wordt onderzocht welke factoren een invloed kunnen hebben op het aantal doelpunten in voetbalwedstrijden.
+In deze sectie worden de parameters geanalyseerd die mogelijks invloed kunnen hebben op het aantal doelpunten in voetbalwedstrijden.
 Aan de hand van statistische analyses wordt nagegaan welke omstandigheden samenhangen met een hoger of lager aantal doelpunten.
 Daarnaast wordt ook bekeken in welke mate een machine-learningmodel in staat is om het aantal doelpunten te voorspellen op basis van deze factoren.
 Uiteraard zal ook hier telkens vergeleken worden met de inschattingen van de voetbalexperts.
@@ -212,7 +212,7 @@ Uiteraard zal ook hier telkens vergeleken worden met de inschattingen van de voe
 \subsection{Regen en zware neerslag: spelen weersomstandigheden echt een rol?}
 
 Wanneer er neerslag valt, wordt het veld gladder en het zicht op de bal mogelijk moeilijker, maar heeft dit dan ook invloed op het aantal doelpunten?
-Met visie op de historische data kan hier niet van uitgegaan worden. Met een gemiddeld aantal doelpunten van 2,83 zonder regen, heeft het gemiddelde aantal maar 0,11 doelpunten meer, wat vrijwel verwaarloosbaar is.
+Op basis van de historische data kan hier niet van uitgegaan worden. Met een gemiddeld aantal doelpunten van 2,83 zonder regen, heeft het gemiddelde aantal maar 0,11 doelpunten meer, wat vrijwel verwaarloosbaar is.
 Ook bleek uit de bijhorende t-test dat er geen significant effect van regen op het aantal doelpunten is.
 
 Hetzelfde geldt bij zware neerslag, wat in dit geval meer dan 2mm neerslag bij aanvang van de wedstrijd is, waar het effect ook niet significant is met een gemiddeld aantal doelpunten van 3,04.
@@ -282,7 +282,7 @@ Zowel de statistische analyse als de menselijke inschattingen suggereren dat een
 
 Om een dieper inzicht te krijgen in welke factoren het machine-learningmodel het zwaarst laat doorwegen bij het voorspellen van het totaal aantal doelpunten,
 werd zowel een feature importance-analyse als een SHAP-analyse uitgevoerd.
-Deze worden vervolgens vergeleken met de inschattingen van de experten uit de enquête.
+Deze worden vervolgens vergeleken met de inschattingen van de experts uit de enquête.
 
 \subsubsection{Feature importance en SHAP-analyse}
 
@@ -297,7 +297,7 @@ Figuur~\ref{fig:fi_doelpunten} toont de tien belangrijkste features van het mode
 
 Uit deze analyse blijkt dat temperatuur\_gem\_c (de gemiddelde temperatuur in graden Celsius) de meest bepalende feature is,
 met een importantiescore van ongeveer 0,25.
-Dit is een opvallende bevinding, aangezien experten en de data-analyse temperatuur slechts als een marginale factor beschouwden.
+Dit is een opvallende bevinding, aangezien experts en de data-analyse temperatuur slechts als een marginale factor beschouwden.
 Op de tweede plaats volgt abs\_rank\_diff (het absolute rangverschil tussen beide ploegen) met een score rond 0,19,
 gevolgd door form\_diff (het vormverschil) met circa 0,16.
 Daarna volgen stadion\_capaciteit en speelstijl\_combo als respectievelijk vierde en vijfde belangrijkste factor.
@@ -335,8 +335,8 @@ De combinatie aanvallend tegen verdedigend daarentegen wijst op een lichte posit
 
 \subsubsection{Vergelijking met expertinschattingen}
 
-Wanneer de modelresultaten worden vergeleken met de inschattingen van de experten, valt een interessant verschil op.
-Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren die experten als meest bepalend beschouwen voor het aantal doelpunten.
+Wanneer de modelresultaten worden vergeleken met de inschattingen van de experts, valt een interessant verschil op.
+Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren die experts als meest bepalend beschouwen voor het aantal doelpunten.
 
 \begin{figure}[H]
     \centering
@@ -345,7 +345,7 @@ Figuur~\ref{fig:enquete_doelpunten_borda} toont de Borda-scores van de factoren 
     \label{fig:enquete_doelpunten_borda}
 \end{figure}
 
-Experten plaatsen onderlinge resultaten (H2H) en rangverschil bovenaan als meest bepalende factoren,
+Experts plaatsen onderlinge resultaten (H2H) en rangverschil bovenaan als meest bepalende factoren,
 gevolgd door stadioncapaciteit. Neerslag, tijdstip en temperatuur worden als minder relevant beschouwd.
 
 Nochtans toont figuur~\ref{fig:enquete_doelpunten_plaats1} dat deze Borda-score een enigszins vertekend beeld kan geven.
@@ -363,21 +363,21 @@ terwijl onderlinge resultaten (H2H) en stadioncapaciteit elk door 1 respondent a
 \vspace{5pt}
 
 Wanneer dit wordt vergeleken met het model, zijn er zowel overeenkomsten als verschillen.
-Het rangverschil (abs\_rank\_diff) en de stadioncapaciteit worden door zowel experten als het model als belangrijke factoren erkend.
+Het rangverschil (abs\_rank\_diff) en de stadioncapaciteit worden door zowel experts als het model als belangrijke factoren erkend.
 Op dit vlak is er dus een duidelijke afstemming tussen menselijke intuïtie en datagerichte modellering.
 
-Een opvallend verschil is echter de rol van H2H-resultaten: experten hechten hier relatief veel belang aan,
+Een opvallend verschil is echter de rol van H2H-resultaten: experts hechten hier relatief veel belang aan,
 terwijl het model deze feature slechts een beperkt belang toekent.
 Dit sluit aan bij de eerdere bevinding in de resultaatanalyse, waar H2H eveneens als zwakke voorspeller naar voren kwam.
 
 Omgekeerd wordt temperatuur door het model als meest bepalende feature aangeduid,
-terwijl experten dit als een van de minst relevante factoren beschouwen.
+terwijl experts dit als een van de minst relevante factoren beschouwen.
 Dit kan verklaard worden doordat temperatuur in de data samenvalt met bepaalde periodes in het seizoen, zoals de wintermaanden, waarin wedstrijden mogelijk anders verlopen.
 Het model pikt dit patroon op, maar temperatuur op zich is waarschijnlijk niet de werkelijke oorzaak van meer of minder doelpunten.
 
 \vspace{5pt}
 
-Op basis van deze vergelijking kan worden geconcludeerd dat model en experten gedeeltelijk op dezelfde lijn zitten,
+Op basis van deze vergelijking kan worden geconcludeerd dat model en experts gedeeltelijk op dezelfde lijn zitten,
 met name wat betreft het belang van rangverschil en stadioncapaciteit.
 Tegelijk zijn er duidelijke discrepanties, voornamelijk rond de rol van temperatuur en H2H-resultaten,
 die aantonen dat machine-learningmodellen niet altijd dezelfde logica volgen als menselijke experts.
@@ -417,7 +417,7 @@ Hieruit kan geconcludeerd worden dat er sprake is van een statistisch significan
 
 \vspace{5pt}
 
-Grafiek~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag waarin experten werd gevraagd naar de verwachte invloed van het thuisvoordeel op het voorspellen van winst of verlies.
+Grafiek~\ref{fig:resultaat_enquete} toont de resultaten van een enquêtevraag waarin experts werd gevraagd naar de verwachte invloed van het thuisvoordeel op het voorspellen van winst of verlies.
 
 \begin{figure}[H]
     \centering
@@ -432,7 +432,7 @@ Scores 1, 2 en 4 werden elk door 1 respondent aangeduid, wat wijst op een spreid
 
 Wanneer deze percepties worden vergeleken met de resultaten uit de historische data-analyse, is er een duidelijke overeenkomst in de algemene tendens.
 De data tonen aan dat thuisvoordeel een significante invloed heeft op wedstrijdresultaten, maar de grootte van dit effect blijft relatief beperkt (ongeveer 43\% thuisoverwinningen tegenover 32\% uitoverwinningen).
-Dit sluit aan bij de inschatting van experten, die het thuisvoordeel als een relevante factor lijken te beschouwen, maar niet als doorslaggevend --- al kan niet uitgesloten worden dat een deel van de respondenten bij twijfel voor de middelste optie koos.
+Dit sluit aan bij de inschatting van experts, die het thuisvoordeel als een relevante factor lijken te beschouwen, maar niet als doorslaggevend --- al kan niet uitgesloten worden dat een deel van de respondenten bij twijfel voor de middelste optie koos.
 
 Hieruit kan worden afgeleid dat het thuisvoordeel zowel statistisch aantoonbaar is als erkend wordt in de praktijk, zij het als een factor met een gematigde invloed binnen een breder geheel van bepalende variabelen.
 
@@ -470,7 +470,7 @@ Er is dus een statistisch significant verband tussen recente vorm en wedstrijdre
 
 \vspace{5pt}
 
-Ook de perceptie van experten werd onderzocht (~\ref{fig:resultaat_enquete_vorm}).
+Ook de perceptie van experts werd onderzocht (~\ref{fig:resultaat_enquete_vorm}).
 
 \begin{figure}[H]
     \centering
@@ -484,7 +484,7 @@ Een kleiner deel (elk 1 respondent) geeft aan dat recente vorm weinig tot beperk
 Hogere scores (4 en 5) worden niet gekozen.
 
 Op basis van zowel de historische data als de enquêteresultaten kan worden geconcludeerd dat recente vorm een meetbaar verband vertoont met het wedstrijdresultaat.
-Hoewel deze invloed statistisch significant is, wordt ze door experten eerder als matig ingeschat en dus niet als doorslaggevend beschouwd.
+Hoewel deze invloed statistisch significant is, wordt ze door experts eerder als matig ingeschat en dus niet als doorslaggevend beschouwd.
 
 \vspace{5pt}
 
@@ -536,7 +536,7 @@ Niemand gaf een hogere score dan 2, wat betekent dat geen enkele deelnemer H2H-g
     \label{fig:resultaat_enquete_h2h}
 \end{figure}
 
-Hieruit kan worden afgeleid dat experten Head-to-Head-resultaten over het algemeen slechts als een beperkte factor beschouwen bij het inschatten van wedstrijdresultaten.
+Hieruit kan worden afgeleid dat experts Head-to-Head-resultaten over het algemeen slechts als een beperkte factor beschouwen bij het inschatten van wedstrijdresultaten.
 
 \vspace{5pt}
 
@@ -565,7 +565,7 @@ Dit resulteerde in een $\chi^2$-waarde van 53,37 met een p-waarde van $7{,}13 \t
 is er sprake van een statistisch significante associatie tussen H2H-resultaat en de uiteindelijke wedstrijduitkomst.
 
 Wanneer dit wordt vergeleken met de enquête, is er een duidelijke overeenkomst.
-Zowel experten als data geven aan dat H2H-geschiedenis een relatief kleine rol speelt in vergelijking met andere factoren zoals vorm of teamkwaliteit.
+Zowel experts als data geven aan dat H2H-geschiedenis een relatief kleine rol speelt in vergelijking met andere factoren zoals vorm of teamkwaliteit.
 
 Op basis hiervan kan worden geconcludeerd dat onderlinge geschiedenis slechts een zwakke indicator is voor toekomstige resultaten en voornamelijk ondersteunend wordt gebruikt in plaats van bepalend.
 Wat uit bovenstaande heatmap wel duidelijk wordt, is dat het thuisvoordeel opnieuw aanwezig is.
@@ -824,7 +824,7 @@ Dit verschil is echter statistisch niet significant, met een p-waarde van 0,7177
 
 \vspace{5pt}
 
-De experten gaven uiteenlopende scores voor de invloed van derby's op het aantal kaarten.
+De experts gaven uiteenlopende scores voor de invloed van derby's op het aantal kaarten.
 Figuur~\ref{fig:enquete_kaarten_derby} toont dat de antwoorden verspreid lagen over de schaal, zonder duidelijke consensus.
 Dit strookt met de data, waarbij er geen statistisch verband kon worden vastgesteld.
 
@@ -932,7 +932,7 @@ om consistent door het model te worden opgepikt.
 
 \vspace{5pt}
 
-Figuur~\ref{fig:enquete_kaarten_borda} toont de Borda-scores van de factoren die experten als meest bepalend beschouwen voor het aantal kaarten.
+Figuur~\ref{fig:enquete_kaarten_borda} toont de Borda-scores van de factoren die experts als meest bepalend beschouwen voor het aantal kaarten.
 
 \begin{figure}[H]
     \centering
@@ -941,14 +941,14 @@ Figuur~\ref{fig:enquete_kaarten_borda} toont de Borda-scores van de factoren die
     \label{fig:enquete_kaarten_borda}
 \end{figure}
 
-Experten plaatsen de speelstijl en derby/rivaliteit bovenaan als meest bepalende factoren, gevolgd door stadioncapaciteit en recente vorm.
+Experts plaatsen de speelstijl en derby/rivaliteit bovenaan als meest bepalende factoren, gevolgd door stadioncapaciteit en recente vorm.
 Neerslag en tijdstip worden als minder relevant beschouwd.
 
 \vspace{5pt}
 
-De vergelijking tussen model en experten toont deels een overeenkomst: beiden beschouwen de speelstijlcombinatie als de meest bepalende factor.
-Een verschil is dat experten derby's als relevante factor aanduiden, terwijl het model en de data-analyse hier geen significant effect vinden.
-Omgekeerd identificeert de data-analyse degradatiewedstrijden als de enige factor met een statistisch significant effect op het aantal kaarten, maar zowel het model als de experten kennen hieraan een relatief beperkt gewicht toe.
+De vergelijking tussen model en experts toont deels een overeenkomst: beiden beschouwen de speelstijlcombinatie als de meest bepalende factor.
+Een verschil is dat experts derby's als relevante factor aanduiden, terwijl het model en de data-analyse hier geen significant effect vinden.
+Omgekeerd identificeert de data-analyse degradatiewedstrijden als de enige factor met een statistisch significant effect op het aantal kaarten, maar zowel het model als de experts kennen hieraan een relatief beperkt gewicht toe.
 De SHAP-analyse nuanceert dit verder: hoewel degradatiewedstrijden gemiddeld laag scoren in feature importance, tonen de uitschieters aan dat het effect reëel is maar sterk wedstrijdafhankelijk.
 
 \vspace{5pt}

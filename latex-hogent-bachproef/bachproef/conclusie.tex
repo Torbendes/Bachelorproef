@@ -18,7 +18,7 @@ Uit de historische data-analyse blijkt dat recente vorm en rangverschil de sterk
 associaties vertonen met het wedstrijdresultaat. Het thuisvoordeel is eveneens duidelijk aanwezig: 43,28\% van
 de wedstrijden wordt gewonnen door de thuisploeg, tegenover 32,37\% door de bezoeker. Bij een rangverschil
 van tien plaatsen of meer wint de hoger gerangschikte ploeg in 78,9\% van de gevallen. Onderlinge confrontaties (H2H)
-tonen wel een statistisch significante associatie, maar de praktische voorspellende waarde blijft beperkt (38,29\% accuraatheid als enkel criterium).
+tonen wel een statistisch significante associatie, maar de praktische voorspellende waarde blijft beperkt (38,29\% nauwkeurigheid als enkel criterium).
 
 \subsection*{Deelvraag 2: Welke factoren beïnvloeden het verloop van wedstrijdstatistieken zoals doelpunten, schoten en kaarten?}
 
@@ -42,10 +42,12 @@ een meetbare invloed hebben op de spelintensiteit.
 \subsection*{Deelvraag 3: Spelen externe contextuele factoren zoals weersomstandigheden, stadioncapaciteit en tijdstip een rol?}
 
 De externe contextuele factoren hebben over het algemeen een beperkte invloed op de wedstrijdstatistieken.
-Noch temperatuur, noch neerslag toont een statistisch significant effect op het aantal schoten, doelpunten of kaarten
-in de uitgevoerde t-tests. Stadioncapaciteit vertoont een zwak maar statistisch significant verband
-met het aantal overtredingen van het uitteam (r = 0,079, p < 0,001), wat mogelijk te verklaren is
-door de hogere druk van een groot thuispubliek. Het tijdstip van de wedstrijd (avond versus dag, weekend versus weekdag)
+Noch temperatuur noch neerslag vertonen een statistisch significant effect op het aantal schoten, doelpunten of kaarten in de uitgevoerde t-tests. 
+Stadioncapaciteit vertoont daarentegen een statistisch significant, 
+maar zeer zwak positief verband met het aantal overtredingen van het uitteam (r = 0,079, p < 0,001), 
+waarbij de effectgrootte beperkt is. 
+Dit verband kan worden geïnterpreteerd als een mogelijke benadering voor verhoogde competitieve druk in grotere stadions met een intensiever thuispubliek, 
+al laat de correlatie geen causale interpretatie toe. Het tijdstip van de wedstrijd (avond versus dag, weekend versus weekdag)
 en weervariabelen spelen een beperkte rol in de modellen, maar zijn geen bepalende voorspellers.
 
 \subsection*{Deelvraag 4: Hoe kunnen de belangrijkste voorspellende factoren geïdentificeerd en geïnterpreteerd worden?}
@@ -61,7 +63,7 @@ met een hoger voorspeld aantal doelpunten, terwijl kleinere stadions samenhangen
 
 Feature importance en SHAP-waarden bleken bruikbaar om modelverklaringen te vergelijken met menselijke redeneringen.
 De combinatie van beide technieken geeft zowel het relatieve belang van variabelen (feature importance)
-als de richting en grootte van hun effect (SHAP) inzichtelijk weer.
+als de richting en grootte van het effect (SHAP) inzichtelijk weer.
 Dit maakt het mogelijk om te beoordelen of een model plausibele verklaringen geeft, of dat het vooral schijnverbanden oppikt,
 zoals bij temperatuur als voor seizoenseffecten.
 

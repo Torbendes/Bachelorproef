@@ -20,7 +20,7 @@ Voorgaande seizoenen werden niet opgenomen omdat er in deze bestanden bepaalde s
 Uit deze bron werden diverse wedstrijdstatistieken verzameld,
 waaronder de deelnemende teams, de speeldatum en de uiteindelijke winnaar.
 Daarnaast werden ook het aantal doelpunten, schoten, overtredingen, corners en kaarten voor zowel de thuis- als uitploeg verzameld.
-Voor de feature-importance-analyse en de voorspellingen waren deze variabelen uiteraard cruciaal.
+Voor de feature importance-analyse en de voorspellingen waren deze variabelen uiteraard cruciaal.
 Variabelen zoals betting odds werden bewust niet opgenomen omdat deze juist voorspeld moesten worden.
 Overige data van de scheidsrechter, teamopstellingen, blessures en transfers waren enkel beschikbaar via betaalde bronnen en werden daarom niet opgenomen.
 
@@ -36,7 +36,7 @@ Ook deze gegevens waren van belang omdat ze mogelijk een invloed konden hebben o
 Aanvullend werden de coördinaten van de verschillende stadions opgezocht. Deze waren vereist als parameters voor het ophalen van de weerdata.
 Naast de ligging van het stadion werd ook de stadioncapaciteit opgenomen als feature. 
 Hoewel deze variabele geen exacte maat vormt voor het effectieve aantal aanwezige toeschouwers, kan ze wel dienen als een benadering van de schaal van het thuispubliek en de infrastructuur van de club. 
-Zo kon onderzocht worden of stadiongrootte samenhangt met bepaalde wedstrijdstatistieken.
+Zo kon onderzocht worden of stadiongrootte en het aantal supporters, met merendeels steun voor de thuisploeg, samenhangt met bepaalde wedstrijdstatistieken.
 
 \subsection{Dataopslag}
 
@@ -60,4 +60,4 @@ Overigens waren er nog twee tabellen voor de weerdata. De tabel \textit{Wedstrij
 Omdat de API weergegevens per uur aanleverde, werd het uur van de wedstrijd als referentiepunt genomen. 
 Daarnaast werden ook gemiddelden berekend binnen een tijdsvenster van één uur rond de aftrap om de weersomstandigheden tijdens de wedstrijd beter te benaderen.
 De tabel \textit{WedstrijdWeerVooraf} bevatte weergegevens van de 48 uur voorafgaand aan de wedstrijd. 
-Het gemiddelde voor de temperatuur, de som van de hoeveelheid neerslag en de maximale windsnelheid.
+Deze bevatten het gemiddelde van de temperatuur, de som van de hoeveelheid neerslag en de maximale windsnelheid.

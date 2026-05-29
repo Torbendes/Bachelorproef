@@ -33,18 +33,6 @@
     tabsize=4
 }
 
-%% Ensure the list of listings is in the table of contents
-\renewcommand\listoflistingscaption{%
-    \IfLanguageName{dutch}{Lijst van codefragmenten}{List of listings}
-}
-\renewcommand\listingscaption{%
-    \IfLanguageName{dutch}{Codefragment}{Listing}
-}
-\renewcommand*\listoflistings{%
-    \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\listoflistingscaption}%
-    \listof{listing}{\listoflistingscaption}%
-}
-
 % Other packages not already included can be imported here
 
 %%---------- Document metadata -------------------------------------------------
@@ -112,8 +100,6 @@
 % If you included tables and/or source code listings, uncomment the appropriate
 % lines.
 \listoftables
-
-\listoflistings
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.

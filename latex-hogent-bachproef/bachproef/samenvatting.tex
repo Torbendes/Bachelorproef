@@ -15,9 +15,10 @@ in hun voorspellingen en verklaringen.
 Het onderzoek vertrekt vanuit een dataset van 2006 wedstrijden uit de Jupiler Pro League, verzameld over de seizoenen 2019-2020
 tot en met 2025-2026. Naast de wedstrijdstatistieken werden ook externe factoren opgenomen,
 waaronder weergegevens (temperatuur, neerslag, windsnelheid) en stadioninformatie.
-Op basis van deze ruwe data werden via feature engineering nieuwe variabelen gecreëerd,
-zoals een dynamische rangschikking, recente vorm, head-to-head statistieken, een speelstijlscore
-en indicatoren voor titel- en degradatiewedstrijden. Alle data werden opgeslagen in een relationele databank.
+Op basis van deze ruwe data werden via feature engineering nieuwe variabelen gecreëerd, 
+zoals een dynamische rangschikking, recente vorm, eerdere onderlinge confrontaties, 
+een speelstijlscore en indicatoren voor titel-, degradatie- en derbywedstrijden. 
+Alle data werden opgeslagen in een relationele databank.
 
 \vspace{5pt}
 
@@ -27,7 +28,7 @@ Voor de analyse van het wedstrijdresultaat werden vier interpreteerbare classifi
 Logistic Regression, Random Forest, Gradient Boosting en XGBoost.
 Aanvullend werden voor het aantal schoten, doelpunten en kaarten XGBoost-regressiemodellen ontwikkeld.
 Feature importance en SHAP-waarden werden gebruikt om de modellen te interpreteren.
-Parallel hiermee werden zes voetbalexperts met een professionele achtergrond in het Belgische voetbal en de sportjournalistiek bevraagd via een enquête.
+Tegelijkertijd hiermee werden zes voetbalexperts met een professionele achtergrond in het Belgische voetbal en de sportjournalistiek bevraagd via een enquête.
 
 \vspace{5pt}
 
@@ -36,12 +37,12 @@ voorspellers zijn voor het wedstrijdresultaat. Het thuisvoordeel is statistisch 
 (43,28\% thuisoverwinningen tegenover 32,37\% voor de bezoeker), maar beperkt in relatief belang.
 Onderlinge confrontaties (H2H) zijn statistisch significant maar zwak als enige voorspeller.
 Het beste classificatiemodel, Logistic Regression, behaalde een accuraatheid van 55,97\%,
-in lijn met wat in de internationale literatuur gerapporteerd wordt voor voetbalvoorspellingen.
+wat in lijn is met de waarden die in de internationale literatuur worden gerapporteerd voor voetbalvoorspellingen.
 
 \vspace{5pt}
 
-Voor doelpunten bleek de speelstijlcombinatie aanvallend versus verdedigend de enige statistisch significant
-beïnvloedende factor (p = 0,0139). Voor kaarten werden enkel degradatiewedstrijden als significant bevonden (p = 0,0399).
+Voor doelpunten bleek de speelstijlcombinatie aanvallend versus verdedigend een statistisch significante
+invloed (p = 0,0139). Voor kaarten werden enkel degradatiewedstrijden als significant bevonden (p = 0,0399).
 Het aantal schoten bleef het moeilijkst te modelleren, met een negatieve R²-waarde, 
 wat aangeeft dat het verloop van een wedstrijd sterk door toeval wordt bepaald of er niet de geschikte data gebruikt werd.
 
@@ -51,7 +52,7 @@ De vergelijking tussen model en experts toont een gedeeltelijke overeenstemming.
 Beide benaderingen identificeren recente vorm en rangverschil als de voornaamste factoren voor het wedstrijdresultaat,
 en erkennen speelstijl als relevant voor doelpunten en kaarten.
 Tegelijk zijn er duidelijke verschillen: experts overschatten de voorspellende waarde van H2H-resultaten en derby's,
-terwijl de modellen gevoelig zijn voor temperatuur als seizoensgerelateerde externe variabele.
+terwijl de modellen gevoelig zijn voor temperatuur (mogelijk als seizoensgerelateerde externe variabele).
 
 \vspace{5pt}
 

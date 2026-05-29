@@ -31,8 +31,8 @@ Naast de overeenkomsten zijn er ook duidelijke divergenties, die inhoudelijk int
 \subsection{De overschatting van onderlinge confrontaties (H2H)}
 
 Een van de meest uitgesproken verschillen betreft de rol van H2H-resultaten.
-Experten, met name in het kader van doelpunten, hechten hier relatief veel belang aan,
-terwijl de data aantonen dat H2H slechts een zwakke voorspellende indicator vormt (38,29\% accuraatheid als enkel criterium).
+Experts, met name in het kader van doelpunten, hechten hier relatief veel belang aan,
+terwijl de data aantonen dat H2H slechts een zwakke voorspellende indicator vormt (38,29\% accuraatheid wanneer H2H als enige criterium wordt gebruikt).
 Het model kent H2H evenmin een beslissende rol toe.
 
 \vspace{5pt}
@@ -47,7 +47,7 @@ niet doorslaggevend is, omdat andere factoren zoals kwaliteitsverschil en huidig
 
 Een opvallende bevinding in de modellen voor zowel doelpunten als kaarten is de hoge feature importance van temperatuur,
 terwijl experts dit als een van de minst relevante factoren beschouwen.
-Deze paradox is mogelijks het gevolg van een een vertekend beeld, mits de temperatuur correleert met het seizoensmoment.
+Deze paradox is mogelijks het gevolg van een vertekend beeld, omdat de temperatuur correleert met het seizoensmoment.
 In de zomermaanden wordt de competitie gestart en afgerond, periodes die samenvallen
 met een hogere inzet en anders verlopende wedstrijden dan in de wintermaanden.
 Het model pikt dit seizoensgerelateerde patroon op via de temperatuurvariabele,
@@ -80,7 +80,7 @@ maar vooral bij grote rangverschillen.
 
 De accuraatheid van het beste classificatiemodel (Logistic Regression, 55,97\%) ligt in lijn met wat in de literatuur
 gerapporteerd wordt voor voetbalvoorspellingen~\autocite{beal2021football}.
-Dit plafond in voorspelbaarheid komt niet enkel door de keuze van het model of de gebruikte features. 
+Dit plafond in voorspelbaarheid is niet uitsluitend het gevolg van de keuze van het model en de gebruikte features. 
 Het wijst op een fundamenteel toevalselement in voetbal. Factoren zoals individuele fouten, efficiëntie in afwerking, 
 rode kaarten en tactische ingrepen tijdens de wedstrijd kunnen de uitkomst sterk beïnvloeden, maar zijn vooraf nooit volledig te modelleren.
 
@@ -127,13 +127,13 @@ Ten derde dekt de dataset enkel seizoenen van de Jupiler Pro League vanaf 2019-2
 Hoewel dit zes volledige seizoenen omvat en neerkomt op 2006 wedstrijden, is het denkbaar
 dat structurele veranderingen in de competitie of in het spelniveau over langere termijn
 de modellen zouden kunnen verrijken.
-Bovendien werden wedstrijden uit het play-offformaat niet altijd opgenomen, wat een vertekend beeld kan geven van de seizoensdynamiek en presataties onder hogere druk.
+Bovendien werden wedstrijden uit de play-offs niet opgenomen, wat een vertekend beeld kan geven van de seizoensdynamiek en prestaties onder hogere druk.
 
 \vspace{5pt}
 
 Tot slot is de keuze voor interpreteerbare modellen, zoals Logistic Regression, Random Forest, Gradient Boosting en XGBoost,
 bewust gemaakt vanuit het oogpunt van transparantie, maar dit gaat mogelijk ten koste van predictieve kracht.
-Complexere architecturen zoals deep learning of ensemble-stacking kunnen hogere accuraatheden bereiken,
+Complexere architecturen zoals deep learning of ensemble-stacking kunnen hogere nauwkeurigheden bereiken,
 maar bieden minder directe inzichten in de bijdrage van individuele variabelen.
 
 \section{Samenvatting van de discussie}

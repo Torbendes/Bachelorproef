@@ -1,7 +1,7 @@
 \chapter{Feature Engineering}
 \label{ch:feature-engineering}
 
-In dit onderdeel wordt de feature engineering gedetailleerd uitgelegd. Nieuw variabelen worden gecreëerd aan de hand van de bestaande data.
+In dit onderdeel wordt de feature engineering gedetailleerd uitgelegd. Nieuwe variabelen worden gecreëerd aan de hand van de bestaande data.
 Hieronder vallen statistische parameters zoals rangschikking, voorgaande resultaten van deze ploegen en speelstijl. 
 Ook de mentale facoren zoals recente vorm, titel -en degradatiewedstrijden en rivaliteit werden verwerkt.
 Bovendien zullen deze variabelen ook later van belang zijn bij de data-analyse en machine-learningmodellen.
@@ -13,7 +13,7 @@ Bovendien zullen deze variabelen ook later van belang zijn bij de data-analyse e
 Voor elke wedstrijd werd een tussentijdse rangschikking berekend op basis van alle voorgaande wedstrijden binnen hetzelfde seizoen, 
 wat overeenkomt met de stand in het klassement op het moment van die wedstrijd.
 Deze volgde de standaard berekening: teams kregen 3 punten voor een overwinning, 1 punt voor een gelijkspel en 0 punten voor een nederlaag. 
-Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten, waar op gebasseerd wordt indien ploegen hetzelfde aantal punten hadden.
+Daarnaast werd het doelsaldo berekend als het verschil tussen gemaakte en geïncasseerde doelpunten, waarop wordt beslist indien ploegen hetzelfde aantal punten hadden.
 
 De rangschikking werd dus dynamisch bepaald op elk wedstrijdmoment door teams te sorteren op:
 \begin{itemize}
@@ -64,7 +64,7 @@ beide teams zich in de onderste regionen van de rangschikking bevinden (laatste 
 \subsection{Rivaliteitsindicator}
 
 Op basis van vooraf bepaalde teamcombinaties werd een binaire variabele toegevoegd die aangeeft of een wedstrijd een klassieke rivaliteit of derby betreft. 
-Dit omvat onder andere regionale derby’s en historisch belangrijke confrontaties.
+Dit omvat onder andere regionale derby’s en historisch belangrijke confrontaties (~\ref{tab:riv_or_derby_pairs}).
 
 \begin{table}[h]
 \centering
@@ -140,5 +140,5 @@ Deze features maken het mogelijk om relatieve verhoudingen tussen de strijdende 
 
 \vspace{5pt}
 
-De combinatie van deze variabelen samen vormen een hele rijke, diverse feature space die complexiteit van voetbalprestaties erg goed weergeeft. 
+De combinatie van deze variabelen samen vormen een hele rijke, diverse feature space die complexiteit van voetbalprestaties weergeeft. 
 Deze feature space is daarmee een stevige fundering voor het verdere data‐onderzoek en de ontwikkeling van de machine learningmodellen.
